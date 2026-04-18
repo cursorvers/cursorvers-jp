@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX3Y6G4XWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TX3Y6G4XWJ');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://cursorvers.jp/cancel">
+    <meta property="og:url" content="https://cursorvers.jp/cancel">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Cursorvers.edu">
+    <title>決済キャンセル | Cursorvers Edu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#FFFFFF',
+                        'brand-surface': '#F8FAFC',
+                        'brand-flame': '#FF4500',
+                        'brand-gold': '#FF5A1F',
+                        'brand-slate': '#475569',
+                        'brand-text-main': '#0F172A',
+                        'brand-border': '#E2E8F0',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FFFFFF;
+            color: #0F172A;
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .scale-in {
+            animation: scaleIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col items-center justify-center p-5">
+    <div class="max-w-xl w-full bg-white border border-slate-200 rounded-3xl shadow-xl p-8 md:p-12 space-y-8">
+
+        <!-- Warning Icon -->
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-100 scale-in">
+                <i class="fa-solid fa-triangle-exclamation text-amber-500 text-3xl"></i>
+            </div>
+        </div>
+
+        <div class="text-center space-y-3">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">決済がキャンセルされました</h1>
+            <p class="text-slate-500 leading-relaxed">
+                決済手続きがキャンセルされました。<br>
+                ご不明な点やお困りのことがございましたら、お気軽にお問い合わせください。
+            </p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 space-y-3">
+            <h2 class="text-base font-bold text-amber-800 flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb"></i>
+                ご確認ください
+            </h2>
+            <p class="text-amber-700 text-sm leading-relaxed">
+                決済を完了するには、カード情報を入力して「Subscribe」ボタンをクリックしてください。
+                セキュリティ上の理由でキャンセルされた場合は、別のカードをお試しいただくか、
+                カード会社にお問い合わせください。
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-col md:flex-row gap-4">
+            <a href="services.html" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition shadow-lg shadow-brand-flame/20">
+                <i class="fa-solid fa-rotate-right"></i>
+                もう一度試す
+            </a>
+            <a href="index.html" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border-2 border-slate-300 text-slate-700 font-bold hover:border-slate-400 hover:bg-slate-50 transition">
+                <i class="fa-solid fa-home"></i>
+                ホームに戻る
+            </a>
+        </div>
+
+        <!-- Footer Note -->
+        <p class="text-center text-slate-400 text-xs leading-relaxed">
+            ご質問やサポートが必要な場合は、お気軽にお問い合わせください。<br>
+            Library Memberの詳細については、サービスページをご覧ください。
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-400">
+        <p class="font-en">&copy; 2026 Cursorvers.</p>
+    </footer>
+</body>
+</html>

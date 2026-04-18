@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX3Y6G4XWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TX3Y6G4XWJ');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://cursorvers.jp/success">
+    <meta property="og:url" content="https://cursorvers.jp/success">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Cursorvers.edu">
+    <title>決済完了 | Cursorvers Edu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#FFFFFF',
+                        'brand-surface': '#F8FAFC',
+                        'brand-flame': '#FF4500',
+                        'brand-gold': '#FF5A1F',
+                        'brand-slate': '#475569',
+                        'brand-text-main': '#0F172A',
+                        'brand-border': '#E2E8F0',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FFFFFF;
+            color: #0F172A;
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .scale-in {
+            animation: scaleIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col items-center justify-center p-5">
+    <div class="max-w-xl w-full bg-white border border-slate-200 rounded-3xl shadow-xl p-8 md:p-12 space-y-8">
+
+        <!-- Success Icon -->
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 scale-in">
+                <i class="fa-solid fa-check text-green-500 text-3xl"></i>
+            </div>
+        </div>
+
+        <div class="text-center space-y-3">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">決済が完了しました！</h1>
+            <p class="text-slate-500 leading-relaxed">
+                Library Memberへのご登録、誠にありがとうございます。<br>
+                ご登録いただいたメールアドレスに確認メールをお送りしました。
+            </p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4">
+            <h2 class="text-base font-bold text-slate-900">次のステップ</h2>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-slate-600 text-sm">
+                    <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                    <span>確認メールをご確認ください（数分以内に届きます）</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm">
+                    <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                    <span>Discord招待リンクからコミュニティにご参加ください</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm">
+                    <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                    <span>Premium Note Mirrorで有料記事を全文閲覧できます</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-600 text-sm">
+                    <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                    <span>Verified Promptライブラリをご活用ください</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Button -->
+        <a href="index.html" class="block w-full text-center px-6 py-4 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition shadow-lg shadow-brand-flame/20">
+            ホームに戻る
+        </a>
+
+        <!-- Footer Note -->
+        <p class="text-center text-slate-400 text-xs leading-relaxed">
+            メールが届かない場合は、迷惑メールフォルダをご確認ください。<br>
+            ご不明な点がございましたら、お気軽にお問い合わせください。
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-400">
+        <p class="font-en">&copy; 2026 Cursorvers.</p>
+    </footer>
+
+    <script>
+        // URLパラメータからセッション情報を取得（オプション）
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        if (sessionId) {
+            console.log('Stripe Session ID:', sessionId);
+            // 必要に応じて、セッションIDをバックエンドに送信して処理
+        }
+    </script>
+</body>
+</html>

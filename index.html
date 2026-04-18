@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX3Y6G4XWJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TX3Y6G4XWJ');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursorvers.edu | 臨床知の資産化とAIで経済的自律</title>
+    <meta name="description" content="臨床知を資産化し、AIで医療者の経済的自律と収益基盤の複線化を設計する。安全な線引きと実装テンプレートで、時間ではなく構造で守る。">
+    <link rel="canonical" href="https://cursorvers.jp/">
+    <meta property="og:url" content="https://cursorvers.jp/">
+    <meta property="og:title" content="Cursorvers.edu | 臨床知の資産化とAIで経済的自律">
+    <meta property="og:description" content="臨床知を資産化し、AIで医療者の経済的自律と収益基盤の複線化を設計する。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Cursorvers.edu">
+
+    <!-- Structured data: Person (author) + Organization (provider) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "大田原 正幸",
+      "alternateName": "Masayuki Otawara",
+      "jobTitle": "集中治療専門医 / Cursorvers Founder",
+      "url": "https://cursorvers.jp/",
+      "sameAs": [
+        "https://cursorvers.com/",
+        "https://note.com/nice_wren7963"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Cursorvers, Inc.",
+        "url": "https://cursorvers.com/"
+      },
+      "knowsAbout": [
+        "医療AIガバナンス",
+        "集中治療",
+        "臨床意思決定",
+        "AI導入設計",
+        "AI監査"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Cursorvers, Inc.",
+      "alternateName": "Cursorvers.edu",
+      "url": "https://cursorvers.jp/",
+      "sameAs": [
+        "https://cursorvers.com/",
+        "https://note.com/nice_wren7963"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "大田原 正幸"
+      }
+    }
+    </script>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563EB">
+
+    <!-- Apple Touch Icon (multiple sizes for iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icon-76.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cursorvers Edu">
+
+    <!-- Standard Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#FFFFFF',
+                        'brand-hero': '#FFFFFF',
+                        'brand-surface': '#F8FAFC',
+                        'brand-flame': '#FF4500',
+                        'brand-gold': '#FF5A1F',
+                        'brand-gray': '#F1F5F9',
+                        'brand-slate': '#475569',
+                        'brand-text-main': '#0F172A',
+                        'brand-text-sub': '#475569',
+                        'brand-border': '#E2E8F0',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'marquee': 'marquee 40s linear infinite',
+                        'fire-glow': 'fireGlow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)', filter: 'blur(10px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)', filter: 'blur(0)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        fireGlow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 69, 0, 0.2)' },
+                            '100%': { boxShadow: '0 0 40px rgba(255, 69, 0, 0.5)' },
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            overflow-x: hidden;
+            font-feature-settings: "palt";
+            font-family: "Noto Sans JP", system-ui, sans-serif;
+        }
+
+        /* --- Hero Section (Video Background Style - White Base) --- */
+        .hero-wrapper {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background: #FFFFFF;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        /* Video Background */
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(1.1) saturate(0.9);
+        }
+
+        /* White overlay for text readability - Premium Light Style */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.85) 0%,
+                    rgba(255, 255, 255, 0.75) 40%,
+                    rgba(255, 255, 255, 0.65) 100%);
+            z-index: 1;
+        }
+
+        /* Glass Nav (White compatible) */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lickable Buttons (Flame Variant) */
+        .btn-lickable {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 1px solid rgba(255, 69, 0, 0.2);
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-lickable:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 1px rgba(255, 69, 0, 0.3), 0 10px 30px -10px rgba(255, 69, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 69, 0, 0.5);
+            color: #FF4500;
+        }
+
+        .btn-lickable::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 69, 0, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-lickable:hover::before {
+            left: 100%;
+        }
+
+        /* CTA Glow (graded by tier) */
+        .cta-glow {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border-radius: 9999px;
+            color: var(--cta-color, #fff);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 22px rgba(255, 69, 0, 0.25);
+        }
+
+        .cta-glow::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 9999px;
+            background: conic-gradient(from 0deg, var(--glow-a), var(--glow-b), var(--glow-c), var(--glow-a));
+            animation: spin 6s linear infinite;
+            opacity: 0.9;
+            z-index: -1;
+        }
+
+        .cta-glow::after {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: 9999px;
+            background: var(--cta-bg, #FF4500);
+            z-index: -1;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Border Beam (Flame) */
+        .border-beam {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            padding: 1px;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        }
+
+        .border-beam::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(from 0deg, transparent 0deg, #FF4500 90deg, transparent 180deg);
+            animation: rotate 4s linear infinite;
+        }
+
+        /* Gold Border Beam */
+        .border-beam-gold::before {
+            background: conic-gradient(from 0deg, transparent 0deg, #FF5A1F 90deg, transparent 180deg);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .text-glow {
+            text-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
+        }
+
+        /* --- Layout Utilities --- */
+        .section-padding {
+            padding-top: 140px;
+            padding-bottom: 140px;
+        }
+
+        /* Cards (Light Theme) */
+        .content-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s ease;
+        }
+
+        .content-card:hover {
+            background: #F8FAFC;
+            border-color: #FF4500;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Image Styling */
+        .img-frame {
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.7);
+        }
+
+        .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .img-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .img-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(5, 2, 2, 0.95) 0%, rgba(5, 2, 2, 0.5) 40%, transparent 100%);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        .mask-image-gradient {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 glass-nav transition-all duration-300" data-mobile-menu-root
+        data-mobile-menu-theme="light">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group" data-mobile-brand>
+                <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo"
+                    class="h-10 w-10 rounded-full border border-slate-200 shadow-md group-hover:border-brand-flame transition">
+                <span
+                    class="text-xl font-bold tracking-tight text-slate-800 group-hover:text-brand-flame transition">Cursorvers.edu</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
+                <a href="#mission" class="hover:text-brand-flame transition duration-300">Mission</a>
+                <a href="#solutions" class="hover:text-brand-flame transition duration-300">Solutions</a>
+                <a href="services.html" class="hover:text-brand-flame transition duration-300">Services</a>
+                <a href="#company" class="hover:text-brand-flame transition duration-300">Company</a>
+                <a href="https://note.com/nice_wren7963" target="_blank"
+                    class="hover:text-brand-flame transition duration-300 flex items-center gap-1">Journal <i
+                        class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec"
+                    target="_blank"
+                    class="text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider"
+                    data-mobile-contact>
+                    Contact
+                </a>
+                <button type="button" class="md:hidden text-slate-800 text-xl" data-mobile-menu-open
+                    aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く"><i
+                        class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Video Background - White Base) -->
+    <div class="hero-wrapper">
+        <!-- Video Background -->
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
+                    type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full">
+            <div class="text-left z-10 pt-20 w-full mx-auto md:col-span-2 md:max-w-5xl">
+                <!-- Eyebrow -->
+                <div class="animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <span
+                        class="inline-flex items-center gap-2 py-1 px-3 border border-brand-flame/40 bg-white/60 text-brand-flame text-[10px] font-bold tracking-[0.2em] uppercase rounded-full backdrop-blur-md font-en shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-flame animate-pulse"></span>
+                        Medical Asset Management
+                    </span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="mt-8 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-slate-900 animate-fade-in-up text-balance"
+                    style="animation-delay: 0.2s;">
+                    臨床知を資産へ<br>AIで経済的自律をつくる
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="mt-8 text-slate-600 text-lg md:text-xl font-medium tracking-wide leading-relaxed max-w-full md:max-w-6xl animate-fade-in-up text-balance md:whitespace-nowrap"
+                    style="animation-delay: 0.3s;">
+                    医療費抑制・働き方改革・インフレ。<br class="sm:block md:hidden">「体力で稼ぐ」モデルは、静かに限界へ。<br class="md:inline">
+                    だからこそ、臨床知をAIで複製可能な形に変え、<br class="sm:block md:hidden">時間ではなく"構造"で収入と選択肢を守る。
+                </p>
+
+                <!-- Hero CTA -->
+                <div class="mt-10 flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <a href="#solutions"
+                        class="inline-flex items-center justify-center px-8 py-3 rounded-full text-xs md:text-sm font-bold text-white font-en uppercase tracking-widest transition shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                        style="background: #FF4500;">
+                        Start Free
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Reality Section -->
+    <section id="reality" class="section-padding bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="reveal max-w-4xl">
+                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Reality
+                    Check</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
+                    医療者の資産形成は、構造的に厳しくなる。
+                </h2>
+                <p class="text-slate-600 text-lg leading-relaxed">
+                    いま起きているのは、個人の努力不足ではありません。<br>
+                    <span
+                        class="text-slate-900 font-bold bg-brand-flame/10 px-1">制度・市場・物価</span>が同時に動き、「長時間労働で穴埋めする」収入モデルが成立しにくくなっています。
+                </p>
+            </div>
+
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="content-card rounded-2xl p-8 reveal">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
+                        01. Cost Pressure</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">医療費抑制 × 実質賃金</h3>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        医療費の適正化は今後も続きます。現場の負荷が上がっても、<span
+                            class="text-slate-900 font-semibold">「報酬が比例して伸びる」期待は置きにくい</span>。
+                        結果として、資産形成は「給与一本足」では不安定になります。
+                    </p>
+                </div>
+
+                <div class="content-card rounded-2xl p-8 reveal" style="transition-delay: 0.1s;">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
+                        02. Time Cap</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">時間外上限 × 外勤の合算</h3>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        2024年4月から医師の時間外労働に上限が設けられ、<span class="text-slate-900 font-semibold">原則
+                            年960時間</span>が基準となりました。<br>
+                        複数医療機関での勤務も合算されるため、これまで月20〜30万円規模で積み上げていた外勤が、
+                        <span class="text-slate-900 font-semibold">制度上・体力上の理由で難しくなる</span>ケースが現実に出ています。
+                    </p>
+                </div>
+
+                <div class="content-card rounded-2xl p-8 reveal" style="transition-delay: 0.2s;">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
+                        03. Inflation</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">インフレ × 住宅・教育コスト</h3>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        生活コストは、ゆっくり確実に上がっていきます。住宅（家賃・ローン・修繕）、教育（学費・塾・留学）、
+                        介護・保険。<br>
+                        <span class="text-slate-900 font-semibold">「稼げているはずなのに増えない」</span>感覚は、ここから強まります。
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 content-card rounded-2xl p-8 md:p-10 reveal border-slate-200">
+                <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">The
+                    Hidden Trap</p>
+                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                    最も危険なのは、「時間で稼ぐ」依存が残ること</h3>
+                <div class="grid md:grid-cols-2 gap-8 text-slate-600 text-base leading-relaxed">
+                    <div class="space-y-3">
+                        <p class="flex gap-2"><i class="fa-solid fa-xmark text-brand-flame mt-1"></i>当直・外勤は、年齢とともに持続しない。
+                        </p>
+                        <p class="flex gap-2"><i
+                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>時間外の枠がある以上、「もっと働く」で補填できない。
+                        </p>
+                        <p class="flex gap-2"><i
+                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>管理職ポストは増えず、椅子取りゲームが激化する。
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i>必要なのは、臨床知を「再利用可能」にしてスケールさせること。
+                        </p>
+                        <p class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>AIを“学ぶ”より先に、<span
+                                class="text-slate-900 font-bold">勝ち筋（稼ぎ方の構造）</span>を設計すること。</p>
+                        <p class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i>安全な線引きの上で、収益ラインを複線化すること。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-200 text-slate-500 text-xs leading-relaxed">
+                    ※制度・収入影響は勤務形態や地域により異なります。本セクションは「構造変化」を理解するための整理です。
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Mission Section -->
+    <section id="mission" class="section-padding bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div class="img-frame aspect-[4/5] reveal order-2 md:order-1 shadow-2xl shadow-brand-flame/5">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
+                        alt="Urban Digital Asset Core Structure">
+                    <div class="img-gradient"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-8 md:p-10 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
+                        <p class="text-brand-flame text-xs font-bold uppercase tracking-widest mb-2 opacity-90 font-en">
+                            01. The Core</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">知的資産としての臨床知</h3>
+                        <p class="text-white/90 text-base leading-relaxed">
+                            日々の診療で培われる経験則や暗黙知は、適切なデジタル化によって、複製可能で価値を生み出し続ける「資産」へと変貌します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal order-1 md:order-2">
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Our
+                        Philosophy</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
+                        知的資産の防衛が、最大のキャリア戦略である。
+                    </h2>
+                    <div class="space-y-8 text-slate-600 text-lg leading-relaxed">
+                        <p>
+                            「AIを勉強する」だけでは、収入も時間も増えません。<br>
+                            本質は、あなたの臨床経験（暗黙知）を、AIで<span
+                                class="text-slate-900 font-bold bg-brand-flame/10 px-1">複製・標準化・再利用可能</span>にし、
+                            <span class="text-slate-900 font-bold">事故らずに運用</span>して、収益ラインを複線化できるかどうかです。
+                        </p>
+                        <div class="pl-6 border-l-2 border-brand-flame/50">
+                            <p class="italic text-slate-700">
+                                収益化は、品格を失う行為ではありません。<br>
+                                臨床知を正しく流通させ、社会に還元しながら、あなたと家族の選択肢を守る――それが「Defense」です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="section-padding bg-brand-surface relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">02.
+                        Vision & Mission</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
+                        AIと共進化する、自立した医療者たちへ。
+                    </h2>
+                    <div class="space-y-8 text-slate-600 text-lg leading-relaxed">
+                        <p>
+                            私たちが目指すのは、すべての医療者がAIという「第二の脳」を持ち、臨床知を安全に社会へ還元しながら、
+                            <span class="text-slate-900 font-bold">収入と時間の両方にレバレッジをかけられる</span>世界です。
+                        </p>
+                        <p>
+                            そのために、私たちは「AIセルフガバナンスの標準化」を掲げます。<br>
+                            恐怖心で遠ざけるのではなく、<span class="text-slate-900 font-bold">線引き（法務・倫理・品質）を理解したうえで</span>、静かに積み上げる。
+                            その実装手順を、医療者の言語で提供します。
+                        </p>
+                    </div>
+                </div>
+                <div class="img-frame aspect-[4/5] reveal shadow-2xl shadow-brand-flame/10">
+                    <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2144&auto=format&fit=crop"
+                        alt="Urban Democratization Network">
+                    <div class="img-gradient"></div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-8 md:p-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                        <p class="text-brand-flame text-xs font-bold uppercase tracking-widest mb-2 opacity-90 font-en">
+                            Our Goal</p>
+                        <h3 class="text-3xl font-bold text-white mb-4">AIセルフガバナンスの標準化</h3>
+                        <p class="text-white/90 text-base leading-relaxed">
+                            一部の専門家やシステムに依存するのではなく、現場の医療者一人ひとりがAIのリスクを理解し、自律的に制御できる状態を目指します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section-padding bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal">
+                <div>
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-4 font-en">The
+                        Ecosystem</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 font-en">Strategic Roadmap</h2>
+                </div>
+                <p class="text-slate-600 max-w-md mt-6 md:mt-0 text-lg">
+                    臨床知の資産化から、収益ラインの複線化へ。<br>
+                    3つのフェーズで、学習と実装を前に進める。
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="content-card rounded-xl overflow-hidden flex flex-col reveal group">
+                    <div class="h-64 img-frame relative">
+                        <div
+                            class="absolute top-4 left-4 bg-slate-700 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
+                            PHASE 01</div>
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
+                            alt="Sophisticated Data Network">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Free Community</h3>
+                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Risk Control
+                            & Basics</p>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            まずは「事故らない」ためのAIリテラシーを身につける無料フェーズ。免許やキャリアを危険にさらさず試せるよう、最低限おさえておきたいリスクと守り方をコンパクトに学びます。
+                        </p>
+                        <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>リスク診断ボットで危険度セルフチェック</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>安全プロンプト集（Lite）／炎上・誤情報を回避</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>外部活動・情報発信の安全ガイド（ライト版）</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>LINEで医療×AIの実務ニュースと注意点を週1〜2回配信
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-sm text-slate-500 space-y-2">
+                            <p>・AIに興味はあるが、まずは様子を見たい勤務医・看護師・コメディカルの方</p>
+                            <p>・「何がNGか」だけでも先に押さえておきたい方</p>
+                        </div>
+                        <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
+                            <span class="text-lg font-bold text-slate-900 font-en">Free</span>
+                            <a href="services.html#phase01"
+                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-slate-700 hover:bg-slate-800 font-en uppercase tracking-widest transition">
+                                Join Community
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card rounded-xl overflow-hidden flex flex-col reveal group"
+                    style="transition-delay: 0.1s;">
+                    <div class="h-64 img-frame relative">
+                        <div
+                            class="absolute top-4 left-4 bg-brand-flame text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
+                            PHASE 02</div>
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+                            alt="Asset Building">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Library Member</h3>
+                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Automation &
+                            Tools</p>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            Verified Promptと実務テンプレートで、臨床知を「再利用できる形」に整えます。目的は、勉強ではなく"実装"。時間の切り売りから抜け出すための武器庫です。</p>
+                        <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>診療・研究・発信のVerified Prompt（再現性ある型）
+                            </li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>プロフィール／投稿設計／教材構成のテンプレ</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>免責・注意書き・契約書の雛形（守備の標準装備）</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>著作権クリア素材・スライド部品で制作を加速</li>
+                        </ul>
+                        <div class="mt-4 text-sm text-slate-500 space-y-2">
+                            <p>・「まずはストック型（コンテンツ）」を作り、実績と導線を育てたい方</p>
+                            <p>・当直・外勤の代替として、月数万円の積み上げを狙いたい方</p>
+                        </div>
+                        <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
+                            <span class="text-lg font-bold text-slate-900 font-en">¥2,980<span
+                                    class="text-xs text-slate-500 ml-1">/ Month</span></span>
+                            <a href="services.html#phase02"
+                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-brand-flame hover:bg-brand-flame/90 font-en uppercase tracking-widest transition">
+                                Join Library
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card rounded-xl overflow-hidden flex flex-col reveal group"
+                    style="transition-delay: 0.2s;">
+                    <div class="h-64 img-frame relative">
+                        <div
+                            class="absolute top-4 left-4 bg-amber-500 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
+                            PHASE 03</div>
+                        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop"
+                            alt="Governance">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Master Class</h3>
+                        <p class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-4 font-en">Closed
+                            Beta・Waitlist</p>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            臨床知を「眠らない資産」へ昇華する集中プログラム。勝ち筋の設計、商品化、発信、守備（線引き）、AIワークフローを一気通貫で伴走します。</p>
+                        <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>あなたの"勝ち筋"診断（強み×市場×倫理）</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>ストック／スポット／継続の収益設計と優先順位</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>提案書・資料・LPのレビュー（実務フィードバック）</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>AIを使った制作・運用の標準化（再現性の担保）</li>
+                        </ul>
+                        <div class="mt-4 text-sm text-slate-500 space-y-2">
+                            <p>・「何を作れば良いか」ではなく、「勝てる型を最短で作りたい」方</p>
+                            <p>・収益化と品格を両立し、長期で積み上げたい方</p>
+                        </div>
+                        <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
+                            <span class="text-lg font-bold text-slate-900 font-en">Closed Beta</span>
+                            <a href="services.html#phase03"
+                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-500 font-en uppercase tracking-widest transition">
+                                Join Waitlist
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blueprint Section -->
+    <section id="blueprint" class="section-padding bg-brand-surface relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">04.
+                        Blueprint</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
+                        収益は価値提供の証左。医療者の臨床知を正しく運用する。
+                    </h2>
+                    <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
+                        <p>
+                            私たちは「一攫千金」も「小手先のノウハウ」も教えません。<br>
+                            代わりに、<span
+                                class="text-slate-900 font-bold bg-brand-flame/10 px-1">臨床知を資産として扱い、AIで複製可能な形に整え、社会に還元しながら収益化する</span>ための
+                            実装手順を提供します。
+                        </p>
+                        <p>
+                            収益化は、医療の信頼を損なう行為ではありません。<br>
+                            <span class="text-slate-900 font-bold">透明性・線引き・再現性</span>を守れば、むしろ「医療者が社会に価値を返す」正統なルートになります。
+                        </p>
+
+                        <div class="content-card rounded-2xl p-6 border border-slate-200">
+                            <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">How We Build</p>
+                            <ol class="space-y-3 text-base leading-relaxed text-slate-600">
+                                <li class="flex gap-3"><span
+                                        class="text-brand-flame font-bold">1.</span>臨床知の棚卸し（強み・症例・暗黙知を言語化）</li>
+                                <li class="flex gap-3"><span
+                                        class="text-brand-flame font-bold">2.</span>勝ち筋の選定（誰の何を、どの形で解決するか）</li>
+                                <li class="flex gap-3"><span
+                                        class="text-brand-flame font-bold">3.</span>AIワークフロー実装（作る／届ける／改善する）</li>
+                                <li class="flex gap-3"><span
+                                        class="text-brand-flame font-bold">4.</span>守備の設計（免責・個人情報・品質管理）</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid gap-6 reveal">
+                    <div class="content-card rounded-2xl p-7">
+                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route A / Stock</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">知識コンテンツ（積み上がる資産）</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-4">
+                            文章・資料・教材をAIで高速に作り、販売と配布の導線を整える。忙しい医療者に最も相性が良い「ストック型」。
+                        </p>
+                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>note連載／Notionテンプレ／動画講義</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>症例の学びを「再現可能な型」に変換</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>小さく売って、改善して、積み上げる</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card rounded-2xl p-7">
+                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route B / Spot</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">研修・講演（信頼を収益に変える）</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-4">
+                            AIを使いこなす医療者は、院内外で求められます。テーマ設計と資料作成をAIで標準化し、単発の収益へ。
+                        </p>
+                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>院内勉強会／看護部研修／企業向けセミナー</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>資料・台本・Q&Aをテンプレ化</li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>目安：1回
+                                5〜10万円規模から</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card rounded-2xl p-7">
+                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route C / Retainer
+                        </p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">監修・アドバイザリー（継続収入の核）</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-4">
+                            医療×AIの現場知がある人材は希少です。線引きと責任範囲を明確にし、継続契約へ。
+                        </p>
+                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>医療監修／運用ルール整備／FAQレビュー</li>
+                            <li class="flex gap-2"><i
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i>契約書・免責の雛形で防御を固める</li>
+                            <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>目安：月
+                                3〜10万円（小規模から開始）</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-16 content-card rounded-2xl p-8 md:p-10 reveal border border-slate-200">
+                <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">Timeline (Example)</p>
+                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">収益化までの現実的なタイムライン（目安）</h3>
+                <div class="grid md:grid-cols-4 gap-6 text-slate-600 text-base leading-relaxed">
+                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
+                        <p class="text-xs text-brand-flame font-bold font-en mb-2">0-2 Weeks</p>
+                        <p class="text-slate-900 font-bold mb-2">線引きと環境整備</p>
+                        <p>個人情報・免責・品質のルールを理解し、事故らない型を先に作る。</p>
+                    </div>
+                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
+                        <p class="text-xs text-brand-flame font-bold font-en mb-2">2-4 Weeks</p>
+                        <p class="text-slate-900 font-bold mb-2">勝ち筋の決定</p>
+                        <p>誰の課題を、どの形式で解くか。臨床知を「商品設計」に落とす。</p>
+                    </div>
+                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
+                        <p class="text-xs text-brand-flame font-bold font-en mb-2">1-3 Months</p>
+                        <p class="text-slate-900 font-bold mb-2">小さく提供して検証</p>
+                        <p>発信・教材・研修など、低リスクで実績を作り、改善サイクルへ。</p>
+                    </div>
+                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
+                        <p class="text-xs text-brand-flame font-bold font-en mb-2">3-6 Months</p>
+                        <p class="text-slate-900 font-bold mb-2">継続契約へ</p>
+                        <p>監修・アドバイザリーなど、継続収益を核にして安定化を目指す。</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-slate-500 text-xs leading-relaxed">
+                    ※成果・報酬を保証するものではありません。適性・時間・発信量・市場環境により変動します。<br>
+                    ただし「体系と実装」があれば、試行回数が増え、勝ち筋に到達しやすくなります。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="section-padding bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div class="img-frame aspect-[4/5] reveal order-2 md:order-1">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2070&auto=format&fit=crop"
+                        alt="Urban consulting leaders">
+                    <div class="img-gradient"></div>
+                    <div class="absolute bottom-10 left-10 text-white">
+                        <p class="text-xs font-bold uppercase tracking-widest mb-2 opacity-80 font-en">Transformation
+                        </p>
+                        <p class="text-xl font-bold">リスクを制御する側へ</p>
+                    </div>
+                </div>
+
+                <div class="reveal order-1 md:order-2">
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">05.
+                        Your Transformation</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
+                        受講後に手に入れる、３つの核心的能力。
+                    </h2>
+                    <ul class="space-y-8 text-lg leading-relaxed">
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-shield-halved text-brand-flame text-xl shrink-0 mt-1"></i>
+                            <div>
+                                <strong class="block text-slate-900 mb-1">自律的なリスク制御</strong>
+                                <span
+                                    class="text-slate-600">炎上、漏洩、ハルシネーション。AI利用に伴うリスクを自ら評価し、安全なプロンプトを設計・運用できる自信を手に入れます。</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-bolt-lightning text-brand-flame text-xl shrink-0 mt-1"></i>
+                            <div>
+                                <strong class="block text-slate-900 mb-1">知的生産の劇的効率化</strong>
+                                <span
+                                    class="text-slate-600">論文執筆、学会発表、情報発信。労働集約的な作業時間を劇的に短縮し、本質的な臨床や研究に集中できる時間を創出します。</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-coins text-brand-flame text-xl shrink-0 mt-1"></i>
+                            <div>
+                                <strong class="block text-slate-900 mb-1">収益ラインの複線化</strong>
+                                <span class="text-slate-600">臨床知をデジタル資産化し、<span
+                                        class="text-slate-900 font-bold">コンテンツ（ストック）／研修（スポット）／監修・アドバイザリー（継続）</span>を組み合わせて、時間に依存しない収益基盤を設計します。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="section-padding bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-12 md:gap-24">
+                <div class="md:col-span-5 reveal">
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">About
+                        Us</span>
+                    <h2 class="text-4xl font-bold mb-8 text-slate-900">Company Profile</h2>
+                    <p class="text-slate-600 leading-relaxed mb-10">
+                        Cursorvers.eduは、医療者がAIを安全に使いこなし、臨床知を「資産」として運用できるようにする教育ラインです。<br>
+                        机上の学習ではなく、勝ち筋の設計・実装テンプレート・コミュニティで、経済的自律の基盤をつくります。<br>
+                        ※医療機関・企業向けの導入支援やプロジェクト相談は別窓口で対応しています。
+                    </p>
+
+                    <div class="space-y-0 border-t border-slate-200">
+                        <div class="flex py-5 border-b border-slate-200">
+                            <span class="w-32 text-sm font-bold text-slate-400 font-en">Company</span>
+                            <span class="text-sm text-slate-900 font-en">Cursorvers株式会社</span>
+                        </div>
+                        <div class="flex py-5 border-b border-slate-200">
+                            <span class="w-32 text-sm font-bold text-slate-400 font-en">Leadership</span>
+                            <div class="text-sm text-slate-900 leading-relaxed font-en">
+                                <span class="block">Founder &amp; Director: Masayuki Otawara</span>
+                            </div>
+                        </div>
+                        <div class="flex py-5 border-b border-slate-200">
+                            <span class="w-32 text-sm font-bold text-slate-400 font-en">Address</span>
+                            <span class="text-sm text-slate-900">〒102-0074 東京都千代田区九段南1-5-6 りそな九段ビル5F KSフロア</span>
+                        </div>
+                        <div class="flex py-5 border-b border-slate-200">
+                            <span class="w-32 text-sm font-bold text-slate-400 font-en">Phone</span>
+                            <span class="text-sm text-slate-900 font-en">03-6403-9882</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 py-16 text-xs text-slate-500 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-16">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo"
+                            class="h-6 w-6 rounded-full border border-slate-200">
+                        <span class="text-slate-900 font-bold text-base font-en">Cursorvers.edu</span>
+                    </div>
+                    <p class="leading-relaxed opacity-80">
+                        Building clinical assets and economic autonomy through AI and education.
+                    </p>
+                </div>
+                <div class="flex gap-16">
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#solutions" class="hover:text-brand-flame transition">Solutions</a></li>
+                            <li><a href="services.html" class="hover:text-brand-flame transition">Services</a></li>
+                            <li><a href="#blueprint" class="hover:text-brand-flame transition">Blueprint</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html" class="hover:text-brand-flame transition">Privacy Policy</a></li>
+                            <li><a href="terms.html" class="hover:text-brand-flame transition">Terms of Service</a></li>
+                            <li><a href="tokushoho.html" class="hover:text-brand-flame transition">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-200">
+                <p class="text-center text-sm text-slate-500 mb-6">※
+                    当事業者は免税事業者です。インボイス（適格請求書）は発行できないため、消費税の仕入税額控除にはご利用いただけません。<a href="tokushoho.html"
+                        class="underline hover:text-slate-700 ml-1">詳細はこちら</a></p>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="font-en">&copy; 2026 Cursorvers.</p>
+                    <div class="flex gap-6 text-lg">
+                        <a href="#" class="hover:text-slate-900 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Aurora Gradient: Flowing Light Curtains ---
+        const setup3D = () => {
+            const container = document.getElementById('webgl-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 0, 100);
+            camera.lookAt(0, 0, 0);
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // === SIMPLEX NOISE (Inline implementation) ===
+            const simplex = {
+                grad3: [[1, 1, 0], [-1, 1, 0], [1, -1, 0], [-1, -1, 0], [1, 0, 1], [-1, 0, 1], [1, 0, -1], [-1, 0, -1], [0, 1, 1], [0, -1, 1], [0, 1, -1], [0, -1, -1]],
+                p: [151, 160, 137, 91, 90, 15, 131, 13, 201, 95, 96, 53, 194, 233, 7, 225, 140, 36, 103, 30, 69, 142, 8, 99, 37, 240, 21, 10, 23, 190, 6, 148, 247, 120, 234, 75, 0, 26, 197, 62, 94, 252, 219, 203, 117, 35, 11, 32, 57, 177, 33, 88, 237, 149, 56, 87, 174, 20, 125, 136, 171, 168, 68, 175, 74, 165, 71, 134, 139, 48, 27, 166, 77, 146, 158, 231, 83, 111, 229, 122, 60, 211, 133, 230, 220, 105, 92, 41, 55, 46, 245, 40, 244, 102, 143, 54, 65, 25, 63, 161, 1, 216, 80, 73, 209, 76, 132, 187, 208, 89, 18, 169, 200, 196, 135, 130, 116, 188, 159, 86, 164, 100, 109, 198, 173, 186, 3, 64, 52, 217, 226, 250, 124, 123, 5, 202, 38, 147, 118, 126, 255, 82, 85, 212, 207, 206, 59, 227, 47, 16, 58, 17, 182, 189, 28, 42, 223, 183, 170, 213, 119, 248, 152, 2, 44, 154, 163, 70, 221, 153, 101, 155, 167, 43, 172, 9, 129, 22, 39, 253, 19, 98, 108, 110, 79, 113, 224, 232, 178, 185, 112, 104, 218, 246, 97, 228, 251, 34, 242, 193, 238, 210, 144, 12, 191, 179, 162, 241, 81, 51, 145, 235, 249, 14, 239, 107, 49, 192, 214, 31, 181, 199, 106, 157, 184, 84, 204, 176, 115, 121, 50, 45, 127, 4, 150, 254, 138, 236, 205, 93, 222, 114, 67, 29, 24, 72, 243, 141, 128, 195, 78, 66, 215, 61, 156, 180],
+                perm: [],
+                init: function () {
+                    for (let i = 0; i < 512; i++) this.perm[i] = this.p[i & 255];
+                },
+                dot: function (g, x, y) { return g[0] * x + g[1] * y; },
+                noise2D: function (xin, yin) {
+                    const F2 = 0.5 * (Math.sqrt(3) - 1);
+                    const G2 = (3 - Math.sqrt(3)) / 6;
+                    let n0, n1, n2;
+                    const s = (xin + yin) * F2;
+                    const i = Math.floor(xin + s);
+                    const j = Math.floor(yin + s);
+                    const t = (i + j) * G2;
+                    const X0 = i - t, Y0 = j - t;
+                    const x0 = xin - X0, y0 = yin - Y0;
+                    let i1, j1;
+                    if (x0 > y0) { i1 = 1; j1 = 0; } else { i1 = 0; j1 = 1; }
+                    const x1 = x0 - i1 + G2, y1 = y0 - j1 + G2;
+                    const x2 = x0 - 1 + 2 * G2, y2 = y0 - 1 + 2 * G2;
+                    const ii = i & 255, jj = j & 255;
+                    const gi0 = this.perm[ii + this.perm[jj]] % 12;
+                    const gi1 = this.perm[ii + i1 + this.perm[jj + j1]] % 12;
+                    const gi2 = this.perm[ii + 1 + this.perm[jj + 1]] % 12;
+                    let t0 = 0.5 - x0 * x0 - y0 * y0;
+                    if (t0 < 0) n0 = 0; else { t0 *= t0; n0 = t0 * t0 * this.dot(this.grad3[gi0], x0, y0); }
+                    let t1 = 0.5 - x1 * x1 - y1 * y1;
+                    if (t1 < 0) n1 = 0; else { t1 *= t1; n1 = t1 * t1 * this.dot(this.grad3[gi1], x1, y1); }
+                    let t2 = 0.5 - x2 * x2 - y2 * y2;
+                    if (t2 < 0) n2 = 0; else { t2 *= t2; n2 = t2 * t2 * this.dot(this.grad3[gi2], x2, y2); }
+                    return 70 * (n0 + n1 + n2);
+                }
+            };
+            simplex.init();
+
+            // === AURORA RIBBONS (Multiple flowing curtains) ===
+            const auroraRibbons = [];
+            const ribbonCount = 5;
+
+            // Color palettes for each ribbon
+            const colorPalettes = [
+                { primary: [0.2, 0.8, 0.9], secondary: [0.4, 0.2, 0.8] },  // Cyan to Purple
+                { primary: [0.3, 0.9, 0.5], secondary: [0.1, 0.6, 0.9] },  // Green to Blue
+                { primary: [0.9, 0.3, 0.6], secondary: [0.5, 0.1, 0.9] },  // Pink to Violet
+                { primary: [0.2, 0.6, 1.0], secondary: [0.8, 0.3, 0.7] },  // Blue to Magenta
+                { primary: [0.1, 0.9, 0.7], secondary: [0.3, 0.4, 0.9] },  // Teal to Indigo
+            ];
+
+            for (let r = 0; r < ribbonCount; r++) {
+                const ribbonGeo = new THREE.PlaneGeometry(250, 120, 128, 64);
+                const palette = colorPalettes[r];
+
+                const ribbonMat = new THREE.ShaderMaterial({
+                    uniforms: {
+                        uTime: { value: 0 },
+                        uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+                        uPrimaryColor: { value: new THREE.Vector3(...palette.primary) },
+                        uSecondaryColor: { value: new THREE.Vector3(...palette.secondary) },
+                        uOffset: { value: r * 0.7 },
+                        uSpeed: { value: 0.3 + r * 0.1 }
+                    },
+                    vertexShader: `
+                        uniform float uTime;
+                        uniform float uOffset;
+                        uniform float uSpeed;
+                        varying vec2 vUv;
+                        varying float vWave;
+                        varying float vHeight;
+
+                        // Simplex noise approximation
+                        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                        vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                        vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+                        float snoise(vec2 v) {
+                            const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+                            vec2 i = floor(v + dot(v, C.yy));
+                            vec2 x0 = v - i + dot(i, C.xx);
+                            vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+                            vec4 x12 = x0.xyxy + C.xxzz;
+                            x12.xy -= i1;
+                            i = mod289(i);
+                            vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+                            vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+                            m = m*m; m = m*m;
+                            vec3 x = 2.0 * fract(p * C.www) - 1.0;
+                            vec3 h = abs(x) - 0.5;
+                            vec3 ox = floor(x + 0.5);
+                            vec3 a0 = x - ox;
+                            m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+                            vec3 g;
+                            g.x = a0.x * x0.x + h.x * x0.y;
+                            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+                            return 130.0 * dot(m, g);
+                        }
+
+                        void main() {
+                            vUv = uv;
+                            vec3 pos = position;
+
+                            // Create flowing wave pattern
+                            float t = uTime * uSpeed + uOffset;
+
+                            // Multiple wave layers
+                            float wave1 = snoise(vec2(uv.x * 2.0 + t * 0.5, uv.y * 1.5 + t * 0.2)) * 15.0;
+                            float wave2 = snoise(vec2(uv.x * 4.0 - t * 0.3, uv.y * 2.0)) * 8.0;
+                            float wave3 = snoise(vec2(uv.x * 1.0 + t * 0.4, uv.y * 3.0 - t * 0.1)) * 5.0;
+
+                            // Vertical curtain effect
+                            float curtain = sin(uv.x * 6.28318 * 3.0 + t) * 3.0;
+                            curtain += sin(uv.x * 6.28318 * 5.0 - t * 1.5) * 2.0;
+
+                            pos.z += wave1 + wave2 + wave3 + curtain;
+
+                            // Vertical displacement (aurora rising effect)
+                            pos.y += snoise(vec2(uv.x * 3.0 + t, 0.0)) * 10.0;
+
+                            vWave = (wave1 + wave2 + wave3) / 28.0;
+                            vHeight = (pos.y + 60.0) / 120.0;
+
+                            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                        }
+                    `,
+                    fragmentShader: `
+                        uniform float uTime;
+                        uniform vec2 uMouse;
+                        uniform vec3 uPrimaryColor;
+                        uniform vec3 uSecondaryColor;
+                        uniform float uOffset;
+                        varying vec2 vUv;
+                        varying float vWave;
+                        varying float vHeight;
+
+                        void main() {
+                            // Dynamic color mixing based on position and time
+                            float colorMix = sin(vUv.x * 6.28318 + uTime * 0.5 + uOffset) * 0.5 + 0.5;
+                            colorMix += vWave * 0.5;
+                            colorMix = clamp(colorMix, 0.0, 1.0);
+
+                            vec3 color = mix(uPrimaryColor, uSecondaryColor, colorMix);
+
+                            // Add shimmer
+                            float shimmer = sin(vUv.x * 50.0 + uTime * 3.0) * 0.1 + 0.9;
+                            color *= shimmer;
+
+                            // Vertical fade (stronger at top, fading at bottom)
+                            float verticalFade = smoothstep(0.0, 0.3, vUv.y) * (1.0 - smoothstep(0.7, 1.0, vUv.y));
+
+                            // Horizontal fade at edges
+                            float horizontalFade = smoothstep(0.0, 0.15, vUv.x) * (1.0 - smoothstep(0.85, 1.0, vUv.x));
+
+                            // Wave-based intensity variation
+                            float waveIntensity = 0.5 + vWave * 0.5;
+
+                            // Mouse influence
+                            float mouseDist = distance(vUv, uMouse);
+                            float mouseGlow = (1.0 - smoothstep(0.0, 0.4, mouseDist)) * 0.3;
+
+                            // Combine all alpha factors
+                            float alpha = verticalFade * horizontalFade * waveIntensity * 0.35;
+                            alpha += mouseGlow;
+                            alpha = clamp(alpha, 0.0, 0.5);
+
+                            // Add subtle glow
+                            color += vec3(0.1, 0.1, 0.2) * (1.0 - vUv.y) * 0.3;
+
+                            gl_FragColor = vec4(color, alpha);
+                        }
+                    `,
+                    transparent: true,
+                    side: THREE.DoubleSide,
+                    depthWrite: false,
+                    blending: THREE.AdditiveBlending
+                });
+
+                const ribbon = new THREE.Mesh(ribbonGeo, ribbonMat);
+                ribbon.position.set(
+                    (r - ribbonCount / 2) * 30,
+                    (r % 2 === 0 ? 1 : -1) * 10,
+                    -30 - r * 15
+                );
+                ribbon.rotation.x = -0.2 + (r * 0.05);
+
+                scene.add(ribbon);
+                auroraRibbons.push(ribbon);
+            }
+
+            // === FLOATING LIGHT PARTICLES (Stars) ===
+            const starCount = 100;
+            const starGeometry = new THREE.BufferGeometry();
+            const starPositions = new Float32Array(starCount * 3);
+            const starSizes = new Float32Array(starCount);
+
+            for (let i = 0; i < starCount; i++) {
+                starPositions[i * 3] = (Math.random() - 0.5) * 300;
+                starPositions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+                starPositions[i * 3 + 2] = (Math.random() - 0.5) * 100 - 50;
+                starSizes[i] = Math.random() * 2 + 0.5;
+            }
+
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            starGeometry.setAttribute('size', new THREE.BufferAttribute(starSizes, 1));
+
+            const starMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    uTime: { value: 0 }
+                },
+                vertexShader: `
+                    attribute float size;
+                    uniform float uTime;
+                    varying float vAlpha;
+
+                    void main() {
+                        vec3 pos = position;
+
+                        // Gentle drift
+                        pos.x += sin(uTime * 0.2 + position.y * 0.01) * 2.0;
+                        pos.y += cos(uTime * 0.15 + position.x * 0.01) * 1.5;
+
+                        vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+                        gl_PointSize = size * (200.0 / -mvPosition.z);
+                        gl_Position = projectionMatrix * mvPosition;
+
+                        // Twinkling
+                        vAlpha = 0.3 + sin(uTime * 2.0 + position.x + position.y) * 0.2;
+                    }
+                `,
+                fragmentShader: `
+                    varying float vAlpha;
+
+                    void main() {
+                        float dist = distance(gl_PointCoord, vec2(0.5));
+                        if (dist > 0.5) discard;
+
+                        float alpha = (1.0 - dist * 2.0) * vAlpha;
+                        vec3 color = vec3(0.8, 0.9, 1.0);
+
+                        gl_FragColor = vec4(color, alpha);
+                    }
+                `,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+
+            // === MOUSE TRACKING ===
+            let mouseX = 0.5;
+            let mouseY = 0.5;
+            let targetMouseX = 0.5;
+            let targetMouseY = 0.5;
+
+            const handleMouseMove = (x, y) => {
+                targetMouseX = x / window.innerWidth;
+                targetMouseY = 1.0 - (y / window.innerHeight);
+            };
+
+            document.addEventListener('mousemove', (e) => {
+                handleMouseMove(e.clientX, e.clientY);
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    handleMouseMove(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            }, { passive: true });
+
+            // === ANIMATION ===
+            const clock = new THREE.Clock();
+
+            function animate() {
+                requestAnimationFrame(animate);
+                const time = clock.getElapsedTime();
+
+                // Smooth mouse follow
+                mouseX += (targetMouseX - mouseX) * 0.05;
+                mouseY += (targetMouseY - mouseY) * 0.05;
+
+                // Update aurora ribbons
+                auroraRibbons.forEach((ribbon, i) => {
+                    ribbon.material.uniforms.uTime.value = time;
+                    ribbon.material.uniforms.uMouse.value.set(mouseX, mouseY);
+
+                    // Subtle rotation based on mouse
+                    ribbon.rotation.y = (mouseX - 0.5) * 0.1;
+                    ribbon.rotation.x = -0.2 + (i * 0.05) + (mouseY - 0.5) * 0.05;
+                });
+
+                // Update stars
+                starMaterial.uniforms.uTime.value = time;
+
+                // Camera movement
+                camera.position.x = (mouseX - 0.5) * 20;
+                camera.position.y = (mouseY - 0.5) * 15;
+                camera.lookAt(0, 0, 0);
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Resize handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            console.log('3D Effect initialized - Aurora Gradient');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setup3D();
+
+            // Intersection Observer for Reveals
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Mobile Menu
+            const menuBtn = document.querySelector('[data-mobile-menu-open]');
+            const nav = document.querySelector('[data-desktop-nav]');
+            if (menuBtn && nav) {
+                let mobileMenu = null;
+                const closeMenu = () => {
+                    if (mobileMenu) mobileMenu.style.display = 'none';
+                    document.body.style.overflow = '';
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                };
+                const createMenu = () => {
+                    if (mobileMenu) return;
+                    mobileMenu = document.createElement('div');
+                    mobileMenu.id = 'mobile-menu';
+                    mobileMenu.className = 'fixed inset-0 z-[60] bg-white flex flex-col';
+                    mobileMenu.innerHTML = `
+                        <div class="flex items-center justify-between h-24 px-6 border-b border-slate-200">
+                            <a href="#" class="flex items-center gap-3">
+                                <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-10 w-10 rounded-full border border-slate-200">
+                                <span class="text-xl font-bold tracking-tight text-slate-800">Cursorvers.edu</span>
+                            </a>
+                            <button type="button" class="text-slate-800 text-2xl" aria-label="メニューを閉じる" id="mobile-menu-close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-lg font-medium font-en" id="mobile-nav-links"></nav>
+                        <div class="px-6 pb-10 text-center">
+                            <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec" target="_blank" class="inline-block text-xs font-bold border border-slate-300 px-8 py-4 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition text-slate-700 uppercase tracking-wider font-en">Contact</a>
+                        </div>
+                    `;
+                    document.body.appendChild(mobileMenu);
+                    const navLinks = mobileMenu.querySelector('#mobile-nav-links');
+                    nav.querySelectorAll('a').forEach(link => {
+                        const clone = link.cloneNode(true);
+                        clone.className = 'text-xl font-semibold text-slate-800 hover:text-brand-flame transition py-2';
+                        clone.addEventListener('click', closeMenu);
+                        navLinks.appendChild(clone);
+                    });
+                    mobileMenu.querySelector('#mobile-menu-close').addEventListener('click', closeMenu);
+                };
+                const openMenu = () => {
+                    createMenu();
+                    mobileMenu.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                };
+                menuBtn.addEventListener('click', openMenu);
+                document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+            }
+        });
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

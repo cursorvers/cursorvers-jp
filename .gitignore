@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 --typescript/
 .project-os/
+
+# local claude state
+.claude/

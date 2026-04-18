@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX3Y6G4XWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TX3Y6G4XWJ');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursorvers Edu | Services</title>
+    <meta name="description" content="Cursorvers Edu のサービス一覧。医療者のためのAIリテラシーと臨床知の資産化プログラムを紹介します。">
+    <link rel="canonical" href="https://cursorvers.jp/services">
+    <meta property="og:url" content="https://cursorvers.jp/services">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Cursorvers.edu">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#FFFFFF',
+                        'brand-surface': '#F8FAFC',
+                        'brand-flame': '#FF4500',
+                        'brand-gold': '#FF5A1F',
+                        'brand-gray': '#F1F5F9',
+                        'brand-slate': '#475569',
+                        'brand-text-main': '#0F172A',
+                        'brand-text-sub': '#475569',
+                        'brand-border': '#E2E8F0',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            overflow-x: hidden;
+            font-feature-settings: "palt";
+            font-family: "Noto Sans JP", system-ui, sans-serif;
+        }
+        .section-padding { padding-top: 120px; padding-bottom: 120px; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.84);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .content-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .content-card:hover {
+            border-color: #FF4500;
+            transform: translateY(-4px);
+            background: #F8FAFC;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        .phase-label { letter-spacing: 0.3em; font-size: 0.7rem; text-transform: uppercase; color: #64748B; }
+
+        /* Library Card Highlight */
+        .library-highlight { border-color: rgba(255, 69, 0, 0.35); box-shadow: 0 0 30px rgba(255, 69, 0, 0.08); }
+        .library-highlight:hover { border-color: rgba(255, 69, 0, 0.6); box-shadow: 0 0 40px rgba(255, 69, 0, 0.15); }
+
+        /* CTA Glow */
+        .cta-glow {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+        .cta-glow::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 9999px;
+            background: conic-gradient(from 0deg, #FF4500, #FF7A3C, #FF5A1F, #FF4500);
+            animation: spin 6s linear infinite;
+            opacity: 0.9;
+            z-index: -1;
+        }
+        .cta-glow::after {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: 9999px;
+            background: var(--cta-bg, #FF4500);
+            z-index: -1;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300" data-mobile-menu-root data-mobile-menu-theme="light">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group" data-mobile-brand>
+                <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-10 w-10 rounded-full border border-slate-200 shadow-md group-hover:border-brand-flame transition">
+                <span class="text-xl font-bold tracking-tight text-slate-800 group-hover:text-brand-flame transition">Cursorvers.edu</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
+                <a href="index.html#mission" class="hover:text-brand-flame transition duration-300">Mission</a>
+                <a href="index.html#solutions" class="hover:text-brand-flame transition duration-300">Solutions</a>
+                <a href="services.html" class="text-brand-flame font-semibold">Services</a>
+                <a href="index.html#company" class="hover:text-brand-flame transition duration-300">Company</a>
+                <a href="https://note.com/nice_wren7963" target="_blank" class="hover:text-brand-flame transition duration-300 flex items-center gap-1">Journal <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec" target="_blank" class="text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider" data-mobile-contact>
+                    Contact
+                </a>
+                <button type="button" class="md:hidden text-slate-800 text-xl" data-mobile-menu-open aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 bg-white text-slate-900">
+        <section class="section-padding pt-32 pb-16" aria-labelledby="services-hero">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+                <p class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-brand-flame/10 border border-brand-flame/30 text-[10px] tracking-[0.4em] uppercase font-bold text-brand-flame font-en">
+                    Our Services
+                </p>
+                <h1 id="services-hero" class="text-4xl md:text-6xl font-black tracking-tight text-slate-900">Services｜サービス一覧</h1>
+                <div class="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed border-l-2 border-brand-flame/50 pl-4 md:pl-6 text-left">
+                    <p>医療・ヘルスケア領域に関心のある方がAIを味方につけ、知見を「資産」に変えていくための<br class="hidden md:block">3つのレイヤーをご用意しています。</p>
+                    <p class="text-slate-700">
+                        Cursorvers Edu は、医療・ヘルスケア領域に関心のある個人に向けた「AIリテラシー」「業務効率化」「臨床知の資産化」に特化した教育プログラムです。<br class="hidden md:block">ここで紹介するサービスはすべて、診断や治療方針を指示するものではなく、あなた自身が安全にAIを使いこなし、キャリアと収益源をデザインするための情報提供・スキル提供を目的としています。
+                    </p>
+                    <p class="text-xs text-slate-500">※本ページの内容は情報提供のみを目的としており、個別の診断・治療・投薬等の医療判断を行うものではありません。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-brand-surface" aria-labelledby="phase01">
+            <div class="max-w-5xl mx-auto px-6 space-y-8">
+                <div>
+                    <p class="phase-label font-en">PHASE 01 – Individual Literacy</p>
+                    <h2 id="phase01" class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-slate-900">Free Community｜Safety &amp; Literacy（無料）</h2>
+                    <p class="text-slate-600 text-lg leading-relaxed">医療・ヘルスケア領域に関心のあるすべての方が安心してAI活用を試行できるよう、基礎的な安全リテラシーを無償で提供するフェーズです。職種や立場を問わず、リスクを避けるために必要な留意点と守り方を短時間で体系的に学べます。</p>
+                </div>
+                <div class="content-card p-8 space-y-6">
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>リスク診断ボット：AI活用における留意点をセルフチェック</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>安全プロンプト集（Lite）：不適切投稿・情報漏えい・誤情報拡散を避けるための質問テンプレ</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>医療・ヘルスケア領域の副業・情報発信におけるコンプライアンス要点（ライト版）</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>LINEで最新のAI活用トレンド／副業・発信事例を配信（週1〜2回）</li>
+                    </ul>
+                    <div class="text-sm text-slate-500 space-y-2">
+                        <p>・医療・ヘルスケアに関心があり、まずは全体像を把握したい方</p>
+                        <p>・まずは注意すべき事項だけでも先に把握したい方</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-4 border-t border-slate-200">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-500 font-en">Price</p>
+                            <p class="text-2xl font-bold text-slate-900">Free（無料）</p>
+                        </div>
+                        <div class="space-y-1">
+                            <a href="line-qr.html?v=20260104" class="cta-glow inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white transition font-en" style="--cta-bg:#3A3A3A;">
+                                Join Community
+                            </a>
+                            <p class="text-xs text-slate-500">LINE QRコードから友だち追加 → メール登録でDiscord招待</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-white relative" aria-labelledby="phase02">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-flame/5 rounded-full blur-[120px] -z-10"></div>
+
+            <div class="max-w-5xl mx-auto px-6 space-y-8">
+                <div>
+                    <p class="phase-label text-brand-flame font-en">PHASE 02 – Asset Building</p>
+                    <h2 id="phase02" class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-slate-900">Library Member｜Efficiency &amp; Tools</h2>
+                    <p class="text-brand-flame text-sm font-semibold">月額 ¥2,980（税込）｜臨床の時間を縮めながら、いつでも収益化に転換できる「下地」をつくるレイヤー</p>
+                    <p class="text-slate-600 text-lg leading-relaxed mt-4">Library Member は、「まずは日々の業務をラクにしたい」「そのうえで将来の副業や発信の準備をしておきたい」医療・ヘルスケア領域に関心のある方のための、実務ツールと知識のライブラリです。AIを使った業務効率化テンプレートにくわえ、将来のMaster Class受講費に充当できる「積立割引（Tuition Credit）」で、学びと投資を両立させます。</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="content-card p-6 space-y-3 library-highlight">
+                        <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-en">Value 01</p>
+                        <h3 class="text-lg font-bold text-slate-900">Premium Note Mirror</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Cursorversが Note で販売する有料記事を、Library会員は Discord の会員限定チャンネルで全文閲覧できます。「記事を何本も単品購入するくらいなら、Libraryに入った方が安い」状態を目指します。</p>
+                    </div>
+                    <div class="content-card p-6 space-y-3 library-highlight">
+                        <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-en">Value 02</p>
+                        <h3 class="text-lg font-bold text-slate-900">Verified Prompt</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">紹介状、サマリー、抄録ドラフト、カンファレンス準備など、臨床・研究・事務で使える「動作検証済みプロンプト」を、最新のモデルにあわせて毎月メンテナンス。コピペで微調整するだけの状態に保ちます。</p>
+                    </div>
+                    <div class="content-card p-6 space-y-3 library-highlight">
+                        <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-en">Value 03</p>
+                        <h3 class="text-lg font-bold text-slate-900">Tuition Credit</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">毎月の会費 ¥2,980 は、将来受講する Master Class（¥380,000）の受講費として全額積立。12ヶ月継続で ¥35,760 の割引に。解約でリセットされるため、続けるほどお得になる仕組みです。</p>
+                    </div>
+                </div>
+                <div class="content-card library-highlight p-8 space-y-4">
+                    <ul class="list-disc pl-5 text-slate-600 text-sm space-y-2">
+                        <li>副業や情報発信に使える、医療イラストや免責文テンプレートなどの著作権クリア素材（順次追加）</li>
+                        <li>最新の医療×AIトレンド、収益化事例のミニレポート（Library限定先行配信）</li>
+                    </ul>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-4 border-t border-slate-200 mt-4">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-500 font-en">Price</p>
+                            <p class="text-2xl font-bold text-slate-900">¥2,980 <span class="text-sm font-normal text-slate-500">/ Month（税込）</span></p>
+                        </div>
+
+                        <button type="button" data-open-library class="cta-glow inline-flex items-center justify-center px-8 py-3 rounded-full text-sm font-bold text-white transition shadow-lg shadow-brand-flame/20 focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white font-en" style="--cta-bg:#FF4500;">
+                            Join Library
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-brand-surface" aria-labelledby="phase03">
+            <div class="max-w-5xl mx-auto px-6 space-y-8">
+                <div>
+                    <p class="phase-label font-en">PHASE 03 – Governance Master Class</p>
+                    <h2 id="phase03" class="text-3xl md:text-4xl font-bold mt-4 mb-2 text-slate-900">Master Class｜Clinical Asset Mastery（開発中）</h2>
+                    <p class="text-brand-flame text-sm font-semibold">現在クローズドβを構築中｜完成次第、ウェイトリストの方からご案内します</p>
+                    <p class="text-slate-600 text-lg leading-relaxed mt-4">
+                        Master Class は、臨床知を眠らないアセットへ昇華させる3ヶ月の集中プログラムとして設計しています。
+                        2026年ローンチを目標に、AIワークフロー、セルフガバナンス、マネタイズ設計を一気通貫で伴走するカリキュラムを磨き込み中です。
+                        早期アクセスをご希望の方はウェイトリストにご登録ください。
+                    </p>
+                    <p class="text-slate-500 text-base leading-relaxed">
+                        ゴールは「個人としての toC ビジネスを飛躍させること」。ニュースレターやメンバーシップ、デジタル講座など、
+                        あなたの臨床知を直接エンドユーザーへ届ける仕組みを設計し、継続収益を生むブランド力を育てます。
+                    </p>
+                </div>
+                <div class="content-card p-8 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 text-slate-900">想定モジュール（鋭意開発中）</h3>
+                        <ul class="list-disc pl-5 text-slate-600 space-y-3 text-sm leading-relaxed">
+                            <li><strong class="text-slate-900">Clinical Asset Design Lab</strong> — 臨床経験をニュースレター/講座/コミュニティに最適化するフォーマット設計ワーク。</li>
+                            <li><strong class="text-slate-900">AI Workflow Orchestra</strong> — 収集・生成・発信をAIと分担し、24時間稼働の知的生産ラインを構築。</li>
+                            <li><strong class="text-slate-900">Self-Governed Monetization</strong> — 著作権・薬機法・契約を踏まえたセルフガバナンスとレベニューアーキテクチャ。</li>
+                            <li><strong class="text-slate-900">Go-To-Customer Launch Systems</strong> — toC向け講座・コミュニティ・メンバーシップを高速に検証し、継続的に伸ばすためのローンチ/リローンチ設計。</li>
+                            <li><strong class="text-slate-900">Launch &amp; Review Sprint</strong> — βローンチを実施し、フィードバックを元に継続可能な運用モデルに昇華。</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <h3 class="text-lg font-bold text-slate-900">Certification</h3>
+                        <p>ローンチ後は <strong class="text-slate-900">Certified AI-Safe Creator（公認AI活用者）</strong> を授与予定です。個人として安全に臨床知を資産化できる証明を目指します。</p>
+                    </div>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-4 border-t border-slate-200">
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-slate-500 font-en">Status</p>
+                                <p class="text-2xl font-bold text-slate-900">Closed Beta｜Waitlist Only</p>
+                            </div>
+                            <a
+                                href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec"
+                                target="_blank"
+                                class="cta-glow inline-flex items-center justify-center px-9 py-3 rounded-full text-sm font-bold text-black transition font-en"
+                                style="--cta-bg:#F1C156;"
+                            >
+                                Join Waitlist
+                            </a>
+                        </div>
+                    <p class="text-xs text-slate-500">※開発過程で内容・価格は変更となる場合があります。正式リリース前は、ウェイトリスト登録者限定で進捗をお知らせします。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-white" aria-labelledby="disclaimer">
+            <div class="max-w-5xl mx-auto px-6 content-card p-8">
+                <h2 id="disclaimer" class="text-xl font-bold mb-4 text-slate-900">【重要なご案内】</h2>
+                <ul class="text-slate-600 text-sm space-y-3 leading-relaxed list-disc pl-5">
+                    <li>Cursorvers Eduで提供する各種サービスは、すべて教育・情報提供を目的としたものであり、特定の医薬品・医療機器・治療法の効果を保証したり、診断・治療方針を指示するものではありません。</li>
+                    <li>最終的な医療判断（診断・治療・投薬・検査の要否など）は、必ず現場の主治医・医療機関の責任のもとで行われます。</li>
+                    <li>Trademarks and brand names are the property of their respective owners and are used for identification only. No endorsement implied.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Library Checkout Modal -->
+    <div id="library-modal" class="fixed inset-0 z-[80] hidden overflow-y-auto">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close-library></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative max-w-xl w-full bg-white border border-slate-200 rounded-2xl shadow-2xl p-6 space-y-6 my-8">
+                <!-- Close button -->
+                <button type="button" class="absolute top-4 right-4 text-slate-400 hover:text-brand-flame text-xl transition-colors" aria-label="閉じる" data-close-library>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <!-- Header -->
+                <div class="space-y-2">
+                    <p class="text-xs uppercase tracking-[0.4em] text-brand-flame font-bold font-en">Library Member</p>
+                    <h3 class="text-3xl font-bold text-slate-900">決済前の確認</h3>
+                    <p class="text-sm text-slate-600">
+                        月額 <span class="text-brand-flame font-semibold">¥2,980</span>（税込）。カード情報は次の画面（Stripe）で入力します。
+                        <span class="text-brand-flame font-semibold">PHI（診療情報）は絶対に入力しないでください。</span>
+                    </p>
+                </div>
+
+                <!-- Form -->
+                <form id="library-form" class="space-y-4 bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                    <div class="space-y-2">
+                        <label for="library-email" class="text-sm font-semibold text-slate-900">メールアドレス</label>
+                        <input id="library-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-flame focus:border-brand-flame">
+                        <p class="text-xs text-slate-500">決済完了後、このメールアドレスに確認メールが送信されます。</p>
+                    </div>
+
+                    <label class="flex items-start gap-3 text-sm text-slate-600">
+                        <input id="opt-in-email" name="opt_in_email" type="checkbox" checked class="mt-1 rounded border-slate-300 bg-white text-brand-flame focus:ring-brand-flame">
+                        <span>ニュースレター／アップデートをメールで受け取る（任意）</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 text-sm text-slate-600">
+                        <input id="agree-terms" name="agree_terms" type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-flame focus:ring-brand-flame">
+                        <span><a href="terms.html" class="underline hover:text-brand-flame" target="_blank" rel="noopener">利用規約</a>・<a href="privacy.html" class="underline hover:text-brand-flame" target="_blank" rel="noopener">プライバシーポリシー</a>・PHI禁止に同意する</span>
+                    </label>
+
+                    <div id="library-status" class="text-sm font-semibold"></div>
+
+                    <button type="submit" class="w-full rounded-full bg-brand-flame text-white font-bold py-3 hover:bg-brand-flame/90 transition focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white">
+                        <i class="fa-solid fa-crown text-sm"></i>
+                        Stripeで決済に進む
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Join Modal -->
+    <div id="community-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close-community></div>
+        <div class="relative max-w-lg mx-auto mt-28 bg-white border border-slate-200 rounded-2xl shadow-2xl text-left p-8 md:p-10 space-y-6 mx-4">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs tracking-[0.3em] uppercase text-brand-flame font-bold font-en">Free Community</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">参加前のご案内</h3>
+                    <p class="text-slate-500 text-sm mt-3 leading-relaxed">LINEで最新のSafety & Literacy情報を受け取れます。PHIや診療情報は入力せず、友だち追加のみで参加できます。</p>
+                </div>
+                <button type="button" class="text-slate-400 hover:text-slate-900 text-xl" aria-label="閉じる" data-close-community>&times;</button>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-600 bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <div class="flex items-start gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-flame mt-1.5"></span>
+                    <p>カード情報やPHIは扱いません。友だち追加のみで参加できます。</p>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-flame mt-1.5"></span>
+                    <p>安全ガイド／最新AI副業トレンドをLINEで配信します。</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:justify-end gap-3 pt-2">
+                <button type="button" data-close-community class="inline-flex justify-center px-5 py-3 rounded-full border border-slate-300 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition">閉じる</button>
+                <a href="line-qr.html?v=20260104" class="inline-flex justify-center px-6 py-3 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white">
+                    LINE登録ページへ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-16 text-xs text-slate-500 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-16">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-6 w-6 rounded-full border border-slate-200">
+                        <span class="text-slate-900 font-bold text-base font-en">Cursorvers.edu</span>
+                    </div>
+                    <p class="leading-relaxed opacity-80">Building clinical assets and economic autonomy through AI and education.</p>
+                </div>
+                <div class="flex gap-16">
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="services.html" class="hover:text-brand-flame transition">Overview</a></li>
+                            <li><a href="index.html#mission" class="hover:text-brand-flame transition">Mission</a></li>
+                            <li><a href="index.html#solutions" class="hover:text-brand-flame transition">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html" class="hover:text-brand-flame transition">Privacy Policy</a></li>
+                            <li><a href="terms.html" class="hover:text-brand-flame transition">Terms of Service</a></li>
+                            <li><a href="tokushoho.html" class="hover:text-brand-flame transition">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-en">&copy; 2026 Cursorvers.</p>
+                <div class="flex gap-6 text-lg">
+                    <a href="#" class="hover:text-slate-900 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 本番エンドポイントをフロント側で指定
+        window.CURSORVERS_CHECKOUT_ENDPOINT = "https://haaxgwyimoqzzxzdaeep.functions.supabase.co/create-checkout-session";
+    </script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuBtn = document.querySelector('[data-mobile-menu-open]');
+        const nav = document.querySelector('[data-desktop-nav]');
+        if (menuBtn && nav) {
+            let mobileMenu = null;
+            const createMenu = () => {
+                if (mobileMenu) return;
+                mobileMenu = document.createElement('div');
+                mobileMenu.id = 'mobile-menu';
+                mobileMenu.className = 'fixed inset-0 z-[60] bg-white flex flex-col';
+                mobileMenu.innerHTML = `
+                    <div class="flex items-center justify-between h-24 px-6 border-b border-slate-200">
+                        <a href="index.html" class="flex items-center gap-3">
+                            <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-10 w-10 rounded-full border border-slate-200">
+                            <span class="text-xl font-bold tracking-tight text-slate-800">Cursorvers.edu</span>
+                        </a>
+                        <button type="button" class="text-slate-800 text-2xl" aria-label="メニューを閉じる" id="mobile-menu-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-lg font-medium" id="mobile-nav-links"></nav>
+                    <div class="px-6 pb-10 text-center">
+                        <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec" target="_blank" class="inline-block text-xs font-bold border border-slate-300 px-8 py-4 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition text-slate-700">Contact</a>
+                    </div>
+                `;
+                document.body.appendChild(mobileMenu);
+                const navLinks = mobileMenu.querySelector('#mobile-nav-links');
+                nav.querySelectorAll('a').forEach(link => {
+                    const clone = link.cloneNode(true);
+                    clone.className = 'text-xl font-semibold text-slate-800 hover:text-brand-flame transition py-2 text-center';
+                    clone.addEventListener('click', closeMenu);
+                    navLinks.appendChild(clone);
+                });
+                mobileMenu.querySelector('#mobile-menu-close').addEventListener('click', closeMenu);
+            };
+            const openMenu = () => {
+                createMenu();
+                mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                menuBtn.setAttribute('aria-expanded', 'true');
+            };
+            const closeMenu = () => {
+                if (mobileMenu) mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            };
+            menuBtn.addEventListener('click', openMenu);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        }
+
+        // --- Library Checkout Modal + API ---
+        const checkoutEndpoint = window.CURSORVERS_CHECKOUT_ENDPOINT || "";
+        const libraryModal = document.getElementById('library-modal');
+        const openLibraryButtons = document.querySelectorAll('[data-open-library]');
+        const closeLibraryTargets = libraryModal ? libraryModal.querySelectorAll('[data-close-library]') : [];
+        const libraryForm = document.getElementById('library-form');
+        const libraryStatus = document.getElementById('library-status');
+        const submitBtn = libraryForm ? libraryForm.querySelector('button[type="submit"]') : null;
+
+        // Community modal
+        const communityModal = document.getElementById('community-modal');
+        const openCommunityButtons = document.querySelectorAll('[data-open-community]');
+        const closeCommunityTargets = communityModal ? communityModal.querySelectorAll('[data-close-community]') : [];
+
+        const setStatus = (message, isError = true) => {
+            if (!libraryStatus) return;
+            libraryStatus.textContent = message;
+            libraryStatus.className = isError ? 'text-sm font-semibold text-red-500' : 'text-sm font-semibold text-brand-flame';
+        };
+
+        const openModal = () => {
+            if (!libraryModal) return;
+            libraryModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setStatus('');
+        };
+
+        const closeModal = () => {
+            if (!libraryModal) return;
+            libraryModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        openLibraryButtons.forEach(btn => btn.addEventListener('click', openModal));
+        closeLibraryTargets.forEach(btn => btn.addEventListener('click', closeModal));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Community modal handlers
+        const openCommunityModal = () => {
+            if (!communityModal) return;
+            communityModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeCommunityModal = () => {
+            if (!communityModal) return;
+            communityModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+        openCommunityButtons.forEach(btn => btn.addEventListener('click', openCommunityModal));
+        closeCommunityTargets.forEach(btn => btn.addEventListener('click', closeCommunityModal));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCommunityModal();
+        });
+
+        if (libraryForm) {
+            libraryForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                setStatus('');
+
+                if (!checkoutEndpoint) {
+                    setStatus('決済APIのエンドポイントを設定してください（window.CURSORVERS_CHECKOUT_ENDPOINT）');
+                    return;
+                }
+
+                const emailInput = libraryForm.querySelector('#library-email');
+                const optInInput = libraryForm.querySelector('#opt-in-email');
+                const agreeTermsInput = libraryForm.querySelector('#agree-terms');
+
+                const email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
+                const optInEmail = optInInput instanceof HTMLInputElement ? optInInput.checked : false;
+                const agreeTerms = agreeTermsInput instanceof HTMLInputElement ? agreeTermsInput.checked : false;
+
+                if (!email) {
+                    setStatus('メールアドレスを入力してください');
+                    return;
+                }
+                if (!agreeTerms) {
+                    setStatus('利用規約への同意が必要です');
+                    return;
+                }
+
+                if (submitBtn) {
+                    submitBtn.setAttribute('disabled', 'true');
+                    submitBtn.textContent = '送信中...';
+                }
+
+                try {
+                    const response = await fetch(checkoutEndpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email,
+                            opt_in_email: optInEmail,
+                            agree_terms: agreeTerms,
+                            tier: 'library',
+                        }),
+                    });
+
+                    const data = await response.json().catch(() => ({}));
+
+                    if (!response.ok) {
+                        throw new Error(data.error || '決済の準備に失敗しました');
+                    }
+
+                    if (!data.url) {
+                        throw new Error('決済URLが取得できませんでした');
+                    }
+
+                    setStatus('Stripeに遷移します...', false);
+                    window.location.href = data.url;
+                } catch (err) {
+                    const message = err instanceof Error ? err.message : '不明なエラーが発生しました';
+                    setStatus(message);
+                } finally {
+                    if (submitBtn) {
+                        submitBtn.removeAttribute('disabled');
+                        submitBtn.textContent = 'Stripeで決済に進む';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
