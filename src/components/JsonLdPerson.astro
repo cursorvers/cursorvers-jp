@@ -1,0 +1,16 @@
+---
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: '大田原 正幸',
+  alternateName: 'Masayuki Otawara',
+  jobTitle: 'Founder, Director',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Cursorvers Inc.',
+    url: 'https://cursorvers.jp',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(person)} />

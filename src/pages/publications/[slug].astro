@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return [];
+}
+
+const { slug } = Astro.params;
+const noteCanonical = `https://note.com/cursorvers/n/${slug}`;
+// Future publication teaser pages should set canonical={noteCanonical}
+// so the note.com article remains the canonical source of the full text.
+---
+
+<BaseLayout
+  title="Publication | Cursorvers"
+  description="note.com記事ティザーのテンプレートです。"
+  canonical={noteCanonical}
+>
+  <div class="site-mark">
+    <img src="/favicon.svg" alt="" loading="eager" />
+    <span>Publication</span>
+  </div>
+  <p class="eyebrow">記事ティザー</p>
+  <h1>note.com記事への導線</h1>
+  <p class="lead">このテンプレートは、note.comの記事をcanonical sourceとして扱うために用意しています。</p>
+</BaseLayout>

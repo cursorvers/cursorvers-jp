@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+
+const description = 'Cursorversへのお問い合わせ先です。';
+---
+
+<BaseLayout title="Contact | Cursorvers" description={description}>
+  <div class="site-mark">
+    <img src="/favicon.svg" alt="" loading="eager" />
+    <span>Contact</span>
+  </div>
+  <p class="eyebrow">お問い合わせ</p>
+  <h1>法人向け支援の相談</h1>
+  <p class="lead">
+    医療AIガバナンスの設計、研修、監査に関するご相談は、以下のメールアドレスからご連絡ください。
+  </p>
+  <p><a href="mailto:flux@cursorvers.com">flux@cursorvers.com</a></p>
+</BaseLayout>
