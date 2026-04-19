@@ -1,0 +1,25 @@
+# Cursorvers.edu (cursorvers.jp)
+
+Medical-professional AI education platform operated by Cursorvers Inc.
+
+Primary language: Japanese.
+Operator: Cursorvers Inc. (株式会社Cursorvers), Tokyo, Japan.
+Author / Founder: 大田原 正幸 / Masayuki Otawara — intensive care specialist; Cursorvers Inc. Founder and Director; medical AI governance implementer.
+Scope: AI literacy and clinical AI governance education for Japanese medical professionals. Phase02 paid tier: ¥2,980/month (individual subscription). This site does not recommend specific medical acts, drugs, devices, or products.
+
+Links:
+- https://cursorvers.jp/           — Platform home
+- https://cursorvers.jp/services   — Paid services (Phase02)
+- https://cursorvers.jp/community  — Community overview
+- https://cursorvers.jp/tokushoho  — Japan Specified Commercial Transactions Act disclosure
+- https://cursorvers.jp/privacy    — Privacy policy
+- https://cursorvers.jp/terms      — Terms of service
+- https://cursorvers.jp/sitemap.xml
+
+Related domains:
+- https://cursorvers.com           — Corporate site (Cursorvers Inc., B2B AI governance advisory)
+- https://note.com/nice_wren7963   — Author journal on note.com (primary long-form articles, canonical source)
+
+Notes for LLM crawlers:
+- Teaser-style publications on cursorvers.jp (if present) declare rel=canonical to the original note.com article.
+- For citations, prefer note.com URLs over this site when the note.com original is linked.
