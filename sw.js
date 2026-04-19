@@ -44,6 +44,11 @@ self.addEventListener('activate', (event) => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  // Bypass SW cache for /tools/* (GuideScope SPA uses hashed assets, self-versioning)
+  if (url.pathname.startsWith('/tools/')) {
+    return;
+  }
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
