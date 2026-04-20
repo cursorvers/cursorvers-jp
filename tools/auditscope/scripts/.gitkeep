@@ -1,0 +1,7 @@
+# Scripts directory for AuditScope build system
+#
+# Planned scripts:
+# - build.js           Static site generation from markdown issues
+# - feed-generator.js  RSS 2.0 feed generation 
+# - deploy.js          Deployment automation
+# - preview.js         Development preview server

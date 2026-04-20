@@ -1,0 +1,1894 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at": "2026-04-20T02:29:38.970Z",
+  "source": "medical-paper-governance/corpus/guidelines/*.yml",
+  "guideline_count": 10,
+  "guidelines": [
+    {
+      "id": "eu-ai-act",
+      "name_ja": "EU AI法",
+      "name_en": "Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence",
+      "issuer": "European Parliament and Council of the European Union",
+      "jurisdiction": "eu",
+      "type": "regulatory",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+      "version": "2024.07",
+      "published_date": "2024-07-12",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:pending-2026-04-20",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "ai-act",
+        "eu",
+        "high-risk-ai",
+        "medical-device",
+        "regulatory"
+      ],
+      "source_notes": [
+        {
+          "title": "Regulation (EU) 2024/1689",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689",
+          "retrieved": "2026-04-20",
+          "note_ja": "curl -sL -A \"curl/8.7.1\" では HTTP 202 WAF challenge かつ 0 byte 応答となり、原文本文を取得できなかったため source_hash は pending placeholder とする。"
+        }
+      ],
+      "summary_ja": "EUのAI包括規則。医療機器AI等の高リスク分類、提供者義務、監視・透明性を定める。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "must",
+          "summary_ja": "EU市場・利用のAIに適用し医療機器AIも対象化。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-6",
+            "section": "Article 2(1); Article 6(1); Annex I Section A points 11-12",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "B",
+          "requirement": "must",
+          "summary_ja": "Annex I対象かAnnex III該当なら高リスクAIに分類。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-6",
+            "section": "Article 6(1)-(4); Annex III point 5(a), 5(d)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "C",
+          "requirement": "must",
+          "summary_ja": "提供者は導入者へ性能、限界、使用説明を提供する義務。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-13",
+            "section": "Article 13(1)-(3)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "D",
+          "requirement": "must",
+          "summary_ja": "高リスクAIはライフタイム中の自動ログ記録を技術的に可能にする。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-12",
+            "section": "Article 12(1)-(2); Article 21(2)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "E",
+          "requirement": "must",
+          "summary_ja": "高リスクAIは自然人による有効な監督を可能に設計する。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-14",
+            "section": "Article 14(1)-(5)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "F",
+          "requirement": "must",
+          "summary_ja": "訓練・検証・試験データの品質とバイアス対策を要求。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-10",
+            "section": "Article 10(1)-(5)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "G",
+          "requirement": "must",
+          "summary_ja": "市販後監視を置き、重大インシデントを報告する義務。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-72",
+            "section": "Article 72(1)-(4); Article 73(1)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "H",
+          "requirement": "must",
+          "summary_ja": "提供者等の義務とQMS内の責任枠組みを定める。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-17",
+            "section": "Article 16; Article 17(1)(m)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "I",
+          "requirement": "must",
+          "summary_ja": "個人データ保護法を維持し、特殊データ処理に保護条件を課す。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-10",
+            "section": "Article 2(7); Article 10(5)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "J",
+          "requirement": "must",
+          "summary_ja": "正確性、堅牢性、サイバーセキュリティ水準を確保する義務。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-15",
+            "section": "Article 15(1)-(5)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "K",
+          "requirement": "must",
+          "summary_ja": "意図目的に照らした試験・妥当性確認と性能指標を要求。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-9",
+            "section": "Article 9(6)-(8); Article 15(1)-(4)",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "整合規格・共通仕様と既存EU整合法令との接続を規定。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-40",
+            "section": "Article 8(2); Article 40; Article 41",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "M",
+          "requirement": "must",
+          "summary_ja": "リスク管理、QMS、市販後監視を通じた継続管理を要求。",
+          "citation": {
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689#art-72",
+            "section": "Article 9(2); Article 17(1); Article 72",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fda-aiml-saamd-ap",
+      "name_ja": "FDA AI/ML SaMDアクションプラン・PCCPガイダンス",
+      "name_en": "Artificial Intelligence/Machine Learning (AI/ML)-Based Software as a Medical Device (SaMD) Action Plan and PCCP Guidance",
+      "issuer": "U.S. Food and Drug Administration",
+      "jurisdiction": "us",
+      "type": "regulatory",
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-software-medical-device",
+      "version": "2025.08",
+      "published_date": "2021-01-12",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:bca81a98373c803b4c83f9ac3d26a438bc468a2343ab5c1f6b83a791e081c2dc",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "samd",
+        "aiml",
+        "fda",
+        "pccp",
+        "medical-device",
+        "regulatory"
+      ],
+      "summary_ja": "FDAのAI/ML SaMD監督方針とPCCP提出推奨を整理し、TPLC・透明性・性能監視を示す。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "should",
+          "summary_ja": "AI-DSFを含む医療機器と510(k)等の提出が主対象。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=9",
+            "section": "PCCP Guidance, Section III Scope",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "B",
+          "requirement": "should",
+          "summary_ja": "IMDRFリスク分類やFDA便益リスクを踏まえた監督を想定。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=2",
+            "section": "Introduction & Background; Action 1",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "学習データ、入力、ロジック、性能根拠等の透明性を推奨。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=5",
+            "section": "Action 3 Patient-Centered Approach Incorporating Transparency to Users",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "D",
+          "requirement": "should",
+          "summary_ja": "PCCPではデータ管理、更新手順、追跡表で変更根拠を残す。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=33",
+            "section": "PCCP Guidance, Section VII.C Traceability",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "E",
+          "requirement": "mention",
+          "summary_ja": "手動更新や臨床ワークフローで人の入力・判断の役割に触れる。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=9",
+            "section": "PCCP Guidance, Section III Scope",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "バイアス識別・低減と頑健性評価の方法開発を重視。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=6",
+            "section": "Action 4 Regulatory Science Methods Related to Algorithm Bias & Robustness",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "G",
+          "requirement": "should",
+          "summary_ja": "PCCPは予定変更、実装方法、影響評価を提出に含める。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=14",
+            "section": "PCCP Guidance, Section V Policy for Predetermined Change Control Plans",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "製造業者がPCCPを作成し品質システムで影響評価する。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=34",
+            "section": "PCCP Guidance, Section VIII Impact Assessment",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "I",
+          "requirement": "mention",
+          "summary_ja": "患者中心の信頼・透明性を扱うが同意手続は主題外。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=5",
+            "section": "Action 3 Patient-Centered Approach Incorporating Transparency to Users",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          }
+        },
+        {
+          "column": "J",
+          "requirement": "mention",
+          "summary_ja": "GMLPを医療機器サイバーセキュリティ施策と連携すると記載。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=4",
+            "section": "Action 2 Good Machine Learning Practice (GMLP)",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "K",
+          "requirement": "should",
+          "summary_ja": "PCCPの性能評価・検証妥当性確認で安全有効性を示す。",
+          "citation": {
+            "url": "https://www.fda.gov/media/166704/download#page=31",
+            "section": "PCCP Guidance, Section VII.B(3) Performance evaluation",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "GMLP標準化やIMDRF等との国際調和を推進。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=4",
+            "section": "Action 2 Good Machine Learning Practice (GMLP)",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "開発前から市販後までTPLC監督とRWP監視を重視。",
+          "citation": {
+            "url": "https://www.fda.gov/files/medical%20devices/published/AIML-SaMD-Action-Plan.pdf#page=7",
+            "section": "Introduction & Background; Action 5 Real-World Performance (RWP)",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "id": "imdrf-samd",
+      "name_ja": "IMDRF SaMD作業部会文書",
+      "name_en": "IMDRF Software as a Medical Device Working Group documents",
+      "issuer": "International Medical Device Regulators Forum",
+      "jurisdiction": "international",
+      "type": "regulatory_guidance",
+      "url": "https://www.imdrf.org/working-groups/software-medical-device-samd",
+      "version": "N10/N12/N23/N41 + UDI N48 reference",
+      "published_date": "2017-09-21",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:287df25325df4bc53fe0713889cb738b203881c23cd83b2f69aeeafb24538204",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "imdrf",
+        "samd",
+        "medical-device",
+        "regulatory-guidance"
+      ],
+      "source_documents": [
+        {
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-131209-samd-key-definitions-140901.pdf",
+          "code": "IMDRF/SaMD WG/N10FINAL:2013",
+          "pdf_sha256": "1c9a15ef83f8e7987f6484c59e0775102e9bd74ab97f21dcfa4266b951ac42ff"
+        },
+        {
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf",
+          "code": "IMDRF/SaMD WG/N12FINAL:2014",
+          "pdf_sha256": "f9335eba6f94d2d058126708c782e306e557e7dd5bdae4a784d51f83d6c05d8d"
+        },
+        {
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+          "code": "IMDRF/SaMD WG/N23FINAL:2015",
+          "pdf_sha256": "38324b33e16772dfc536c42f3c70ca871e4f3d58118ac8d17ea1a6f583466baa"
+        },
+        {
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf",
+          "code": "IMDRF/SaMD WG/N41FINAL:2017",
+          "pdf_sha256": "a7ff6d79aa9bfd723c952f52f2279cfc1b0416c8fff72e9905501db6af367c02"
+        },
+        {
+          "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-190321-udi-sag.pdf",
+          "code": "IMDRF/UDI WG/N48FINAL:2019",
+          "note_ja": "SaMD作業部会文書ではなくUDI適用ガイド。SaMDのUDI例を含むため参照。",
+          "pdf_sha256": "8ebd4e3071477170723ae08e397c4324400420f536c280d213c5383d8c274a68"
+        }
+      ],
+      "summary_ja": "IMDRFのSaMD定義、リスク分類、QMS、臨床評価、UDI参照をまとめた国際規制調和文書群。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "should",
+          "summary_ja": "ハードウェアに属さず医療目的を果たすソフトをSaMDと定義。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-131209-samd-key-definitions-140901.pdf",
+            "section": "N10 Section 5.1 Software as a Medical Device",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "汎用プラットフォーム上で動く医療目的ソフト、IVD、モバイルアプリも定義に含まれる。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "should",
+          "summary_ja": "医療判断への寄与と状態重大性でIからIVに分類する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf",
+            "section": "N12 Sections 7.1-7.3",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "Category IVが最高影響、Category Iが最低影響。規制分類そのものではない。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "mention",
+          "summary_ja": "定義文、使用目的、表示・利用情報の明確化に言及する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-131209-samd-key-definitions-140901.pdf",
+            "section": "N10 Sections 5.4-5.5",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "透明性一般ではなく、SaMD定義文、意図用途、ラベル・使用説明の情報に関する言及。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "should",
+          "summary_ja": "文書管理、記録管理、構成追跡でトレーサビリティを保つ。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 7.4-7.5",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "監査ログという語ではないが、文書・記録・構成・苦情等の追跡可能性を扱う。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "mention",
+          "summary_ja": "ユーザーリスク、使用環境、使用者支援への考慮に言及。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 7.3; 8.5",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "人間監督義務としては明示されず、ユーザーリスクと意図使用の考慮にとどまる。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "データ完全性、臨床データ品質、妥当性の確保を求める。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf",
+            "section": "N41 Sections 6.0-7.0",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "N23はデータ完全性、N41は臨床評価エビデンスの品質・関連性を扱う。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "should",
+          "summary_ja": "変更影響評価と市販後実性能データの継続監視を求める。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf",
+            "section": "N41 Sections 8.3-8.4",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PCCPという用語ではないが、変更、市販後情報、継続学習、実世界性能監視を扱う。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "SaMD製造者が品質、リスク、ライフサイクル管理を担う。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 6.0-7.0",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "組織リーダーシップ、説明責任、ガバナンス、資源提供をQMSの基盤に置く。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "should",
+          "summary_ja": "患者データ等の機密性と安全な保管・廃棄を考慮する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 8.2; 8.6",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "同意手続ではなく、機微データ、患者情報、機密データの保護に関するQMS考慮。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "should",
+          "summary_ja": "情報セキュリティ、脅威分析、脆弱性対策を安全と統合する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 7.3; 8.3; 8.6",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "侵入検知、ペネトレーションテスト、脆弱性スキャン、データ完全性試験に言及。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "should",
+          "summary_ja": "臨床関連性、分析妥当性、臨床妥当性の三要素で評価する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-170921-samd-n41-clinical-evaluation_1.pdf",
+            "section": "N41 Sections 5.0-7.0",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "SaMDの安全性、有効性、性能を示す臨床評価の収束的アプローチを定義。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "should",
+          "summary_ja": "各国規制当局のSaMD用語・管理原則の収束を目的とする。",
+          "citation": {
+            "url": "https://www.imdrf.org/working-groups/software-medical-device-samd",
+            "section": "Working Group charter",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "国際的な共通語彙、リスク分類、QMS、臨床評価原則の整合を狙う。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "計画、開発、検証、展開、保守、廃止までQMSで管理する。",
+          "citation": {
+            "url": "https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-151002-samd-qms.pdf",
+            "section": "N23 Sections 7.0-8.6",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "ライフサイクル支援プロセスと実現・使用プロセスをSaMD全体に適用する。\n"
+        }
+      ]
+    },
+    {
+      "id": "iso-iec-42001",
+      "name_ja": "ISO/IEC 42001 AIマネジメントシステム",
+      "name_en": "ISO/IEC 42001:2023 Artificial intelligence management system",
+      "issuer": "ISO/IEC JTC 1/SC 42",
+      "jurisdiction": "international",
+      "type": "standard",
+      "url": "https://www.iso.org/standard/81230.html",
+      "version": "2023",
+      "published_date": "2023-12-01",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:pending-2026-04-20",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "iso",
+        "iec",
+        "ai-management-system",
+        "standard"
+      ],
+      "source_notes": [
+        {
+          "note_ja": "2026-04-20取得時点でcurlはCloudflare challengeを返し、標準本文は有償のため未確認。 ISO公式ページの公開概要・検索結果スニペットで確認できた範囲のみ記載。\n"
+        }
+      ],
+      "summary_ja": "AIマネジメントシステムの国際標準。本文未取得のため詳細要求は低信頼で限定評価。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "should",
+          "summary_ja": "AI製品・サービスの開発、提供、利用組織を対象にする。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: What is ISO/IEC 42001?",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "公式ページ公開概要では、AIベース製品・サービスを提供又は利用する組織向けと説明。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "mention",
+          "summary_ja": "AI関連リスクと機会を管理する枠組みとして説明される。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: Benefits",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "リスク分類表や医療機器分類の詳細は本文未取得のため未評価。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "mention",
+          "summary_ja": "透明性、トレーサビリティ、信頼性を利点として掲げる。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: Benefits",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "透明性の条項番号や具体要求は標準本文未取得のため確認していない。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "not_assessed",
+          "summary_ja": "監査ログ・記録要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "AIMSの記録管理に関する可能性はあるが、条項を確認できないため未評価。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "not_assessed",
+          "summary_ja": "人間監督の具体要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "公開概要だけではHuman oversightの条項を確認できない。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "not_assessed",
+          "summary_ja": "データ品質・バイアス要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "詳細要求は標準本文又は正規プレビュー確認が必要。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "not_assessed",
+          "summary_ja": "PCCP・市販後管理相当の条項は評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "AIシステムの継続改善との関係はあり得るが、条項未確認。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "mention",
+          "summary_ja": "方針、目的、プロセスによる責任あるAI管理を扱う。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: FAQ; AIMS definition",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "責任主体の詳細分担は本文未取得のため未評価。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "not_assessed",
+          "summary_ja": "同意・プライバシー要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "公開概要ではプライバシー条項番号を確認できない。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "not_assessed",
+          "summary_ja": "セキュリティ要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "セキュリティ管理要求は標準本文の確認が必要。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "not_assessed",
+          "summary_ja": "臨床評価要求は本文未取得で評価未了。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "not assessed; standard text unavailable",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "ISO/IEC 42001は医療専用ではないため、臨床評価の有無は本文確認が必要。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "AI管理システムの国際標準として位置づけられる。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: General information",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "ISO/IEC国際標準であり、国際整合の参照点になる。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "AIMSの確立、実施、維持、継続的改善を要求する。",
+          "citation": {
+            "url": "https://www.iso.org/standard/81230.html",
+            "section": "ISO public page: What is ISO/IEC 42001?",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "公開概要で継続的改善まで確認。具体条項番号は本文未取得。\n"
+        }
+      ]
+    },
+    {
+      "id": "jmsf-ai-medical",
+      "name_ja": "日本医師会 AIの臨床利用答申",
+      "name_en": "Japan Medical Association report on clinical use of AI and bioethics",
+      "issuer": "日本医師会",
+      "jurisdiction": "jp",
+      "type": "professional_guideline",
+      "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf",
+      "version": "2026.04.15",
+      "published_date": "2026-04-15",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:0bdb7e3dd8281dabcde80c669506a9509dcb02db664f65cf6ae4b0e5cb898f99",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "jma",
+        "jp",
+        "professional-guideline",
+        "clinical-ai",
+        "bioethics"
+      ],
+      "source_notes": [
+        {
+          "title": "AIに関する臨床的課題と生命倫理について",
+          "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf",
+          "published_date": "2026-04-15",
+          "retrieved": "2026-04-20",
+          "pdf_pages": 99,
+          "pdf_sha256": "0bdb7e3dd8281dabcde80c669506a9509dcb02db664f65cf6ae4b0e5cb898f99",
+          "note_ja": "PDF目次を抽出し、章番号・ページ単位で確認。セル単位の要求強度は薬事要求ではなく専門職倫理答申として保守的に判定。\n"
+        }
+      ],
+      "summary_ja": "日本医師会のAI臨床利用に関する答申。医師主導、人間中心、情報管理、責任、生命倫理上の課題を整理する。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "mention",
+          "summary_ja": "医療AIの臨床利用全般と医師・患者・AIの関係を対象にする。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=1",
+            "section": "第1章 総論：医療AIの現状と課題",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "答申全体の対象は臨床利用・生命倫理であり、規制上の適用範囲定義ではない。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "mention",
+          "summary_ja": "臨床利用を3類型に分け、悪用や制度的リスクも整理する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=68",
+            "section": "第3章 3.3.1 AIの臨床利用の3類型",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "要確認: 形式的なリスク分類表ではなく、倫理論点整理としての分類。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "AI使用の患者通知、透明性措置、医師確認を重視する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=69",
+            "section": "第3章 3.3.2 記録・文書作成の補助",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "AI使用の患者への通知、臨床医による確認、元データ保存が対策として挙げられる。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "mention",
+          "summary_ja": "エラー報告、データ保存、AIモニタリングの必要性に触れる。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=69",
+            "section": "第3章 3.3.2; 第2章 2.8.7",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "要確認: 監査ログ要求そのものではなく、記録保存・エラー報告・監視体制への言及。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "should",
+          "summary_ja": "医師参加型原則により医師が確認し最終判断を行う。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=53",
+            "section": "第3章 3.1.2 WMAが示す医師参加型原則",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "Physician-in-the-Loopとして、医学的専門性を持つ医師の介在と最終判断を説明する。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "バイアス、データセットシフト、精度劣化への注意を求める。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=71",
+            "section": "第3章 3.3.3 診断・治療の補助",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "診断・治療補助でバイアス、一般化可能性、データセットシフトを課題として整理する。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "mention",
+          "summary_ja": "展開後の能力維持やAIによるAI監視を課題に挙げる。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=51",
+            "section": "第2章 2.8.7 さいごに",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "要確認: PCCPや市販後管理の制度要求ではなく、AIモニタリング体制の必要性としての言及。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "医師、開発者、行政を含む責任分担の必要性を示す。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=72",
+            "section": "第3章 3.3.3 診断・治療の補助",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "WMA声明に関連し、ステークホルダー間の連携と責任分担の必要性を述べる。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "should",
+          "summary_ja": "機微な診療情報の機密性、不正アクセス防止、同意を重視する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=54",
+            "section": "第3章 3.1.2 WMAが示す医師参加型原則",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "患者データの取扱いで機密性、不正アクセス防止、透明性、各国法令遵守に言及する。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "should",
+          "summary_ja": "診療情報の情報セキュリティとAI攻撃対策を慎重に検討する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=53",
+            "section": "第3章 3.1.1 はじめに; 第2章 2.8.4",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "診療情報の情報セキュリティ、敵対的攻撃、データポイズニングを課題として扱う。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "mention",
+          "summary_ja": "診断・治療補助では性能、透明性、医師判断への影響を検討する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=70",
+            "section": "第3章 3.3.3 診断・治療の補助",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "要確認: 承認申請用の臨床評価要求ではなく、臨床利用上の倫理・性能課題として確認。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "WMA声明、日本AI法、国際倫理と国内戦略の整合を整理する。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=53",
+            "section": "第3章 3.1 医療AIを巡る国際倫理と日本の戦略",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "国際倫理と国内制度を人間中心AIの方向性として対比・接続している。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "mention",
+          "summary_ja": "医師会の継続的関与と新たなガバナンス体制を求める。",
+          "citation": {
+            "url": "https://www.med.or.jp/dl-med/teireikaiken/20260415_3.pdf#page=56",
+            "section": "第3章 3.1.4 まとめ; 第2章 2.8.7",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "ライフサイクル要求ではなく、医療DXとAI臨床利用に関する継続的な制度・倫理対応として確認。\n"
+        }
+      ]
+    },
+    {
+      "id": "meti-ai-guidelines",
+      "name_ja": "経済産業省 AI事業者ガイドライン",
+      "name_en": "AI Guidelines for Business",
+      "issuer": "経済産業省",
+      "jurisdiction": "jp",
+      "type": "governmental_guideline",
+      "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/index.html",
+      "version": "1.2",
+      "published_date": "2026-03-31",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:0ed456065a0e97b5d45f30c02b10cc02d63a9408de4f8f6b666e3b7c96ce6286",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "meti",
+        "jp",
+        "ai-guidelines",
+        "governance"
+      ],
+      "source_documents": [
+        {
+          "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html",
+          "note_ja": "AI事業者ガイドライン第1.2版掲載ページ。",
+          "html_sha256": "2916cf1a23f7899ddb86bba68d268994fb50be0b95297b1e719b056ddd4f01f4"
+        },
+        {
+          "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+          "note_ja": "AI事業者ガイドライン第1.2版本編PDF。",
+          "pdf_sha256": "64dff6280a873c76e6adb824a57ce770272cef8a2354ba59db3c04888f60f55d"
+        }
+      ],
+      "summary_ja": "AI開発者・提供者・利用者向けに、人間中心、リスクベース、透明性等を示す日本政府指針。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "should",
+          "summary_ja": "AI開発者、提供者、利用者を主対象にする。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第1部 2. 対象",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "業務外利用者やデータ提供者は対象外だが、必要な対応には言及する。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "should",
+          "summary_ja": "危害の大きさと蓋然性に応じたリスクベース対応を重視。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第1部 はじめに; リスクベースアプローチ",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "医療機器分類ではなく、AI利用形態に伴う社会的リスクの大きさに対応する考え方。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "ステークホルダーへの情報提供で透明性を高める。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 6) 透明性",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "出力過程、根拠、判断根拠等の説明可能性・解釈可能性にも触れる。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "should",
+          "summary_ja": "判断過程、判断根拠等のログ記録・保存を求める。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 6) 透明性",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "ログ保存は原因究明やトレーサビリティ、説明責任と接続して説明される。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "should",
+          "summary_ja": "人間中心の考え方に基づく開発・提供・利用を求める。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 A. 基本理念; B. 1) 人間中心",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "AIに単独判断させず適切なタイミングで人が関与する趣旨の記述を含む。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "データの正確性・最新性と回避不能なバイアス認識を求める。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 2) 安全性; 3) 公平性",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "学習等に用いるデータの適切性、バイアス要因、技術要素と利用者振る舞いを扱う。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "should",
+          "summary_ja": "ライフサイクル全体でリスク対策と環境変化対応を行う。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第1部 はじめに; 第2部 B. 共通の指針",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PCCP用語はないが、AIの開発・提供・利用と実運用後の変化対応を扱う。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "各主体の役割に応じ合理的範囲で説明責任を果たす。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 7) アカウンタビリティ",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "責任者の設定、方針策定・公表、リスク対応状況の説明を扱う。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "should",
+          "summary_ja": "個人情報保護法等を踏まえプライバシー保護を検討する。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 4) プライバシー保護",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "プライバシーポリシー、国際的個人データ保護原則、越境移転にも言及。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "should",
+          "summary_ja": "不正操作や外部攻撃に備えセキュリティを確保する。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第2部 B. 5) セキュリティ確保",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "AIシステムの振る舞い改変、停止、プロンプト等への攻撃を含むリスクに触れる。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "none",
+          "summary_ja": "医療AI固有の臨床評価要求は本編確認範囲で扱いなし。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "本編確認範囲; 医療固有臨床評価なし",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "安全性評価や品質には触れるが、医療機器の臨床評価要求としては確認できない。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "NIST、ISO、EU AI法等の海外原則・標準を参照する。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第1部 はじめに; 第2部 B. 6) 透明性",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "NIST AI RMF、ISO/IEC JTC1/SC42、EU AI法等を参考情報として扱う。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "AIライフサイクル全体で自主的な対策実行を促す。",
+          "citation": {
+            "url": "https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_1.pdf",
+            "section": "第1部 はじめに; 第2部 B. 共通の指針",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "AI開発、提供、利用、実運用後、更新・再学習を含む継続的対応を前提にする。\n"
+        }
+      ]
+    },
+    {
+      "id": "mhlw-samd",
+      "name_ja": "厚労省 医療機器プログラムに関する取扱い",
+      "name_en": "MHLW Handling of Software as a Medical Device",
+      "issuer": "Ministry of Health, Labour and Welfare",
+      "jurisdiction": "jp",
+      "type": "regulatory",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000179749_00004.html",
+      "version": "2023-03-31 partial revision",
+      "published_date": "2023-03-31",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:b6115cb14368e311237489b3d96fc432196d8607440de0351a20d1e75c446f7b",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "samd",
+        "jp",
+        "mhlw",
+        "regulatory"
+      ],
+      "source_documents": [
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000179749_00004.html",
+          "note_ja": "厚労省「医療機器プログラムについて」ページ。"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+          "note_ja": "プログラムの医療機器該当性に関するガイドライン（令和5年3月31日一部改正）。"
+        }
+      ],
+      "summary_ja": "厚労省が医療機器プログラムの該当性、除外例、判断手順、リスク分類、相談窓口を示す公式情報。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "must",
+          "summary_ja": "医療目的と生命健康リスクで医療機器プログラム該当性を判断。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "1 はじめに / 2(1) 医療機器プログラムの範囲",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "疾病診断・治療・予防目的とリスクを該当性判断の中核としている。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "must",
+          "summary_ja": "クラスIからIVとGHTFルールでリスク程度を判定。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "6 人の生命及び健康に影響を与えるリスクの程度の考え方",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "SaMDも有体物にインストールされた状態を想定し、原則同様に判定する。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "非医療機器表示や根拠の検証可能性で誤認防止を求める。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "5(1) 事前準備 / 8(1) 標ぼうの留意事項",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "「望ましい」記述を含むためshould判定。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "mention",
+          "summary_ja": "個人健康記録の収集・ログ作成は非該当例として言及。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "4(3) 使用者が自らの医療・健康情報を閲覧等するプログラム",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "監査ログ義務ではなく、記録・ログ作成を行う非該当例としての言及。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "mention",
+          "summary_ja": "医療関係者の管理下かを使用者分類で確認。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "5(1) 事前準備（使用目的、処理方法などの明確化・整理）",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "Human oversight義務ではなく、該当性判断の使用者分類として確認。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "根拠情報とアルゴリズム妥当性の検証可能性を整理。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "5(1) 判断のために明確にすべき項目の例示",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "バイアスを直接扱う記述ではなく、根拠・妥当性確認として判定。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "none",
+          "summary_ja": "PCCPや市販後監視の明示的扱いは確認できず。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "全文確認（該当記述なし）",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "本ガイドラインは医療機器該当性判断が主題。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "事業者・開発者が使用者、目的、処理方法を確認整理。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "5(1) 事前準備 / 8(2) 適正使用のための周知啓発",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "「確認、整理、精査等すること」や周知啓発の重要性からshould判定。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "mention",
+          "summary_ja": "個人健康記録の保存・共有例はあるが同意義務は未確認。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "4(3) 使用者が自らの医療・健康情報を閲覧等するプログラム",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "プライバシーや同意の要求としてではなく、非該当例の説明として確認。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "none",
+          "summary_ja": "セキュリティ要求の明示的扱いは確認できず。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "全文確認（該当記述なし）",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "本ガイドラインは該当性判断が主題で、サイバー要件は扱っていない。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "mention",
+          "summary_ja": "治験・臨床研究での提供と適用関係に言及。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "7 臨床研究等における取扱いについて",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "臨床評価手法の要求ではなく、臨床研究での法適用関係への言及。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "GHTF分類を用い、IMDRF分類因子は参考可能と記載。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "6 人の生命及び健康に影響を与えるリスクの程度の考え方 脚注11",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "GHTFはリスク分類で直接使用、IMDRFは参考可能とされる。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "mention",
+          "summary_ja": "規制範囲は今後変更可能で、適正使用周知にも言及。",
+          "citation": {
+            "url": "https://www.mhlw.go.jp/content/11120000/001082227.pdf",
+            "section": "2(2) 基本的考え方 / 8(2) 適正使用のための周知啓発",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "ライフサイクル全体の管理要求ではなく、変更可能性と適正使用への言及。\n"
+        }
+      ]
+    },
+    {
+      "id": "nist-ai-rmf",
+      "name_ja": "NIST AIリスクマネジメントフレームワーク",
+      "name_en": "NIST Artificial Intelligence Risk Management Framework 1.0 and Generative AI Profile",
+      "issuer": "National Institute of Standards and Technology",
+      "jurisdiction": "us",
+      "type": "framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "version": "AI RMF 1.0 + NIST AI 600-1",
+      "published_date": "2023-01-26",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:3802da9d1947166deca3e1f5abc4e74314549ae9abc82271692fe8b9ee4fffc5",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "nist",
+        "ai-rmf",
+        "generative-ai",
+        "risk-management"
+      ],
+      "source_documents": [
+        {
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "note_ja": "AI RMF 1.0 PDF。",
+          "pdf_sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1"
+        },
+        {
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+          "note_ja": "Generative AI Profile PDF。",
+          "pdf_sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a"
+        }
+      ],
+      "summary_ja": "NISTの任意AIリスク管理枠組み。Govern/Map/Measure/Manageと生成AIプロファイルを示す。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "should",
+          "summary_ja": "AIの設計・開発・利用・評価で信頼性リスク管理を促す。",
+          "citation": {
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework#main-content",
+            "section": "Overview of the AI RMF",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "任意利用の枠組みであり、医療AI専用ではなくAI製品・サービス・システム全般を対象にする。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "should",
+          "summary_ja": "文脈に応じてリスク許容度、優先度、影響を評価する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=32",
+            "section": "Section 3; MAP 4-5; MANAGE 1",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "法的クラス分類ではなく、組織の文脈・影響・リスク許容度に基づくリスクベース管理。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "透明性、説明可能性、解釈可能性を信頼性特性に含める。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=35",
+            "section": "Section 4; MEASURE 2.8",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "Generative AI Profileも来歴、生成物透明性、文書化のプロセスを扱う。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "should",
+          "summary_ja": "文書化、インベントリ、来歴、監視結果の記録を求める。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=20",
+            "section": "GOVERN 1.5-1.6; MEASURE 2.8",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "生成AIプロファイルはデータ来歴、インシデント監視、改変履歴の追跡可能性を具体化する。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "should",
+          "summary_ja": "人間判断とHuman-AI構成の役割を明確化する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=30",
+            "section": "GOVERN 3.2; MAP 3.4",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "自動化バイアス、過信、擬人化など人間とAIの相互作用リスクを扱う。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "公平性、有害バイアス、データ代表性を測定・管理する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=23",
+            "section": "Section 4; MEASURE 2.11",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "AI RMFは公平性と有害バイアス管理を信頼性特性に含める。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "should",
+          "summary_ja": "展開後監視、改善、事故・エラー連絡を管理機能に含める。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=38",
+            "section": "MANAGE 4.1-4.3",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PCCP固有用語ではないが、展開後の監視計画と継続改善を扱う。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "役割、責任、説明責任メカニズムを組織に求める。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=28",
+            "section": "GOVERN 2.1-2.3; Section 3.4",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "組織コミットメント、責任、意思決定ラインをAIリスク管理の前提とする。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "should",
+          "summary_ja": "プライバシー強化と同意等の生成AIプライバシーリスクを扱う。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=24",
+            "section": "GAI Risks: Data Privacy; MEASURE 2.10",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "個人データ、目的特定、個人参加、同意、機微データ露出をリスクとして扱う。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "should",
+          "summary_ja": "セキュアでレジリエントなAIと情報セキュリティを評価する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=21",
+            "section": "GAI Risks: Information Security; MEASURE 2.7",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "プロンプト注入、データポイズニング、モデル抽出等の生成AI脅威も含む。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "should",
+          "summary_ja": "TEVV、妥当性、信頼性、性能限界を測定・文書化する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=34",
+            "section": "MEASURE 2.1-2.6",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "医療AI固有の臨床評価ではないが、試験・評価・検証・妥当性確認を扱う。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "他のリスク管理努力との整合と国際的利用を意図する。",
+          "citation": {
+            "url": "https://www.nist.gov/itl/ai-risk-management-framework#main-content",
+            "section": "Overview of the AI RMF; AIRC",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "NISTページはAI RMFが他者のAIリスク管理努力と整合・支援することを説明する。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "Govern/Map/Measure/ManageをAIライフサイクル全体に適用する。",
+          "citation": {
+            "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=26",
+            "section": "Section 5; Tables 1-4",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "GOVERNは全段階、MAP/MEASURE/MANAGEは各ライフサイクル段階で適用可能とされる。\n"
+        }
+      ]
+    },
+    {
+      "id": "pmda-samd",
+      "name_ja": "PMDA SaMD情報ページ",
+      "name_en": "PMDA Software as a Medical Device (SaMD)",
+      "issuer": "Pharmaceuticals and Medical Devices Agency",
+      "jurisdiction": "jp",
+      "type": "regulatory",
+      "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html",
+      "version": "page updated 2026-04-06",
+      "published_date": "2026-04-06",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:9ebdf65034e2ffe0485a7c28ac46e8be21f5977dd71f4e6e0cae4b7ef0178ae5",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "samd",
+        "jp",
+        "pmda",
+        "regulatory"
+      ],
+      "source_documents": [
+        {
+          "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html",
+          "note_ja": "PMDA公式SaMD情報ページ。"
+        },
+        {
+          "url": "https://www.pmda.go.jp/files/000232497.pdf",
+          "note_ja": "ユーザー指定PDF。2026-04-20取得時点でHTTP 404のため本文未確認。"
+        }
+      ],
+      "summary_ja": "PMDAがSaMDの該当性、相談、承認審査、QMS、審査ポイント、DASH施策を集約する公式情報ページ。\n",
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "must",
+          "summary_ja": "PMD法上の医療目的かつ重大リスクのソフトウェアを対象化。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#classfication",
+            "section": "Determination Whether Software Qualifies as a Medical Device",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PMDAページは、PMD Act上の対象ソフトウェアの範囲を説明している。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "mention",
+          "summary_ja": "承認審査情報として医療機器分類や申請区分への参照あり。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "Approval review / Marketing Approval Review",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PMDAページ自体は分類ルール本文ではなく、分類・承認手続情報への導線を示す。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aでは透明性要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "透明性の具体要求は関連通知・審査ポイントの追加確認が必要。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aでは監査ログ要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "監査証跡の具体要求はQMS資料等の追加確認が必要。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aでは人の監督要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "Human oversightの具体要求は関連審査ポイントの追加確認が必要。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aではデータ品質・バイアス要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "AI SaMDのデータ品質・バイアスはScience Board等の追加確認が必要。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "mention",
+          "summary_ja": "再評価・再審査の臨床研究相談への言及あり。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#consultation",
+            "section": "PMDA Consultation on SaMD",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PCCPそのものの要求はこのページでは確認していない。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "mention",
+          "summary_ja": "製造販売業者からの相談申込みを前提に助言提供。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#consultation",
+            "section": "PMDA Consultation on SaMD",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "責任分担の詳細ではなく、MAHからの相談手続として確認。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aでは同意・プライバシー要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "臨床試験倫理への言及はあるが、同意・プライバシー要求の判定は未了。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "not_assessed",
+          "summary_ja": "Lane Aではセキュリティ要求の評価未了。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#contents",
+            "section": "未評価（Lane A）",
+            "retrieved": "2026-04-20",
+            "confidence": "low"
+          },
+          "notes_ja": "セキュリティはQMS・関連通知での追加確認が必要。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "should",
+          "summary_ja": "治験相談で承認申請上の評価充足性を確認。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#consultation",
+            "section": "PMDA Consultation on SaMD",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "PMDAは治験の倫理性、科学的妥当性、信頼性、安全性を確認すると説明。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "mention",
+          "summary_ja": "国際調和、DASH 2の国際展開、Science Board資料に言及。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#dash",
+            "section": "Software as a Medical Device / DASH for SaMD 2",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "国際整合の具体要件ではなく、制度背景・施策としての言及。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "mention",
+          "summary_ja": "最新情報更新、審査ポイント整備、相談体制強化に言及。",
+          "citation": {
+            "url": "https://www.pmda.go.jp/english/review-services/reviews/0009.html#dash",
+            "section": "Review Points for SaMD / Initiatives to Promote Practical Use of SaMD",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "ライフサイクル管理の要求ではなく、PMDA側の情報更新・制度整備として確認。\n"
+        }
+      ]
+    },
+    {
+      "id": "who-aih",
+      "name_ja": "WHO AI for Health倫理・ガバナンス",
+      "name_en": "Ethics and governance of artificial intelligence for health",
+      "issuer": "World Health Organization",
+      "jurisdiction": "international",
+      "type": "ethical",
+      "url": "https://www.who.int/publications/i/item/9789240029200",
+      "version": "2021 guidance + 2023 LLM update + 2024/2025 LMM guidance",
+      "published_date": "2021-06-28",
+      "last_reviewed": "2026-04-20",
+      "source_hash": "sha256:dc5697ab8ba83b0ab42232da6e85f1dd41eb4fab9d112deaedfa97458a8cdfb1",
+      "maintainer": "cursorvers/medai",
+      "tags": [
+        "who",
+        "ai-health",
+        "ethics",
+        "governance",
+        "lmm"
+      ],
+      "summary_ja": "WHOの医療AI倫理・ガバナンス指針。2021年版の6原則に加え、LMM向け勧告を参照する。\n",
+      "source_notes": [
+        {
+          "title": "Ethics and governance of artificial intelligence for health",
+          "url": "https://www.who.int/publications/i/item/9789240029200",
+          "published_date": "2021-06-28",
+          "pdf_sha256": "dc5697ab8ba83b0ab42232da6e85f1dd41eb4fab9d112deaedfa97458a8cdfb1"
+        },
+        {
+          "title": "Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models",
+          "url": "https://www.who.int/publications-detail-redirect/9789240084759",
+          "published_date": "2025-03-25",
+          "note_ja": "IRIS citation は 2024 年刊行として記録。WHO publication page は 2025-03-25 表示。",
+          "pdf_sha256": "b85c025219cc483f1e05427290660f7c6cffc7830bf2e9f5af46e4045e011d41"
+        },
+        {
+          "title": "WHO calls for safe and ethical AI for health",
+          "url": "https://www.who.int/news/item/16-05-2023-who-calls-for-safe-and-ethical-ai-for-health",
+          "published_date": "2023-05-16",
+          "note_ja": "生成AI/LLMの医療利用に関する2023年WHO departmental update。"
+        }
+      ],
+      "cells": [
+        {
+          "column": "A",
+          "requirement": "mention",
+          "summary_ja": "医療AI全般とLMMの医療・公衆衛生利用を対象にする。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=13",
+            "section": "Overview; 2021 guidance",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "2021年版はAI for health全般、LMM版は診療・患者利用・事務・教育・研究などを扱う。\n"
+        },
+        {
+          "column": "B",
+          "requirement": "mention",
+          "summary_ja": "LMMではリスクベース枠組みと規制負荷差に言及。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/e9e62c65-6045-481e-bd04-20e206bc5039/content#page=65",
+            "section": "Section 5, Assessment of general-purpose foundation models and/or applications used in health care",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "\"the burden of proof increasing with the level of risk\" と記載。ただし分類表ではない。\n"
+        },
+        {
+          "column": "C",
+          "requirement": "should",
+          "summary_ja": "透明性・説明可能性・理解可能性を中核原則に置く。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=42",
+            "section": "Executive summary; Section 5",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "6原則の一つとして透明性、説明可能性、理解可能性を掲げる。\n"
+        },
+        {
+          "column": "D",
+          "requirement": "should",
+          "summary_ja": "LMMでは第三者監査、影響評価、公開を求める。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/e9e62c65-6045-481e-bd04-20e206bc5039/content#page=18",
+            "section": "Sections 4.2, 5.2, 6.4",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "LMM guidance は開発初期監査、影響評価、独立したリリース後監査を勧告する。\n"
+        },
+        {
+          "column": "E",
+          "requirement": "should",
+          "summary_ja": "医療判断は人間が管理し、人間監督点を設ける。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=41",
+            "section": "Executive summary; Protecting human autonomy",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "人間の自律、医療判断の人間による管理、human warranty を重視する。\n"
+        },
+        {
+          "column": "F",
+          "requirement": "should",
+          "summary_ja": "低品質・非代表データとバイアスの最小化を重視する。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=44",
+            "section": "Executive summary; inclusiveness and equity",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "2021年版は公平性と包摂性、LMM版は訓練データ品質とバイアスを明示する。\n"
+        },
+        {
+          "column": "G",
+          "requirement": "mention",
+          "summary_ja": "実使用中の継続的評価とリリース後監査に触れる。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/e9e62c65-6045-481e-bd04-20e206bc5039/content#page=72",
+            "section": "Section 6.2; deployment responsibilities",
+            "retrieved": "2026-04-20",
+            "confidence": "medium"
+          },
+          "notes_ja": "PCCP固有用語ではないが、運用中評価、継続監視、post-release audits を扱う。\n"
+        },
+        {
+          "column": "H",
+          "requirement": "should",
+          "summary_ja": "責任と説明責任、被害救済、価値連鎖上の責任を求める。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=44",
+            "section": "Executive summary; responsibility and accountability",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "LMM guidance Section 7 は開発、提供、導入の価値連鎖上の責任にも言及する。\n"
+        },
+        {
+          "column": "I",
+          "requirement": "should",
+          "summary_ja": "プライバシー、機密性、有効な同意、データ保護を要求する。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=41",
+            "section": "Executive summary; Protecting human autonomy",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "2021年版は自律原則にプライバシー、機密性、有効な同意を含める。\n"
+        },
+        {
+          "column": "J",
+          "requirement": "mention",
+          "summary_ja": "安全性とサイバーセキュリティ上のリスクを扱う。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/e9e62c65-6045-481e-bd04-20e206bc5039/content#page=18",
+            "section": "Sections 4.2, 5.2; cybersecurity risks",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "LMM guidance は安全性、サイバーセキュリティ、患者情報保護のリスクを列挙する。\n"
+        },
+        {
+          "column": "K",
+          "requirement": "should",
+          "summary_ja": "安全性、正確性、有効性、性能証明を重視する。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=42",
+            "section": "Executive summary; human well-being and safety",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "2021年版は安全性・正確性・有効性、LMM版は性能証明や医療機器規制適合を扱う。\n"
+        },
+        {
+          "column": "L",
+          "requirement": "should",
+          "summary_ja": "LMMと医療AIの国際的な協調ガバナンスを求める。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/e9e62c65-6045-481e-bd04-20e206bc5039/content#page=78",
+            "section": "Section 8; International governance of LMMs",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "LMM guidance は国際ルール形成、国連内協調、最低基準の整合を扱う。\n"
+        },
+        {
+          "column": "M",
+          "requirement": "should",
+          "summary_ja": "設計、導入、実使用中の継続評価を求める。",
+          "citation": {
+            "url": "https://iris.who.int/server/api/core/bitstreams/f780d926-4ae3-42ce-a6d6-e898a5562621/content#page=46",
+            "section": "Executive summary; responsive and sustainable",
+            "retrieved": "2026-04-20",
+            "confidence": "high"
+          },
+          "notes_ja": "2021年版は実使用中の継続的・体系的・透明な評価を求める。\n"
+        }
+      ]
+    }
+  ]
+}

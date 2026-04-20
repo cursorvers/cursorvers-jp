@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AuditScope — 医療AIガバナンス weekly digest</title>
+    <link>https://cursorvers.jp/tools/auditscope/</link>
+    <description>医療AIガバナンスの最新動向を週次でお届け</description>
+    <language>ja</language>
+    <item>
+      <title>AuditScope 第1号 - 創刊号</title>
+      <link>https://cursorvers.jp/tools/auditscope/issues/2026-04-29/</link>
+      <guid>https://cursorvers.jp/tools/auditscope/issues/2026-04-29/</guid>
+      <pubDate>Tue, 28 Apr 2026 22:00:00 GMT</pubDate>
+      <description>AuditScope 創刊号。医療AIガバナンスに関する今週の公的動きと、臨床現場が押さえるべき論点を編集委員視点でお届けします。</description>
+    </item>
+  </channel>
+</rss>
