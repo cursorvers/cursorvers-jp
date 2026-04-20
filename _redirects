@@ -1,2 +1,6 @@
 # SPA fallback for GuideScope
 /tools/guidescope/*  /tools/guidescope/index.html  200
+
+# AuditScope: retired weekly digest URLs (pivoted to OSS tool LP, 2026-04-20)
+/tools/auditscope/issues/*  /tools/auditscope/  301
+/tools/auditscope/feed.xml  /tools/auditscope/  301

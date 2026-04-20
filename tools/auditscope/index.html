@@ -12,12 +12,12 @@
         gtag('config', 'G-TX3Y6G4XWJ');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuditScope - 医療AIガバナンス weekly digest</title>
-    <meta name="description" content="医療AIガバナンスの最新動向を週次でお届け。安全な実装から監査まで、現場で使える知見を毎週水曜 7:00 JSTに配信。">
+    <title>AuditScope - 医療AI論文 daily digest OSS</title>
+    <meta name="description" content="医療AI論文の daily digest を、あなた専用の Gmail に届ける OSS。fork して 10 分で動かす、出典付き・再現可能・改ざん検知付きの朝の private briefing。">
     <link rel="canonical" href="https://cursorvers.jp/tools/auditscope/">
     <meta property="og:url" content="https://cursorvers.jp/tools/auditscope/">
-    <meta property="og:title" content="AuditScope - 医療AIガバナンス weekly digest">
-    <meta property="og:description" content="医療AIガバナンスの最新動向を週次でお届け。安全な実装から監査まで、現場で使える知見を毎週水曜 7:00 JSTに配信。">
+    <meta property="og:title" content="AuditScope - 医療AI論文 daily digest OSS">
+    <meta property="og:description" content="医療AI論文の daily digest を、あなた専用の Gmail に届ける OSS。fork して 10 分で動かす朝の private briefing。">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="Cursorvers.edu">
@@ -83,20 +83,51 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
 
-        /* Subscribe form disabled state */
-        .form-disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-disabled input,
-        .form-disabled button {
-            cursor: not-allowed;
-        }
-
         .section-padding {
             padding-top: 80px;
             padding-bottom: 80px;
+        }
+
+        /* Mail mock */
+        .mail-mock {
+            font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            background: #0F172A;
+            color: #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-x: auto;
+        }
+
+        .mail-mock .m-muted { color: #94A3B8; }
+        .mail-mock .m-accent { color: #FF8A4C; }
+        .mail-mock .m-ok { color: #7DD3FC; }
+
+        /* Step badges */
+        .step-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            background: #FF4500;
+            color: #FFFFFF;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+        }
+
+        code.inline {
+            background: #F1F5F9;
+            color: #0F172A;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+            font-size: 0.875em;
         }
     </style>
 </head>
@@ -118,10 +149,10 @@
                 <a href="../guidescope/" class="hover:text-brand-flame transition duration-300">GuideScope</a>
                 <span class="text-brand-flame font-bold">AuditScope</span>
             </nav>
-            <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec"
-                target="_blank"
+            <a href="https://github.com/cursorvers/auditscope"
+                target="_blank" rel="noopener"
                 class="text-xs font-bold border border-slate-300 text-slate-700 px-4 py-2 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider">
-                Contact
+                <i class="fa-brands fa-github mr-1"></i> GitHub
             </a>
         </div>
     </header>
@@ -135,111 +166,313 @@
                     <span
                         class="inline-flex items-center gap-2 py-1 px-3 border border-brand-flame/40 bg-white text-brand-flame text-xs font-bold tracking-[0.15em] uppercase rounded-full shadow-sm">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-flame animate-pulse"></span>
-                        Weekly Digest
+                        Open Source / Self-hosted
                     </span>
                 </div>
 
                 <!-- Headline -->
                 <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight text-slate-900 mb-6">
-                    医療AIガバナンス<br>weekly digest
+                    医療AI論文 daily digest を、<br>あなた専用の Gmail に。
                 </h1>
 
                 <!-- Subheadline -->
-                <p class="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto mb-8">
-                    安全な実装から監査まで。<br>
-                    医療現場のAIガバナンスの最新動向を、毎週水曜 7:00 JSTにお届けします。
+                <p class="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed max-w-4xl mx-auto mb-6">
+                    fork して 10 分で動かす OSS。<br>
+                    要約は出典付き・再現可能・改ざん検知付き。
                 </p>
 
-                <!-- Schedule Badge -->
-                <div class="inline-flex items-center gap-3 bg-brand-surface border border-brand-border rounded-full px-6 py-3">
-                    <i class="fa-regular fa-clock text-brand-flame"></i>
-                    <span class="text-sm font-bold text-slate-700">毎週水曜 7:00 JST 配信</span>
+                <!-- Positioning line -->
+                <p class="text-sm md:text-base text-slate-500 leading-relaxed max-w-3xl mx-auto mb-8">
+                    私たちは論文を publish しません。あなた自身の朝の private briefing を組み立てる道具だけを配ります。
+                </p>
+
+                <!-- CTA row -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="https://github.com/cursorvers/auditscope"
+                        target="_blank" rel="noopener"
+                        class="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition font-bold">
+                        <i class="fa-brands fa-github"></i>
+                        GitHub で見る
+                    </a>
+                    <a href="#setup"
+                        class="inline-flex items-center gap-2 border border-slate-300 text-slate-800 px-6 py-3 rounded-lg hover:border-brand-flame hover:text-brand-flame transition font-bold">
+                        10 分セットアップへ
+                        <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Subscribe Section -->
+    <!-- Why different Section -->
     <section class="section-padding bg-brand-surface">
-        <div class="max-w-4xl mx-auto px-6">
-            <!-- LATEST:START -->
-            <div class="content-card rounded-xl p-8 md:p-12">
-                <div class="mb-6">
-                    <div class="text-sm text-slate-500 mb-2">2026-04-29</div>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">AuditScope 第1号 - 創刊号</h3>
-                    <p class="text-slate-600 leading-relaxed">AuditScope 創刊号。FDA TPLC 最終化動向、EU AI Act × MDR/IVDR 整合提案、厚労省 医療AIデータ利活用GL の 3 点を取り上げ、医療AIを「使う側」視点で 10 本の公的GLを継続的に追う編集方針をお伝えします。</p>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">適用対象</span>
-                    <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">透明性</span>
-                    <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">責任主体</span>
-                </div>
-                <a href="issues/2026-04-29/" class="inline-flex items-center bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors">
-                    第1号を読む
-                    <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">なぜ既存の論文 alert と違うのか</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">
+                    PubMed の新着全件を浴びるのではなく、臨床で本当に要る 3 クラスタに絞り、governance 7 軸で overlay します。
+                </p>
             </div>
-            <!-- LATEST:END -->
-                    <p class="text-sm text-slate-500 mt-4">
-                        <!-- TODO: Buttondown integration -->
-                        準備中です。近日中に購読開始できます。
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="content-card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-brand-flame/10 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-stethoscope text-brand-flame text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">臨床導入・活用・守りに特化</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        PubMed 全件ではなく、Deployment / Use / Safety の 3 クラスタに絞って収集します。<br>
+                        「明日の外来で自分が困る領域」だけが届きます。
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="content-card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-brand-flame/10 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-shield-halved text-brand-flame text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Governance 7 軸 overlay</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        出典明示 / ハルシネーション check / 再現性 / disclaimer / 監査ログ / retraction filter / COI 抽出 を
+                        各論文に自動で添えます。読む前に「信頼できるか」が分かる構造です。
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="content-card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-brand-flame/10 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fa-solid fa-lock text-brand-flame text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">自分用、完全に非公開</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        誰にも読まれない、あなた専用の朝の private briefing。<br>
+                        SaaS ではなくあなたの GitHub Actions で動くので、クエリも閲覧ログも外に出ません。
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Latest Issue Section -->
+    <!-- 10-min setup Section -->
+    <section id="setup" class="section-padding bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">10 分セットアップ</h2>
+                <p class="text-slate-600 text-lg">GitHub template を使って fork、secrets を 3 本貼って config を 1 行編集、以上です。</p>
+            </div>
+
+            <ol class="space-y-5">
+                <li class="content-card rounded-xl p-6 flex items-start gap-5">
+                    <span class="step-badge flex-shrink-0">1</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">GitHub で "Use this template"</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <a href="https://github.com/cursorvers/auditscope" target="_blank" rel="noopener"
+                                class="text-brand-flame font-medium hover:underline">cursorvers/auditscope</a>
+                            を自分のアカウントに複製します。private repo 推奨。
+                        </p>
+                    </div>
+                </li>
+
+                <li class="content-card rounded-xl p-6 flex items-start gap-5">
+                    <span class="step-badge flex-shrink-0">2</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Google AI Studio で Gemini API key を発行</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            無料枠で daily digest は十分まわります。key をコピーしておきます。
+                        </p>
+                    </div>
+                </li>
+
+                <li class="content-card rounded-xl p-6 flex items-start gap-5">
+                    <span class="step-badge flex-shrink-0">3</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Gmail App Password を発行</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            2 段階認証 ON → アプリ パスワードを 1 個作成。これが自分宛送信の SMTP 認証に使われます。
+                        </p>
+                    </div>
+                </li>
+
+                <li class="content-card rounded-xl p-6 flex items-start gap-5">
+                    <span class="step-badge flex-shrink-0">4</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">GitHub Secrets に 3 本貼付</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <code class="inline">GEMINI_API_KEY</code> /
+                            <code class="inline">GMAIL_ADDRESS</code> /
+                            <code class="inline">GMAIL_APP_PASSWORD</code> を repo の Settings &gt; Secrets and variables &gt; Actions に保存します。
+                        </p>
+                    </div>
+                </li>
+
+                <li class="content-card rounded-xl p-6 flex items-start gap-5">
+                    <span class="step-badge flex-shrink-0">5</span>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">config.yml を自分の専門領域に合わせて編集</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            PubMed クエリ・除外誌・送信時刻 (cron) を書き換えれば完了。
+                            翌朝から Gmail に daily digest が届きます。
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Sample mail Section -->
+    <section class="section-padding bg-brand-surface">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">届くメールのサンプル</h2>
+                <p class="text-slate-600 text-lg">TL;DR → 今日の1本 → Deployment / Use / Safety → Footer の構成です。</p>
+            </div>
+
+            <div class="mail-mock rounded-xl">
+<span class="m-muted">From:</span> AuditScope &lt;you@gmail.com&gt;
+<span class="m-muted">Subject:</span> <span class="m-accent">[AuditScope]</span> 2026-04-20 daily digest — 12 papers / 3 flagged
+
+<span class="m-accent">── TL;DR ─────────────────────────────</span>
+・大規模 LLM 問診の外来導入で診断精度は上がるが過剰検査が 1.4x
+・AI 読影の drift 監視、半年で AUC -0.04 を検出した報告
+・院内チャット bot での PHI 漏出インシデント 1 件 (retraction 監視ヒット)
+
+<span class="m-accent">── 今日の1本 ─────────────────────────</span>
+<span class="m-ok">[Deployment]</span> "LLM-assisted triage in primary care: RCT"
+JAMA Intern Med, 2026. DOI: 10.xxxx/xxx
+要約: 一次診療 8 施設の RCT。トリアージ精度 +6.2%、不要検査 +41%。
+Governance overlay:
+  ✓ 出典: 一次論文 DOI + preprint なし
+  ✓ 再現性: protocol 事前登録あり (NCT0xxxxxxx)
+  ! ハルシネーション check: 要約中の数値 1 箇所 abstract と差分
+  ✓ COI: 3 著者が開発企業から consulting fee 受領 (明記)
+
+<span class="m-accent">── Deployment (4) ────────────────────</span>
+1. ...
+2. ...
+
+<span class="m-accent">── Use (5) ───────────────────────────</span>
+1. ...
+
+<span class="m-accent">── Safety (3) ────────────────────────</span>
+1. ...
+
+<span class="m-accent">── Footer ────────────────────────────</span>
+<span class="m-muted">Digest hash:</span> sha256:9f2c... (改ざん検知用)
+<span class="m-muted">Sources:</span> PubMed / medRxiv / Retraction Watch
+<span class="m-muted">Disclaimer:</span> 本メールは臨床判断の推奨ではありません。
+              </div>
+        </div>
+    </section>
+
+    <!-- Safety 7 themes Section -->
     <section class="section-padding bg-white">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">最新号</h2>
-                <p class="text-slate-600 text-lg">最新のAIガバナンス動向をお届けします</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Safety カバー 7 テーマ</h2>
+                <p class="text-slate-600 text-lg max-w-3xl mx-auto">
+                    digest が拾う「臨床で AI を使う側が守るべき」論点の軸。
+                </p>
             </div>
 
-            <!-- Placeholder for latest issue -->
-            <div class="content-card rounded-xl p-8 md:p-12 text-center border-2 border-dashed border-slate-300">
-                <i class="fa-regular fa-newspaper text-4xl text-slate-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-slate-700 mb-2">準備中</h3>
-                <p class="text-slate-500">
-                    第1号は近日公開予定です。医療AIガバナンスの基礎から実践まで、わかりやすく解説します。
-                </p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-syringe text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Prompt injection</h3>
+                        <p class="text-slate-600 text-sm">患者入力や貼付文書経由で指示が書き換わる攻撃面。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-user-shield text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">PHI leak</h3>
+                        <p class="text-slate-600 text-sm">外部モデルに個人識別情報が流出するリスクと対処。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-wave-square text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Model drift</h3>
+                        <p class="text-slate-600 text-sm">導入後に性能が徐々に劣化する現象と監視法。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Automation bias</h3>
+                        <p class="text-slate-600 text-sm">AI 出力を過信して臨床判断が鈍る行動バイアス。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-bullseye text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Adversarial inputs</h3>
+                        <p class="text-slate-600 text-sm">画像・テキストへの微細改変で誤判定を誘発する攻撃。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-scale-balanced text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Bias / fairness</h3>
+                        <p class="text-slate-600 text-sm">学習データ由来の subgroup 格差と臨床影響。</p>
+                    </div>
+                </div>
+                <div class="content-card rounded-xl p-5 flex items-start gap-4 md:col-span-2">
+                    <div class="w-10 h-10 bg-brand-flame/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-gavel text-brand-flame"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-1">Accountability</h3>
+                        <p class="text-slate-600 text-sm">AI 誤判定が患者に及んだときの責任主体・監査証跡の残し方。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Archive Section -->
+    <!-- GitHub / Back-link Section -->
     <section class="section-padding bg-brand-surface">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">アーカイブ</h2>
-                <p class="text-slate-600 text-lg">過去のdigested記事一覧</p>
-            </div>
-
-            <!-- Placeholder for archive -->
-            <div class="content-card rounded-xl p-8 text-center">
-                <i class="fa-regular fa-folder-open text-3xl text-slate-400 mb-4"></i>
-                <h3 class="text-lg font-bold text-slate-700 mb-2">アーカイブ準備中</h3>
-                <p class="text-slate-500 mb-6">
-                    配信開始後、過去の記事をこちらから閲覧できるようになります。
-                </p>
-                <button disabled class="bg-slate-300 text-slate-500 font-bold px-6 py-3 rounded-lg cursor-not-allowed">
-                    アーカイブを見る
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Cards Section -->
-    <section class="section-padding bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">関連ツール</h2>
-                <p class="text-slate-600 text-lg">医療AIを安全に活用するためのツール群</p>
-            </div>
-
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- GuideScope CTA -->
+                <!-- GitHub CTA -->
+                <div class="content-card rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center">
+                                <i class="fa-brands fa-github text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900">AuditScope on GitHub</h3>
+                                <p class="text-sm text-brand-flame font-medium">MIT License / template repo</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            コード全文、config サンプル、GitHub Actions ワークフロー、テストまで MIT で公開しています。<br>
+                            <span class="text-slate-500 text-sm">※ リポジトリは近日公開予定。</span>
+                        </p>
+                        <a href="https://github.com/cursorvers/auditscope" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 text-brand-flame font-bold hover:text-brand-flame/80 transition">
+                            cursorvers/auditscope
+                            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GuideScope back-link -->
                 <div class="content-card rounded-xl overflow-hidden">
                     <div class="p-8">
                         <div class="flex items-center gap-4 mb-4">
@@ -252,7 +485,7 @@
                             </div>
                         </div>
                         <p class="text-slate-600 mb-6 leading-relaxed">
-                            国内の医療AI関連ガイドラインを効率的に探索。Google Gemini、ChatGPT、Claude等で使用できる検索プロンプトを生成します。
+                            国内外の医療AI関連ガイドラインを効率的に探索。Gemini / ChatGPT / Claude で使える検索プロンプトを生成します。
                         </p>
                         <a href="../guidescope/"
                             class="inline-flex items-center gap-2 text-brand-flame font-bold hover:text-brand-flame/80 transition">
@@ -261,28 +494,24 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Evidence Pack CTA -->
-                <div class="content-card rounded-xl overflow-hidden">
-                    <div class="p-8">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-brand-gold/10 rounded-xl flex items-center justify-center">
-                                <i class="fa-solid fa-shield-halved text-brand-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900">Evidence Pack</h3>
-                                <p class="text-sm text-brand-gold font-medium">実装エビデンス集</p>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 mb-6 leading-relaxed">
-                            医療現場でのAI活用事例と安全性検証データ。実際の導入プロセスから学ぶ、実践的なエビデンス集です。
-                        </p>
-                        <span class="inline-flex items-center gap-2 text-slate-500 font-bold">
-                            準備中
-                            <i class="fa-solid fa-clock text-sm"></i>
-                        </span>
-                    </div>
-                </div>
+    <!-- Disclaimer -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="border border-slate-200 rounded-xl p-6 text-sm text-slate-600 leading-relaxed">
+                <p class="font-bold text-slate-900 mb-2">Disclaimer</p>
+                <p>
+                    AuditScope は医療AI関連論文の自動収集・要約ツールであり、
+                    <strong class="text-slate-800">医師法上の医療行為を構成しません</strong>。
+                    出力は診断・治療の推奨ではなく、読者の判断を補助する文献情報の提示に留まります。
+                    臨床判断は常に、担当医師が患者の状態・文脈・最新の公的ガイドラインに照らして行う必要があります。
+                </p>
+                <p class="mt-3">
+                    License: <strong class="text-slate-800">MIT</strong>. 個人利用・商用利用ともに自由です。
+                </p>
             </div>
         </div>
     </section>
@@ -298,7 +527,7 @@
                         <span class="text-slate-900 font-bold text-base font-en">AuditScope</span>
                     </div>
                     <p class="leading-relaxed opacity-80">
-                        医療AIガバナンスの最新動向を毎週お届けします。
+                        医療AI論文の daily digest を、あなた専用の Gmail に届ける OSS。
                     </p>
                 </div>
                 <div class="flex gap-12">
@@ -306,7 +535,7 @@
                         <h4 class="text-slate-900 font-bold mb-3 font-en">Tools</h4>
                         <ul class="space-y-2">
                             <li><a href="../guidescope/" class="hover:text-brand-flame transition">GuideScope</a></li>
-                            <li><span class="text-slate-400">Evidence Pack（準備中）</span></li>
+                            <li><a href="https://github.com/cursorvers/auditscope" target="_blank" rel="noopener" class="hover:text-brand-flame transition">GitHub (MIT)</a></li>
                         </ul>
                     </div>
                     <div>
@@ -319,14 +548,7 @@
                 </div>
             </div>
             <div class="mt-8 pt-6 border-t border-slate-200">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="font-en">&copy; 2026 Cursorvers. All rights reserved.</p>
-                    <div class="flex gap-6 text-lg">
-                        <a href="feed.xml" class="hover:text-slate-900 transition" title="RSS Feed">
-                            <i class="fa-solid fa-rss"></i>
-                        </a>
-                    </div>
-                </div>
+                <p class="font-en">&copy; 2026 Cursorvers. All rights reserved.</p>
             </div>
         </div>
     </footer>
