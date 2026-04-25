@@ -51,7 +51,8 @@ self.addEventListener('fetch', (event) => {
   }
   // Bypass SW cache for video/audio assets (iOS Safari AVPlayer is path-keyed; double-caching breaks file rename hot-swap).
   // See media-asset-policy lint R3 and .claude/CLAUDE.md "メディア資産デプロイ — iOS Safari cache 落とし穴".
-  if (/\.(mp4|webm|mov|m4v|ogv|m4a|mp3)$/i.test(url.pathname)) {
+  if (/(?:\.mp4|\.webm|\.mov|\.m4v|\.ogv|\.m4a|\.mp3)$/i.test(url.pathname)) {
+    event.respondWith(fetch(event.request));
     return;
   }
   event.respondWith(
