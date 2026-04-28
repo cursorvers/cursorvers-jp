@@ -696,7 +696,7 @@
                         </div>
                         <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
                             <span class="text-lg font-bold text-slate-900 font-en">Free</span>
-                            <a href="services.html#phase01"
+                            <a href="line-qr.html?v=20260104"
                                 class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-slate-700 hover:bg-slate-800 font-en uppercase tracking-widest transition">
                                 Join Community
                             </a>
@@ -737,10 +737,10 @@
                         <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
                             <span class="text-lg font-bold text-slate-900 font-en">¥2,980<span
                                     class="text-xs text-slate-500 ml-1">/ Month</span></span>
-                            <a href="services.html#phase02"
-                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-brand-flame hover:bg-brand-flame/90 font-en uppercase tracking-widest transition">
+                            <button type="button" data-open-library
+                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-brand-flame hover:bg-brand-flame/90 font-en uppercase tracking-widest transition focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white">
                                 Join Library
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -776,7 +776,9 @@
                         </div>
                         <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
                             <span class="text-lg font-bold text-slate-900 font-en">Closed Beta</span>
-                            <a href="services.html#phase03"
+                            <a href="https://script.google.com/macros/s/AKfycbwDP0d67qtifyms2h67LawjNWJi_Lh44faPC7Z4axfS_Gdmjzcd50rcl_kmTYBTysKirQ/exec"
+                                target="_blank"
+                                rel="noopener"
                                 class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-slate-900 bg-amber-400 hover:bg-amber-500 font-en uppercase tracking-widest transition">
                                 Join Waitlist
                             </a>
@@ -1049,6 +1051,159 @@
             </div>
         </div>
     </footer>
+
+    <!-- Library Checkout Modal (mirrors services.html#phase02 flow) -->
+    <div id="library-modal" class="fixed inset-0 z-[80] hidden overflow-y-auto">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close-library></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="relative max-w-xl w-full bg-white border border-slate-200 rounded-2xl shadow-2xl p-6 space-y-6 my-8">
+                <button type="button" class="absolute top-4 right-4 text-slate-400 hover:text-brand-flame text-xl transition-colors" aria-label="閉じる" data-close-library>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="space-y-2">
+                    <p class="text-xs uppercase tracking-[0.4em] text-brand-flame font-bold font-en">Library Member</p>
+                    <h3 class="text-3xl font-bold text-slate-900">決済前の確認</h3>
+                    <p class="text-sm text-slate-600">
+                        月額 <span class="text-brand-flame font-semibold">¥2,980</span>（税込）。カード情報は次の画面（Stripe）で入力します。
+                        <span class="text-brand-flame font-semibold">PHI（診療情報）は絶対に入力しないでください。</span>
+                    </p>
+                </div>
+
+                <form id="library-form" class="space-y-4 bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                    <div class="space-y-2">
+                        <label for="library-email" class="text-sm font-semibold text-slate-900">メールアドレス</label>
+                        <input id="library-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-flame focus:border-brand-flame">
+                        <p class="text-xs text-slate-500">決済完了後、このメールアドレスに確認メールが送信されます。</p>
+                    </div>
+
+                    <label class="flex items-start gap-3 text-sm text-slate-600">
+                        <input id="opt-in-email" name="opt_in_email" type="checkbox" checked class="mt-1 rounded border-slate-300 bg-white text-brand-flame focus:ring-brand-flame">
+                        <span>ニュースレター／アップデートをメールで受け取る（任意）</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 text-sm text-slate-600">
+                        <input id="agree-terms" name="agree_terms" type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-flame focus:ring-brand-flame">
+                        <span><a href="terms.html" class="underline hover:text-brand-flame" target="_blank" rel="noopener">利用規約</a>・<a href="privacy.html" class="underline hover:text-brand-flame" target="_blank" rel="noopener">プライバシーポリシー</a>・PHI禁止に同意する</span>
+                    </label>
+
+                    <div id="library-status" class="text-sm font-semibold"></div>
+
+                    <button type="submit" class="w-full rounded-full bg-brand-flame text-white font-bold py-3 hover:bg-brand-flame/90 transition focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white">
+                        <i class="fa-solid fa-crown text-sm"></i>
+                        Stripeで決済に進む
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 本番エンドポイントをフロント側で指定
+        window.CURSORVERS_CHECKOUT_ENDPOINT = "https://haaxgwyimoqzzxzdaeep.functions.supabase.co/create-checkout-session";
+    </script>
+    <script>
+        // --- Library Checkout Modal + API (mirrors services.html) ---
+        (function () {
+            const checkoutEndpoint = window.CURSORVERS_CHECKOUT_ENDPOINT || "";
+            const libraryModal = document.getElementById('library-modal');
+            if (!libraryModal) return;
+            const openLibraryButtons = document.querySelectorAll('[data-open-library]');
+            const closeLibraryTargets = libraryModal.querySelectorAll('[data-close-library]');
+            const libraryForm = document.getElementById('library-form');
+            const libraryStatus = document.getElementById('library-status');
+            const submitBtn = libraryForm ? libraryForm.querySelector('button[type="submit"]') : null;
+
+            const setStatus = (message, isError = true) => {
+                if (!libraryStatus) return;
+                libraryStatus.textContent = message;
+                libraryStatus.className = isError ? 'text-sm font-semibold text-red-500' : 'text-sm font-semibold text-brand-flame';
+            };
+
+            const openModal = () => {
+                libraryModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                setStatus('');
+            };
+            const closeModal = () => {
+                libraryModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            openLibraryButtons.forEach(btn => btn.addEventListener('click', openModal));
+            closeLibraryTargets.forEach(btn => btn.addEventListener('click', closeModal));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !libraryModal.classList.contains('hidden')) closeModal();
+            });
+
+            if (libraryForm) {
+                libraryForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    setStatus('');
+
+                    if (!checkoutEndpoint) {
+                        setStatus('決済APIのエンドポイントを設定してください（window.CURSORVERS_CHECKOUT_ENDPOINT）');
+                        return;
+                    }
+
+                    const emailInput = libraryForm.querySelector('#library-email');
+                    const optInInput = libraryForm.querySelector('#opt-in-email');
+                    const agreeTermsInput = libraryForm.querySelector('#agree-terms');
+
+                    const email = emailInput instanceof HTMLInputElement ? emailInput.value.trim() : '';
+                    const optInEmail = optInInput instanceof HTMLInputElement ? optInInput.checked : false;
+                    const agreeTerms = agreeTermsInput instanceof HTMLInputElement ? agreeTermsInput.checked : false;
+
+                    if (!email) {
+                        setStatus('メールアドレスを入力してください');
+                        return;
+                    }
+                    if (!agreeTerms) {
+                        setStatus('利用規約への同意が必要です');
+                        return;
+                    }
+
+                    if (submitBtn) {
+                        submitBtn.setAttribute('disabled', 'true');
+                        submitBtn.textContent = '送信中...';
+                    }
+
+                    try {
+                        const response = await fetch(checkoutEndpoint, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email,
+                                opt_in_email: optInEmail,
+                                agree_terms: agreeTerms,
+                                tier: 'library',
+                            }),
+                        });
+
+                        const data = await response.json().catch(() => ({}));
+
+                        if (!response.ok) {
+                            throw new Error(data.error || '決済の準備に失敗しました');
+                        }
+                        if (!data.url) {
+                            throw new Error('決済URLが取得できませんでした');
+                        }
+
+                        setStatus('Stripeに遷移します...', false);
+                        window.location.href = data.url;
+                    } catch (err) {
+                        const message = err instanceof Error ? err.message : '不明なエラーが発生しました';
+                        setStatus(message);
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.removeAttribute('disabled');
+                            submitBtn.textContent = 'Stripeで決済に進む';
+                        }
+                    }
+                });
+            }
+        })();
+    </script>
 
     <script>
         // --- Aurora Gradient: Flowing Light Curtains ---
