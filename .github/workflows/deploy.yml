@@ -11,10 +11,8 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
-      - uses: cloudflare/pages-action@v1
+      - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: cursorvers-jp
-          directory: .
-          branch: main
+          command: pages deploy . --project-name=cursorvers-jp --branch=main
