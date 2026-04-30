@@ -1,0 +1,40 @@
+name: Completion Log
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Completion title"
+        required: true
+        type: string
+      summary:
+        description: "Completion summary"
+        required: true
+        type: string
+      evidence:
+        description: "Evidence links, run ids, commits, or checks"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write completion summary
+        env:
+          COMPLETION_TITLE: ${{ inputs.title }}
+          COMPLETION_SUMMARY: ${{ inputs.summary }}
+          COMPLETION_EVIDENCE: ${{ inputs.evidence }}
+        run: |
+          {
+            printf '# %s\n\n' "$COMPLETION_TITLE"
+            echo
+            echo "## Summary"
+            printf '%s\n' "$COMPLETION_SUMMARY"
+            echo
+            echo "## Evidence"
+            printf '%s\n' "$COMPLETION_EVIDENCE"
+          } >> "$GITHUB_STEP_SUMMARY"
