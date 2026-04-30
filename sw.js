@@ -1,9 +1,6 @@
 // Service Worker for Cursorvers.edu PWA (hosted at cursorvers.jp)
-const CACHE_NAME = 'cursorvers-jp-v1';
+const CACHE_NAME = 'cursorvers-jp-v2';
 const urlsToCache = [
-  './',
-  './index.html',
-  './services.html',
   './community.html',
   './icon-192.png',
   './icon-512.png',
@@ -45,6 +42,21 @@ self.addEventListener('activate', (event) => {
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
+  // HTML/navigation must stay fresh. Stale cached HTML can keep old legal/company copy visible.
+  if (event.request.mode === 'navigate' || event.request.destination === 'document' || /\.html$/i.test(url.pathname)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseToCache));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
   // Bypass SW cache for /tools/* (GuideScope SPA uses hashed assets, self-versioning)
   if (url.pathname.startsWith('/tools/')) {
     return;
