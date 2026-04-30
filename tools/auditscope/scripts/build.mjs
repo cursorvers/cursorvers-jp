@@ -140,9 +140,9 @@ function renderIssueHtml(issue, issueNumber) {
         
         <footer class="bg-slate-50 border-t border-slate-200 py-8 mt-16">
             <div class="max-w-4xl mx-auto px-6">
-                <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                    <h3 class="font-semibold text-amber-800 mb-2">Disclaimer</h3>
-                    <p class="text-sm text-amber-700 leading-relaxed">
+                <div class="bg-white border border-slate-200 border-l-4 border-l-brand-flame rounded-lg p-4 shadow-sm">
+                    <h3 class="font-semibold text-slate-900 mb-2">Disclaimer</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed">
                         本digestは医療AIガバナンスに関する情報提供を目的とし、診断・治療・個別製品導入を推奨するものではありません。医師法上の医療行為を構成せず、医療広告ガイドラインに定める医療広告には該当しません。記載内容は発行時点の公開情報に基づき、正確性・完全性を保証しません。読者は各公式原文を自らご確認ください。
                     </p>
                 </div>
