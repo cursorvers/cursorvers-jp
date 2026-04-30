@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="Cursorvers.edu">
-    <title>決済完了 | Cursorvers Edu</title>
+    <title>Pro Tier ご案内 | Cursorvers Edu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,10 +70,10 @@
         </div>
 
         <div class="text-center space-y-3">
-            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">決済が完了しました！</h1>
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">Pro Tier のご案内</h1>
             <p class="text-slate-500 leading-relaxed">
-                Library Memberへのご登録、誠にありがとうございます。<br>
-                ご登録いただいたメールアドレスに確認メールをお送りしました。
+                Cursorvers.jp上の旧Stripe決済導線は停止しました。<br>
+                Pro Tierへの参加は note メンバーシップページからお願いします。
             </p>
         </div>
 
@@ -83,32 +83,32 @@
             <ul class="space-y-3">
                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                     <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
-                    <span>確認メールをご確認ください（数分以内に届きます）</span>
+                    <span>note メンバーシップページで Pro Tier を選択してください</span>
                 </li>
                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                     <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
-                    <span>Discord招待リンクからコミュニティにご参加ください</span>
+                    <span>参加後、note 内の固定案内から事前質問フォームへ進んでください</span>
                 </li>
                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                     <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
-                    <span>Premium Note Mirrorで有料記事を全文閲覧できます</span>
+                    <span>月1回30分のオンライン壁打ちを予約できます</span>
                 </li>
                 <li class="flex items-start gap-3 text-slate-600 text-sm">
                     <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
-                    <span>Verified Promptライブラリをご活用ください</span>
+                    <span>Pro限定記事・実務メモを閲覧できます</span>
                 </li>
             </ul>
         </div>
 
         <!-- Button -->
-        <a href="index.html" class="block w-full text-center px-6 py-4 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition shadow-lg shadow-brand-flame/20">
-            ホームに戻る
+        <a href="https://note.com/nice_wren7963/membership" class="block w-full text-center px-6 py-4 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition shadow-lg shadow-brand-flame/20">
+            note メンバーシップを開く
         </a>
 
         <!-- Footer Note -->
         <p class="text-center text-slate-400 text-xs leading-relaxed">
-            メールが届かない場合は、迷惑メールフォルダをご確認ください。<br>
-            ご不明な点がございましたら、お気軽にお問い合わせください。
+            Pro Tierの決済・解約管理は note 側で行います。<br>
+            ご不明な点がございましたら、お問い合わせください。
         </p>
     </div>
 
@@ -117,15 +117,5 @@
         <p class="font-en">&copy; 2026 Cursorvers.</p>
     </footer>
 
-    <script>
-        // URLパラメータからセッション情報を取得（オプション）
-        const urlParams = new URLSearchParams(window.location.search);
-        const sessionId = urlParams.get('session_id');
-
-        if (sessionId) {
-            console.log('Stripe Session ID:', sessionId);
-            // 必要に応じて、セッションIDをバックエンドに送信して処理
-        }
-    </script>
 </body>
 </html>

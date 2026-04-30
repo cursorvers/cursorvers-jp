@@ -5,7 +5,7 @@ Medical-professional AI education platform operated by Cursorvers Inc.
 Primary language: Japanese.
 Operator: Cursorvers Inc. (株式会社Cursorvers), Tokyo, Japan.
 Author / Founder: 大田原 正幸 / Masayuki Otawara — intensive care specialist; Cursorvers Inc. Founder and Director; medical AI governance implementer.
-Scope: AI literacy and clinical AI governance education for Japanese medical professionals. Phase02 paid tier: ¥2,980/month (individual subscription). This site does not recommend specific medical acts, drugs, devices, or products.
+Scope: AI literacy and clinical AI governance education for Japanese medical professionals. Phase02 paid tier: Pro Tier, ¥10,000/month via note membership for individual Medical AI Governance Briefing. This site does not recommend specific medical acts, drugs, devices, or products.
 
 Links:
 - https://cursorvers.jp/           — Platform home
