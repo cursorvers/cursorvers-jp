@@ -162,44 +162,70 @@
         }
 
         /* Video Background */
-        .hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: brightness(1.1) saturate(0.9);
-        }
-
         /* White overlay for text readability - Premium Light Style */
-        .hero-overlay {
+        /* Glass Nav (White compatible) */
+        /* --- Hero 背景の 3D (cursorvers.com と同じ。2026-10-11 に波の動画から替えた) --- */
+        #heroFx {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          opacity: 0;
+          transition: opacity 1.2s ease;
+        }
+        #heroFx.is-ready {
+          opacity: 1;
+        }
+        .hero-mono__pause {
+          position: absolute;
+          z-index: 3;
+          right: clamp(16px, 3vw, 40px);
+          bottom: clamp(16px, 3vw, 32px);
+          min-height: 44px;
+          padding: 0 16px;
+          border: 1px solid #111111;
+          border-radius: 999px;
+          background: rgba(255,255,255,.92);
+          color: #111111;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: .04em;
+          cursor: pointer;
+        }
+        .hero-mono__pause::before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin-right: 8px;
+          background:
+            linear-gradient(#111111, #111111) left center / 3px 10px no-repeat,
+            linear-gradient(#111111, #111111) right center / 3px 10px no-repeat;
+        }
+        .hero-mono__pause[data-state="paused"]::before {
+          background: #111111;
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+        }
+        .hero-mono__veil {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg,
-                    rgba(255, 255, 255, 0.85) 0%,
-                    rgba(255, 255, 255, 0.75) 40%,
-                    rgba(255, 255, 255, 0.65) 100%);
+            inset: 0;
             z-index: 1;
+            pointer-events: none;
+            /* 文字の幅 (PC で左から約 63%) までは白く、右の模型は見せる */
+            background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.9) 58%, rgba(255,255,255,.55) 68%, rgba(255,255,255,0) 80%);
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+            .hero-mono__veil {
+                background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.93) 80%, rgba(255,255,255,.55) 92%, rgba(255,255,255,.2) 100%);
+            }
+        }
+        @media (max-width: 767px) {
+            /* スマホは文字が全幅にかかるため、模型を薄く透かす程度にする */
+            .hero-mono__veil { background: rgba(255,255,255,.84); }
+            .hero-mono__pause { min-height: 36px; padding: 0 12px; font-size: 12px; border-color: rgba(17,17,17,.4); background: rgba(255,255,255,.7); }
         }
 
-        /* Glass Nav (White compatible) */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -418,7 +444,7 @@
                 <span
                     class="text-xl font-bold tracking-tight text-slate-800 group-hover:text-brand-flame transition">Cursorvers.edu</span>
             </a>
-            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
+            <nav class="hidden md:flex items-center gap-5 lg:gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
                 <a href="#mission" class="hover:text-brand-flame transition duration-300">Mission</a>
                 <a href="#solutions" class="hover:text-brand-flame transition duration-300">Solutions</a>
                 <a href="/services" class="hover:text-brand-flame transition duration-300">Services</a>
@@ -431,7 +457,7 @@
             <div class="flex items-center gap-6">
                 <a href="https://script.google.com/macros/s/AKfycbx-983qcPNlVWuAQF7kvQ5llwzvKqfzD_vv21keIQfxYjT7SWbUUre9Uq0_BBjQ3doI/exec"
                     target="_blank"
-                    class="text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider"
+                    class="hidden sm:inline-block text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider"
                     data-mobile-contact>
                     Contact
                 </a>
@@ -443,15 +469,21 @@
     </header>
 
     <!-- Hero Section (Video Background - White Base) -->
-    <div class="hero-wrapper">
+    <div class="hero-wrapper" id="main">
         <!-- Video Background -->
-        <div class="hero-video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
-                    type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
+        <!-- 背景は 3D の白い建築模型 (医療の街区)。cursorvers.com と同じ assets/hero3d/hero3d.min.js (ソースは cursorvers-inc の assets/hero3d/src/)。
+             load の後のアイドル時に読み込む (LCP は文字)。一時停止のボタンあり (WCAG 2.2.2)。reduced-motion では動かさず 1 枚だけ描く。
+             JS やモジュールが失敗しても、文字・ボタン・ナビは HTML と CSS だけで成り立つ。 -->
+        <canvas id="heroFx" aria-hidden="true"></canvas>
+        <div class="hero-mono__veil" aria-hidden="true"></div>
+        <button type="button" lang="en" class="hero-mono__pause" id="heroPause" aria-pressed="false" data-state="playing" hidden>Pause</button>
+        <script>
+        (function () {
+            function go() { var s = document.createElement('script'); s.type = 'module'; s.src = 'assets/hero3d/hero3d.min.js'; document.head.appendChild(s); }
+            function idle() { if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 1500 }); } else { setTimeout(go, 600); } }
+            if (document.readyState === 'complete') { idle(); } else { window.addEventListener('load', idle, { once: true }); }
+        })();
+        </script>
 
         <div class="hero-content max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full">
             <div class="text-left z-10 pt-20 w-full mx-auto md:col-span-2 md:max-w-5xl">
