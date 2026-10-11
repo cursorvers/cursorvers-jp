@@ -331,6 +331,18 @@
             padding-bottom: 140px;
         }
 
+        /* 余白の調整 (2026-10-11 の余白監査)。スマホでも 140px のままで、欄の境目が 280px 空いていた */
+        @media (max-width: 767px) {
+            .section-padding {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+
+        /* 同じ白の欄が続く境目は、上の欄の下余白と足し算になって間延びするため、下の欄の上余白を詰める */
+        #reality + section { padding-top: 40px; }
+        #company { padding-top: 64px; }
+
         /* Cards (Light Theme) */
         .content-card {
             background: #FFFFFF;
