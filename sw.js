@@ -1,5 +1,5 @@
 // Service Worker for Cursorvers.edu PWA (hosted at cursorvers.jp)
-const CACHE_NAME = 'cursorvers-jp-v2';
+const CACHE_NAME = 'cursorvers-jp-v3';
 const urlsToCache = [
   './community.html',
   './icon-192.png',
