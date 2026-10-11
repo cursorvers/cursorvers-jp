@@ -1,5 +1,6 @@
 // Service Worker for Cursorvers.edu PWA (hosted at cursorvers.jp)
-const CACHE_NAME = 'cursorvers-jp-v2';
+const CACHE_PREFIX = 'cursorvers-jp-';
+const CACHE_NAME = `${CACHE_PREFIX}v3`;
 const urlsToCache = [
   './community.html',
   './icon-192.png',
@@ -28,7 +29,8 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
+          // 自分のキャッシュ (cursorvers-jp-*) の旧版だけを消す。同じ origin のほかの用途のキャッシュは残す
+          if (cacheName.startsWith(CACHE_PREFIX) && cacheName !== CACHE_NAME) {
             console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }

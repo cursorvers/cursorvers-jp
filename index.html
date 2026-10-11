@@ -12,12 +12,12 @@
         gtag('config', 'G-TX3Y6G4XWJ');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursorvers.edu | 臨床知の資産化とAIで経済的自律</title>
-    <meta name="description" content="臨床知を資産化し、AIで医療者の経済的自律と収益基盤の複線化を設計する。安全な線引きと実装テンプレートで、時間ではなく構造で守る。">
+    <title>Cursorvers.edu | 医療者のためのAIガバナンス教育</title>
+    <meta name="description" content="医療者が医療AIを使う前に、論点を整えるための教育サイトです。安全リテラシーの無料コミュニティと、note のメンバーシップ「Cursorvers Pro」(月 1 回の相談、月額 1 万円) を提供します。">
     <link rel="canonical" href="https://cursorvers.jp/">
     <meta property="og:url" content="https://cursorvers.jp/">
-    <meta property="og:title" content="Cursorvers.edu | 臨床知の資産化とAIで経済的自律">
-    <meta property="og:description" content="臨床知を資産化し、AIで医療者の経済的自律と収益基盤の複線化を設計する。">
+    <meta property="og:title" content="Cursorvers.edu | 医療者のためのAIガバナンス教育">
+    <meta property="og:description" content="医療者が医療AIを使う前に、論点を整えるための教育サイトです。">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="Cursorvers.edu">
@@ -139,6 +139,7 @@
     </script>
 
     <style>
+        .jp-keep { word-break: keep-all; overflow-wrap: anywhere; line-break: strict; }
         body {
             background-color: #FFFFFF;
             color: #0F172A;
@@ -161,44 +162,70 @@
         }
 
         /* Video Background */
-        .hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            filter: brightness(1.1) saturate(0.9);
-        }
-
         /* White overlay for text readability - Premium Light Style */
-        .hero-overlay {
+        /* Glass Nav (White compatible) */
+        /* --- Hero 背景の 3D (cursorvers.com と同じ。2026-10-11 に波の動画から替えた) --- */
+        #heroFx {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          opacity: 0;
+          transition: opacity 1.2s ease;
+        }
+        #heroFx.is-ready {
+          opacity: 1;
+        }
+        .hero-mono__pause {
+          position: absolute;
+          z-index: 3;
+          right: clamp(16px, 3vw, 40px);
+          bottom: clamp(16px, 3vw, 32px);
+          min-height: 44px;
+          padding: 0 16px;
+          border: 1px solid #111111;
+          border-radius: 999px;
+          background: rgba(255,255,255,.92);
+          color: #111111;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: .04em;
+          cursor: pointer;
+        }
+        .hero-mono__pause::before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin-right: 8px;
+          background:
+            linear-gradient(#111111, #111111) left center / 3px 10px no-repeat,
+            linear-gradient(#111111, #111111) right center / 3px 10px no-repeat;
+        }
+        .hero-mono__pause[data-state="paused"]::before {
+          background: #111111;
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+        }
+        .hero-mono__veil {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg,
-                    rgba(255, 255, 255, 0.85) 0%,
-                    rgba(255, 255, 255, 0.75) 40%,
-                    rgba(255, 255, 255, 0.65) 100%);
+            inset: 0;
             z-index: 1;
+            pointer-events: none;
+            /* 文字の幅 (PC で左から約 63%) までは白く、右の模型は見せる */
+            background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.9) 58%, rgba(255,255,255,.55) 68%, rgba(255,255,255,0) 80%);
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+            .hero-mono__veil {
+                background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.93) 80%, rgba(255,255,255,.55) 92%, rgba(255,255,255,.2) 100%);
+            }
+        }
+        @media (max-width: 767px) {
+            /* スマホは文字が全幅にかかるため、模型を薄く透かす程度にする */
+            .hero-mono__veil { background: rgba(255,255,255,.84); }
+            .hero-mono__pause { min-height: 36px; padding: 0 12px; font-size: 12px; border-color: rgba(17,17,17,.4); background: rgba(255,255,255,.7); }
         }
 
-        /* Glass Nav (White compatible) */
         .hero-content {
             position: relative;
             z-index: 10;
@@ -330,6 +357,18 @@
             padding-bottom: 140px;
         }
 
+        /* 余白の調整 (2026-10-11 の余白監査)。スマホでも 140px のままで、欄の境目が 280px 空いていた */
+        @media (max-width: 767px) {
+            .section-padding {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+
+        /* 同じ白の欄が続く境目は、上の欄の下余白と足し算になって間延びするため、下の欄の上余白を詰める */
+        #reality + section { padding-top: 40px; }
+        #company { padding-top: 64px; }
+
         /* Cards (Light Theme) */
         .content-card {
             background: #FFFFFF;
@@ -405,19 +444,20 @@
                 <span
                     class="text-xl font-bold tracking-tight text-slate-800 group-hover:text-brand-flame transition">Cursorvers.edu</span>
             </a>
-            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
+            <nav class="hidden md:flex items-center gap-5 lg:gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
                 <a href="#mission" class="hover:text-brand-flame transition duration-300">Mission</a>
-                <a href="#solutions" class="hover:text-brand-flame transition duration-300">Solutions</a>
-                <a href="/services" class="hover:text-brand-flame transition duration-300">Services</a>
+                <a href="/services" class="hover:text-brand-flame transition duration-300 whitespace-nowrap">個人向け</a>
+                <a href="/solutions" class="hover:text-brand-flame transition duration-300 whitespace-nowrap">法人向け</a>
                 <a href="#company" class="hover:text-brand-flame transition duration-300">Company</a>
                 <a href="https://note.com/nice_wren7963" target="_blank"
                     class="hover:text-brand-flame transition duration-300 flex items-center gap-1">Journal <i
                         class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                <a href="https://cursorvers.com/" class="hidden lg:flex items-center gap-1 hover:text-brand-flame transition duration-300 whitespace-nowrap">cursorvers.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i><span class="sr-only">（運営会社 Cursorvers株式会社のサイトへ移動します）</span></a>
             </nav>
             <div class="flex items-center gap-6">
                 <a href="https://script.google.com/macros/s/AKfycbx-983qcPNlVWuAQF7kvQ5llwzvKqfzD_vv21keIQfxYjT7SWbUUre9Uq0_BBjQ3doI/exec"
                     target="_blank"
-                    class="text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider"
+                    class="hidden sm:inline-block text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider"
                     data-mobile-contact>
                     Contact
                 </a>
@@ -429,15 +469,21 @@
     </header>
 
     <!-- Hero Section (Video Background - White Base) -->
-    <div class="hero-wrapper">
+    <div class="hero-wrapper" id="main">
         <!-- Video Background -->
-        <div class="hero-video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4"
-                    type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
+        <!-- 背景は 3D の白い建築模型 (医療の街区)。cursorvers.com と同じ assets/hero3d/hero3d.min.js (ソースは cursorvers-inc の assets/hero3d/src/)。
+             load の後のアイドル時に読み込む (LCP は文字)。一時停止のボタンあり (WCAG 2.2.2)。reduced-motion では動かさず 1 枚だけ描く。
+             JS やモジュールが失敗しても、文字・ボタン・ナビは HTML と CSS だけで成り立つ。 -->
+        <canvas id="heroFx" aria-hidden="true"></canvas>
+        <div class="hero-mono__veil" aria-hidden="true"></div>
+        <button type="button" lang="en" class="hero-mono__pause" id="heroPause" aria-pressed="false" data-state="playing" hidden>Pause</button>
+        <script>
+        (function () {
+            function go() { var s = document.createElement('script'); s.type = 'module'; s.src = 'assets/hero3d/hero3d.min.js'; document.head.appendChild(s); }
+            function idle() { if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 1500 }); } else { setTimeout(go, 600); } }
+            if (document.readyState === 'complete') { idle(); } else { window.addEventListener('load', idle, { once: true }); }
+        })();
+        </script>
 
         <div class="hero-content max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center h-full">
             <div class="text-left z-10 pt-20 w-full mx-auto md:col-span-2 md:max-w-5xl">
@@ -446,88 +492,83 @@
                     <span
                         class="inline-flex items-center gap-2 py-1 px-3 border border-brand-flame/40 bg-white/60 text-brand-flame text-[10px] font-bold tracking-[0.2em] uppercase rounded-full backdrop-blur-md font-en shadow-sm">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-flame animate-pulse"></span>
-                        Medical Asset Management
+                        Medical AI Governance Education
                     </span>
                 </div>
 
                 <!-- Headline -->
                 <h1 class="mt-8 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-slate-900 animate-fade-in-up text-balance"
                     style="animation-delay: 0.2s;">
-                    医療AIガバナンスを武器に。<br>臨床知を資産へ。
+                    医療AIを使う前に、<br>論点を整える
                 </h1>
 
                 <!-- Subheadline -->
-                <p class="mt-8 text-slate-600 text-lg md:text-xl font-medium tracking-wide leading-relaxed max-w-full md:max-w-6xl animate-fade-in-up text-balance"
+                <p class="mt-8 text-slate-600 text-lg md:text-xl font-medium tracking-wide leading-relaxed max-w-full md:max-w-6xl animate-fade-in-up text-balance jp-keep"
                     style="animation-delay: 0.3s;">
-                    医師の経済的自律を実現するのは、体系化されたガバナンス知識と実践です。<br class="hidden md:inline">
-                    Pro tier の月次壁打ちが、導入前に整理すべき論点を言語化します。
+                    使うべきか、<wbr>止めるべきか、<wbr>専門家へ<wbr>回すべきか。<br class="hidden md:inline">
+                    医療者が<wbr>自分で<wbr>判断できるよう、<wbr>安全<wbr>リテラシーと<wbr>月次の<wbr>論点整理を<wbr>提供します。
                 </p>
 
                 <!-- Hero CTA -->
                 <div class="mt-10 flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <a href="#pro-tier"
+                    <a href="#solutions"
                         class="inline-flex items-center justify-center px-8 py-3 rounded-full text-xs md:text-sm font-bold text-white font-en uppercase tracking-widest transition shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                         style="background: #FF4500;">
-                        Explore Pro Tier
-                    </a>
-                    <a href="#solutions"
-                        class="inline-flex items-center justify-center px-8 py-3 rounded-full text-xs md:text-sm font-bold text-slate-700 bg-white/80 border border-slate-300 font-en uppercase tracking-widest transition shadow-sm hover:shadow-md hover:-translate-y-0.5 backdrop-blur-md">
                         Join Community (¥0)
                     </a>
+                    <a href="#pro-tier"
+                        class="inline-flex items-center justify-center px-8 py-3 rounded-full text-xs md:text-sm font-bold text-slate-700 bg-white/80 border border-slate-300 font-en uppercase tracking-widest transition shadow-sm hover:shadow-md hover:-translate-y-0.5 backdrop-blur-md">
+                        Explore Cursorvers Pro
+                    </a>
                 </div>
+                <p class="mt-6 text-sm text-slate-600 animate-fade-in-up jp-keep" style="animation-delay: 0.5s;">医療機関として<wbr>導入を<wbr>検討する方は、<wbr><a href="https://cursorvers.com/" target="_blank" rel="noopener" class="underline hover:text-brand-flame">cursorvers.com</a>&nbsp;へ。</p>
 
             </div>
         </div>
     </div>
 
-    <!-- Reality Section -->
+<!-- Decision Points Section -->
     <section id="reality" class="section-padding bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="reveal max-w-4xl">
-                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Reality
-                    Check</span>
-                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
-                    医療者の資産形成は、構造的に厳しくなる。
+                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Decision
+                    Points</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">
+                    医療AIの<wbr>判断は、<wbr>3つの<wbr>場面で<wbr>分かれる
                 </h2>
-                <p class="text-slate-600 text-lg leading-relaxed">
-                    いま起きているのは、個人の努力不足ではありません。<br>
+                <p class="text-slate-600 text-lg leading-relaxed jp-keep">
+                    「導入する・契約で<wbr>止める・撤退する」。<br>
                     <span
-                        class="text-slate-900 font-bold bg-brand-flame/10 px-1">制度・市場・物価</span>が同時に動き、「長時間労働で穴埋めする」収入モデルが成立しにくくなっています。
+                        class="text-slate-900 font-bold bg-brand-flame/10 px-1">どこで<wbr>迷っているか</span>を、判断の<wbr>前に整理します。
                 </p>
             </div>
 
             <div class="mt-16 grid md:grid-cols-3 gap-8">
                 <div class="content-card rounded-2xl p-8 reveal">
                     <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
-                        01. Cost Pressure</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">医療費抑制 × 実質賃金</h3>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        医療費の適正化は今後も続きます。現場の負荷が上がっても、<span
-                            class="text-slate-900 font-semibold">「報酬が比例して伸びる」期待は置きにくい</span>。
-                        結果として、資産形成は「給与一本足」では不安定になります。
+                        01. Adopt</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">導入する</h3>
+                    <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                        AI導入や<wbr>ベンダー提案を<wbr>前に、<wbr>何を<wbr>信じてよいかを<wbr><span
+                            class="text-slate-900 font-semibold">整理する。</span>
                     </p>
                 </div>
 
                 <div class="content-card rounded-2xl p-8 reveal" style="transition-delay: 0.1s;">
                     <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
-                        02. Time Cap</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">時間外上限 × 外勤の合算</h3>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        2024年4月から医師の時間外労働に上限が設けられ、<span class="text-slate-900 font-semibold">原則
-                            年960時間</span>が基準となりました。<br>
-                        複数医療機関での勤務も合算されるため、これまで月20〜30万円規模で積み上げていた外勤が、
-                        <span class="text-slate-900 font-semibold">制度上・体力上の理由で難しくなる</span>ケースが現実に出ています。
+                        02. Contract</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">契約で<wbr>止める</h3>
+                    <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                        契約の<wbr>前に、<wbr>確認すべき<span class="text-slate-900 font-semibold">論点を<wbr>言語化する。</span>
                     </p>
                 </div>
 
                 <div class="content-card rounded-2xl p-8 reveal" style="transition-delay: 0.2s;">
                     <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">
-                        03. Inflation</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">インフレ × 住宅・教育コスト</h3>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        生活コストは、ゆっくり確実に上がっていきます。住宅（家賃・ローン・修繕）、教育（学費・塾・留学）、
-                        介護・保険。<br>
-                        <span class="text-slate-900 font-semibold">「稼げているはずなのに増えない」</span>感覚は、ここから強まります。
+                        03. Exit</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">撤退する</h3>
+                    <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                        <span class="text-slate-900 font-semibold">続けるか、<wbr>止めるかの<wbr>基本線</span>を<wbr>持つ。
                     </p>
                 </div>
             </div>
@@ -535,78 +576,63 @@
             <div class="mt-12 content-card rounded-2xl p-8 md:p-10 reveal border-slate-200">
                 <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">The
                     Hidden Trap</p>
-                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                    最も危険なのは、「時間で稼ぐ」依存が残ること</h3>
-                <div class="grid md:grid-cols-2 gap-8 text-slate-600 text-base leading-relaxed">
+                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 jp-keep">
+                    最も<wbr>危険なのは、<wbr>論点が<wbr>整理されないまま<wbr>決めること</h3>
+                <div class="grid md:grid-cols-2 gap-8 text-slate-600 text-base leading-relaxed jp-keep">
                     <div class="space-y-3">
-                        <p class="flex gap-2"><i class="fa-solid fa-xmark text-brand-flame mt-1"></i>当直・外勤は、年齢とともに持続しない。
+                        <p class="flex gap-2"><i class="fa-solid fa-xmark text-brand-flame mt-1"></i>薬事、医師法、広告、契約、院内ガバナンスの<wbr>論点が<wbr>混ざったまま<wbr>進む。
                         </p>
                         <p class="flex gap-2"><i
-                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>時間外の枠がある以上、「もっと働く」で補填できない。
+                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>個別症例やPHI（個人を<wbr>特定可能な<wbr>診療情報）を、<wbr>確認なしにAIへ<wbr>入れてしまう。
                         </p>
                         <p class="flex gap-2"><i
-                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>管理職ポストは増えず、椅子取りゲームが激化する。
-                        </p>
-                    </div>
-                    <div class="space-y-3">
-                        <p class="flex gap-2"><i
-                                class="fa-solid fa-check text-brand-flame mt-1"></i>必要なのは、臨床知を「再利用可能」にしてスケールさせること。
-                        </p>
-                        <p class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>AIを“学ぶ”より先に、<span
-                                class="text-slate-900 font-bold">勝ち筋（稼ぎ方の構造）</span>を設計すること。</p>
-                        <p class="flex gap-2"><i
-                                class="fa-solid fa-check text-brand-flame mt-1"></i>安全な線引きの上で、収益ラインを複線化すること。
+                                class="fa-solid fa-xmark text-brand-flame mt-1"></i>専門家へ<wbr>回すべき<wbr>判断を、<wbr>自分だけで<wbr>抱えてしまう。
                         </p>
                     </div>
                 </div>
 
-                <div class="mt-8 pt-6 border-t border-slate-200 text-slate-500 text-xs leading-relaxed">
-                    ※制度・収入影響は勤務形態や地域により異なります。本セクションは「構造変化」を理解するための整理です。
+                <div class="mt-8 pt-6 border-t border-slate-200 text-slate-900 text-base font-bold leading-relaxed jp-keep">
+                    AIを<wbr>使うべきか、<wbr>止めるべきか、<wbr>専門家へ<wbr>回すべきか。<wbr>その<wbr>線引きを<wbr>先に<wbr>持つことが、<wbr>最初の<wbr>安全策です。
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Mission Section -->
-    <section id="mission" class="section-padding bg-white relative z-10">
+<!-- Safety Line Section -->
+    <section class="section-padding bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="img-frame aspect-[4/5] reveal order-2 md:order-1 shadow-2xl shadow-brand-flame/5">
                     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
-                        alt="Urban Digital Asset Core Structure">
+                        alt="医療者が安全にAIを使うための基礎を表すイメージ">
                     <div class="img-gradient"></div>
                     <div
                         class="absolute bottom-0 left-0 right-0 p-8 md:p-10 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
                         <p class="text-brand-flame text-xs font-bold uppercase tracking-widest mb-2 opacity-90 font-en">
-                            01. The Core</p>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">知的資産としての臨床知</h3>
-                        <p class="text-white/90 text-base leading-relaxed">
-                            日々の診療で培われる経験則や暗黙知は、適切なデジタル化によって、複製可能で価値を生み出し続ける「資産」へと変貌します。
+                            01. The Basics</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4 jp-keep">院内で<wbr>説明できる、<wbr>AIの<wbr>線引き</h3>
+                        <p class="text-white/90 text-base leading-relaxed jp-keep">
+                            最低限<wbr>おさえておきたい<wbr>リスクと<wbr>守り方を、<wbr>院内で<wbr>説明できる<wbr>形で<wbr>学びます。
                         </p>
                     </div>
                 </div>
 
                 <div class="reveal order-1 md:order-2">
                     <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Our
-                        Philosophy</span>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
-                        知的資産の防衛が、最大のキャリア戦略である。
+                        Approach</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">
+                        線引きを<wbr>知ることが、<wbr>最初の<wbr>安全策である
                     </h2>
                     <div class="space-y-8 text-slate-600 text-lg leading-relaxed">
-                        <p>
-                            「AIを勉強する」だけでは、収入も時間も増えません。<br>
-                            本質は、あなたの臨床経験（暗黙知）を、AIで<span
-                                class="text-slate-900 font-bold bg-brand-flame/10 px-1">複製・標準化・再利用可能</span>にし、
-                            <span class="text-slate-900 font-bold">事故らずに運用</span>して、収益ラインを複線化できるかどうかです。
+                        <p class="jp-keep">
+                            情報漏洩、<wbr>誤った<wbr>出力、<wbr>委託先の<wbr>管理。<br>
+                            AIを<wbr>使う前に、<wbr>院内で<wbr>決めておくべき<wbr>ことを<wbr>押さえます。
                         </p>
-                        <div class="pl-6 border-l-2 border-brand-flame/50">
-                            <p class="italic text-slate-700">
-                                収益化は、品格を失う行為ではありません。<br>
-                                臨床知を正しく流通させ、社会に還元しながら、あなたと家族の選択肢を守る――それが「Defense」です。
-                            </p>
-                        </div>
+                        <p class="jp-keep">
+                            恐怖心で<wbr>遠ざけるのではなく、<wbr><span
+                                class="text-slate-900 font-bold">線引き<wbr>（法務・<wbr>倫理・<wbr>品質）を<wbr>理解したうえで</span>、<wbr>判断する。<br>
+                            その<wbr>手順を、<wbr>医療の<wbr>現場の<wbr>言葉で<wbr>提供します。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -614,19 +640,17 @@
     </section>
 
     <!-- Vision Section -->
-    <section class="section-padding bg-brand-surface relative z-10">
+    <section id="mission" class="section-padding bg-brand-surface relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="reveal">
-                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">02.
-                        Vision & Mission</span>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
-                        AIと共進化する、自立した医療者たちへ。
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Vision & Mission</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">
+                        AIと<wbr>共進化する、<wbr>自立した<wbr>医療者たちへ
                     </h2>
                     <div class="space-y-8 text-slate-600 text-lg leading-relaxed">
                         <p>
-                            私たちが目指すのは、すべての医療者がAIという「第二の脳」を持ち、臨床知を安全に社会へ還元しながら、
-                            <span class="text-slate-900 font-bold">収入と時間の両方にレバレッジをかけられる</span>世界です。
+                            私たちが目指すのは、すべての医療者がAIという「第二の脳」を持ち、臨床知を安全に社会へ還元できる世界です。
                         </p>
                         <p>
                             そのために、私たちは「AIセルフガバナンスの標準化」を掲げます。<br>
@@ -662,9 +686,9 @@
                         Ecosystem</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 font-en">Strategic Roadmap</h2>
                 </div>
-                <p class="text-slate-600 max-w-md mt-6 md:mt-0 text-lg">
-                    臨床知の資産化から、収益ラインの複線化へ。<br>
-                    Free を起点に、Pro と Master、2つの実践ルートへ。
+                <p class="text-slate-600 max-w-md mt-6 md:mt-0 text-lg jp-keep">
+                    安全<wbr>リテラシーから、<wbr>判断前の<wbr>論点整理へ。<br>
+                    Free&nbsp;を<wbr>起点に、<wbr>月&nbsp;1&nbsp;回の<wbr>Pro&nbsp;相談へ。
                 </p>
             </div>
 
@@ -680,31 +704,27 @@
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Free Community</h3>
-                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Risk Control
-                            & Basics</p>
-                        <p class="text-base text-slate-600 leading-relaxed">
-                            まずは「事故らない」ためのAIリテラシーを身につける無料フェーズ。免許やキャリアを危険にさらさず試せるよう、最低限おさえておきたいリスクと守り方をコンパクトに学びます。
+                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Self-Check &amp; Groundwork</p>
+                        <p class="text-base text-slate-600 leading-relaxed jp-keep">
+                            医療AIを<wbr>試す前に、<wbr>危険度の<wbr>見当を<wbr>つける<wbr>無料の<wbr>入口です。<wbr>リスク診断ボットと<wbr>安全プロンプト集<wbr>（Lite）に<wbr>加え、<wbr>医療×AIの<wbr>実務ニュースと<wbr>注意点を<wbr>LINE&nbsp;で<wbr>週&nbsp;1〜2&nbsp;回<wbr>届けます。
                         </p>
                         <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>リスク診断ボットで危険度セルフチェック</li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">リスク診断ボットで<wbr>危険度を<wbr>セルフチェック</span></li>
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>安全プロンプト集（Lite）／炎上・誤情報を回避</li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">安全プロンプト集<wbr>（Lite）</span></li>
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>外部活動・情報発信の安全ガイド（ライト版）</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>LINEで医療×AIの実務ニュースと注意点を週1〜2回配信
-                            </li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">LINE&nbsp;で<wbr>医療×AIの<wbr>実務ニュースと<wbr>注意点を<wbr>週&nbsp;1〜2&nbsp;回<wbr>配信</span></li>
                         </ul>
                         <div class="mt-4 text-sm text-slate-500 space-y-2">
-                            <p>・AIに興味はあるが、まずは様子を見たい勤務医・看護師・コメディカルの方</p>
-                            <p>・「何がNGか」だけでも先に押さえておきたい方</p>
+                            <p class="jp-keep">・導入・<wbr>契約・<wbr>撤退を<wbr>判断する<wbr>医療経営者・<wbr>管理職・<wbr>医師起業家</p>
+                            <p class="jp-keep">・現場で<wbr>使う前に、<wbr>院内で<wbr>起きうる<wbr>論点を<wbr>予習したい方</p>
                         </div>
                         <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
                             <span class="text-lg font-bold text-slate-900 font-en">Free</span>
                             <a href="line-qr.html?v=20260104"
                                 class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-slate-700 hover:bg-slate-800 font-en uppercase tracking-widest transition">
-                                Join Community
+                                LINEで受け取る
                             </a>
                         </div>
                     </div>
@@ -718,31 +738,29 @@
                             PHASE 02 — PRO</div>
                         <div
                             class="absolute top-4 right-4 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
-                            5名 PILOT</div>
+                            5名限定</div>
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-                            alt="Pro Tier — Medical AI Governance Briefing">
+                            alt="Cursorvers Pro — Medical AI Governance">
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Pro Tier</h3>
-                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Medical AI
-                            Governance Briefing</p>
-                        <p class="text-base text-slate-600 leading-relaxed">
-                            医療AIを「導入する・契約で止める・撤退する」の判断前に、月次で論点を整える個人向けブリーフィングプランです。</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Cursorvers Pro</h3>
+                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Medical AI Governance</p>
+                        <p class="text-base text-slate-600 leading-relaxed jp-keep">
+                            医療AIガバナンスについて、<wbr>月&nbsp;1&nbsp;回の<wbr>web&nbsp;ミーティングで<wbr>継続して<wbr>相談できる note&nbsp;の<wbr>メンバーシップです。</p>
                         <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>月 1 回 30 分のオンライン壁打ち
-                            </li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">月&nbsp;1&nbsp;回の<wbr>web&nbsp;ミーティング</span></li>
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>会員向け月次ブリーフィング記事</li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">会員向けの<wbr>Q&amp;A</span></li>
                             <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>事前質問フォームと面談後の要点メモ</li>
+                                    class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">Cursorvers&nbsp;の<wbr>有料&nbsp;note&nbsp;記事を<wbr>会員向けに<wbr>提供</span></li>
                         </ul>
                         <div class="mt-4 text-sm text-slate-500 space-y-2">
-                            <p>・AI導入やベンダー提案を前に、何を信じてよいか整理したい医師・管理職</p>
-                            <p>・薬事、医師法、広告、契約、院内ガバナンスの論点を継続的に追いたい方</p>
+                            <p class="jp-keep">・医療経営者・<wbr>医師起業家</p>
+                            <p class="jp-keep">・医療AI事業者</p>
                         </div>
-                        <p class="mt-4 text-xs text-slate-500 leading-relaxed">
-                            ※個別の経営判断、法的助言、薬事判断、契約書レビュー、診療助言、法人実装支援は含みません。
+                        <p class="mt-4 text-xs text-slate-500 leading-relaxed jp-keep">
+                            法的助言、<wbr>薬事判断、<wbr>診療助言、<wbr>契約書レビュー、<wbr>個別法人への<wbr>実装伴走は<wbr>含みません。
                         </p>
                         <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
                             <span class="text-lg font-bold text-slate-900 font-en">¥10,000<span
@@ -755,220 +773,177 @@
                     </div>
                 </div>
 
-                <div class="content-card rounded-xl overflow-hidden flex flex-col reveal group"
-                    style="transition-delay: 0.2s;">
-                    <div class="h-64 img-frame relative">
-                        <div
-                            class="absolute top-4 left-4 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
-                            PHASE 02 — MASTER</div>
-                        <div
-                            class="absolute top-4 right-4 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
-                            WAITLIST</div>
-                        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop"
-                            alt="Master Class — Personal Monetization Track">
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Master Class</h3>
-                        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Personal
-                            Monetization Track</p>
-                        <p class="text-base text-slate-600 leading-relaxed">
-                            医療AIを起点に、医師自身の収益化モデル（商品・サービス・コンテンツ）を構築する高単価個別プログラム。Pro tier とは独立した、収益化トラックです（Free から直接アクセス可）。</p>
-                        <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>医療AI × 自分の収益化モデル設計（個別伴走）</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>ストック／スポット／継続の収益設計と優先順位付け</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>商品・LP・提案書の実務レビューとローンチ伴走</li>
-                        </ul>
-                        <div class="mt-4 text-sm text-slate-500 space-y-2">
-                            <p>・医療AIを軸に、自分自身の収益化モデルを構築したい医師</p>
-                            <p>・Pro tier ではなく、最初から収益化トラックに入りたい方</p>
-                        </div>
-                        <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
-                            <span class="text-lg font-bold text-slate-900 font-en">Closed Beta</span>
-                            <a href="https://script.google.com/macros/s/AKfycbx-983qcPNlVWuAQF7kvQ5llwzvKqfzD_vv21keIQfxYjT7SWbUUre9Uq0_BBjQ3doI/exec"
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-brand-flame hover:bg-brand-flame/90 font-en uppercase tracking-widest transition">
-                                Join Waitlist
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div class="content-card rounded-xl overflow-hidden flex flex-col reveal group"
+    style="transition-delay: 0.2s;">
+    <div class="h-64 img-frame relative">
+        <div
+            class="absolute top-4 left-4 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
+            FOR ORGANIZATIONS</div>
+        <div
+            class="absolute top-4 right-4 bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded z-10 font-en">
+            CURSORVERS.COM</div>
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop"
+            alt="医療機関の導入判断を表すイメージ">
+    </div>
+    <div class="p-8 flex flex-col flex-grow">
+        <h3 class="text-xl font-bold text-slate-900 mb-2 jp-keep">法人の方へ<wbr></h3>
+        <p class="text-xs font-bold text-brand-flame uppercase tracking-wider mb-4 font-en">Adoption &amp; Review</p>
+        <p class="text-base text-slate-600 leading-relaxed jp-keep">
+            医療機関としての導入判断<wbr>・第三者レビュー<wbr>・院内体制づくりは、Cursorvers株式会社のコーポレートサイトで受け付けています。</p>
+        <ul class="mt-4 space-y-2 text-base text-slate-600 leading-relaxed">
+            <li class="flex gap-2 jp-keep"><i
+                    class="fa-solid fa-check text-brand-flame mt-1"></i>導入前のセカンドオピニオン</li>
+            <li class="flex gap-2 jp-keep"><i
+                    class="fa-solid fa-check text-brand-flame mt-1"></i>ベンダー提案の責任分界<wbr>・院内説明の確認</li>
+            <li class="flex gap-2 jp-keep"><i
+                    class="fa-solid fa-check text-brand-flame mt-1"></i>院内ガバナンス担当者の育成</li>
+        </ul>
+        <div class="mt-4 text-sm text-slate-500 space-y-2">
+            <p class="jp-keep">・医療機関として、AIの導入や契約を検討している方</p>
+            <p class="jp-keep">・個人ではなく、<wbr>組織の<wbr>判断として<wbr>相談したい方</p>
+        </div>
+        <div class="mt-auto border-t border-slate-200 pt-6 flex justify-between items-center gap-3">
+            <span class="text-lg font-bold text-slate-900 font-en">cursorvers.com</span>
+            <a href="https://cursorvers.com/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs md:text-sm font-bold text-white bg-brand-flame hover:bg-brand-flame/90 font-en uppercase tracking-widest transition">
+                Visit Site
+            </a>
+        </div>
+    </div>
+</div>
 
             </div>
         </div>
     </section>
 
-    <!-- Blueprint Section -->
-    <section id="blueprint" class="section-padding bg-brand-surface relative z-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <div class="reveal">
-                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">04.
-                        Blueprint</span>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
-                        収益は価値提供の証左。医療者の臨床知を正しく運用する。
-                    </h2>
-                    <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
-                        <p>
-                            私たちは「一攫千金」も「小手先のノウハウ」も教えません。<br>
-                            代わりに、<span
-                                class="text-slate-900 font-bold bg-brand-flame/10 px-1">臨床知を資産として扱い、AIで複製可能な形に整え、社会に還元しながら収益化する</span>ための
-                            実装手順を提供します。
-                        </p>
-                        <p>
-                            収益化は、医療の信頼を損なう行為ではありません。<br>
-                            <span class="text-slate-900 font-bold">透明性・線引き・再現性</span>を守れば、むしろ「医療者が社会に価値を返す」正統なルートになります。
-                        </p>
+<!-- Topics Section -->
+<section id="topics" class="section-padding bg-brand-surface relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <div class="reveal">
+                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Topics</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">
+                    判断<wbr>の前に、<wbr>押さえておく<wbr>論点
+                </h2>
+                <div class="space-y-6 text-slate-600 text-lg leading-relaxed">
+                    <p class="jp-keep">
+                        規制ニュースを<wbr>なぞるのではなく、<wbr>会議や<wbr>稟議の<wbr>前に<wbr>「何を<wbr>確認すべきか」の<wbr>判断軸へ<wbr>翻訳します。
+                    </p>
+                    <p class="jp-keep">
+                        個別の<wbr>経営判断、<wbr>法的助言、<wbr>薬事判断、<wbr>契約書レビュー、<wbr>診療助言は<wbr>扱いません。<wbr>必要な場合は<wbr>専門家または&nbsp;cursorvers.com&nbsp;へ<wbr>つなぎます。
+                    </p>
 
-                        <div class="content-card rounded-2xl p-6 border border-slate-200">
-                            <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">How We Build</p>
-                            <ol class="space-y-3 text-base leading-relaxed text-slate-600">
-                                <li class="flex gap-3"><span
-                                        class="text-brand-flame font-bold">1.</span>臨床知の棚卸し（強み・症例・暗黙知を言語化）</li>
-                                <li class="flex gap-3"><span
-                                        class="text-brand-flame font-bold">2.</span>勝ち筋の選定（誰の何を、どの形で解決するか）</li>
-                                <li class="flex gap-3"><span
-                                        class="text-brand-flame font-bold">3.</span>AIワークフロー実装（作る／届ける／改善する）</li>
-                                <li class="flex gap-3"><span
-                                        class="text-brand-flame font-bold">4.</span>守備の設計（免責・個人情報・品質管理）</li>
-                            </ol>
-                        </div>
+                    <div class="content-card rounded-2xl p-6 border border-slate-200">
+                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">How We Learn</p>
+                        <ol class="space-y-3 text-base leading-relaxed text-slate-600 jp-keep">
+                            <li class="flex gap-3"><span
+                                    class="text-brand-flame font-bold shrink-0">1.</span><span class="jp-keep">リスクを<wbr>知る（情報漏洩・<wbr>誤出力・<wbr>委託先）</span></li>
+                            <li class="flex gap-3"><span
+                                    class="text-brand-flame font-bold shrink-0">2.</span><span class="jp-keep">線引きを<wbr>持つ（薬事・医師法・広告）</span></li>
+                            <li class="flex gap-3"><span
+                                    class="text-brand-flame font-bold shrink-0">3.</span><span class="jp-keep">判断軸を<wbr>整える（導入・契約・撤退）</span></li>
+                            <li class="flex gap-3"><span
+                                    class="text-brand-flame font-bold shrink-0">4.</span><span class="jp-keep">守り方を<wbr>決める（PHI・免責・品質管理）</span></li>
+                        </ol>
                     </div>
-                </div>
-
-                <div class="grid gap-6 reveal">
-                    <div class="content-card rounded-2xl p-7">
-                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route A / Stock</p>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">知識コンテンツ（積み上がる資産）</h3>
-                        <p class="text-slate-600 text-base leading-relaxed mb-4">
-                            文章・資料・教材をAIで高速に作り、販売と配布の導線を整える。忙しい医療者に最も相性が良い「ストック型」。
-                        </p>
-                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>note連載／Notionテンプレ／動画講義</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>症例の学びを「再現可能な型」に変換</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>小さく売って、改善して、積み上げる</li>
-                        </ul>
-                    </div>
-
-                    <div class="content-card rounded-2xl p-7">
-                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route B / Spot</p>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">研修・講演（信頼を収益に変える）</h3>
-                        <p class="text-slate-600 text-base leading-relaxed mb-4">
-                            AIを使いこなす医療者は、院内外で求められます。テーマ設計と資料作成をAIで標準化し、単発の収益へ。
-                        </p>
-                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>院内勉強会／看護部研修／企業向けセミナー</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>資料・台本・Q&Aをテンプレ化</li>
-                            <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>目安：1回
-                                5〜10万円規模から</li>
-                        </ul>
-                    </div>
-
-                    <div class="content-card rounded-2xl p-7">
-                        <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Route C / Retainer
-                        </p>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-3">監修・アドバイザリー（継続収入の核）</h3>
-                        <p class="text-slate-600 text-base leading-relaxed mb-4">
-                            医療×AIの現場知がある人材は希少です。線引きと責任範囲を明確にし、継続契約へ。
-                        </p>
-                        <ul class="text-slate-500 text-base space-y-2 leading-relaxed">
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>医療監修／運用ルール整備／FAQレビュー</li>
-                            <li class="flex gap-2"><i
-                                    class="fa-solid fa-check text-brand-flame mt-1"></i>契約書・免責の雛形で防御を固める</li>
-                            <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1"></i>目安：月
-                                3〜10万円（小規模から開始）</li>
-                        </ul>
-                    </div>
-
                 </div>
             </div>
 
-            <div class="mt-16 content-card rounded-2xl p-8 md:p-10 reveal border border-slate-200">
-                <p class="text-xs text-brand-flame tracking-widest uppercase mb-3 font-en">Timeline (Example)</p>
-                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">収益化までの現実的なタイムライン（目安）</h3>
-                <div class="grid md:grid-cols-4 gap-6 text-slate-600 text-base leading-relaxed">
-                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
-                        <p class="text-xs text-brand-flame font-bold font-en mb-2">0-2 Weeks</p>
-                        <p class="text-slate-900 font-bold mb-2">線引きと環境整備</p>
-                        <p>個人情報・免責・品質のルールを理解し、事故らない型を先に作る。</p>
-                    </div>
-                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
-                        <p class="text-xs text-brand-flame font-bold font-en mb-2">2-4 Weeks</p>
-                        <p class="text-slate-900 font-bold mb-2">勝ち筋の決定</p>
-                        <p>誰の課題を、どの形式で解くか。臨床知を「商品設計」に落とす。</p>
-                    </div>
-                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
-                        <p class="text-xs text-brand-flame font-bold font-en mb-2">1-3 Months</p>
-                        <p class="text-slate-900 font-bold mb-2">小さく提供して検証</p>
-                        <p>発信・教材・研修など、低リスクで実績を作り、改善サイクルへ。</p>
-                    </div>
-                    <div class="content-card rounded-xl p-6 bg-slate-50 border-0">
-                        <p class="text-xs text-brand-flame font-bold font-en mb-2">3-6 Months</p>
-                        <p class="text-slate-900 font-bold mb-2">継続契約へ</p>
-                        <p>監修・アドバイザリーなど、継続収益を核にして安定化を目指す。</p>
-                    </div>
+            <div class="grid gap-6 reveal">
+                <div class="content-card rounded-2xl p-7">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Topic A / Regulation</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 jp-keep">薬事・<wbr>医師法</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4 jp-keep">
+                        医療AIの<wbr>位置づけと、<wbr>医師の<wbr>判断の<wbr>線引きを<wbr>押さえる。
+                    </p>
+                    <ul class="text-slate-500 text-base space-y-2 leading-relaxed jp-keep">
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">医療機器（SaMD）に<wbr>あたるかの<wbr>論点</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">診療行為の<wbr>代替にしない<wbr>線引き</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">個別症例の<wbr>判断は<wbr>主治医・<wbr>自院の<wbr>体制で</span></li>
+                    </ul>
                 </div>
-                <p class="mt-6 text-slate-500 text-xs leading-relaxed">
-                    ※成果・報酬を保証するものではありません。適性・時間・発信量・市場環境により変動します。<br>
-                    ただし「体系と実装」があれば、試行回数が増え、勝ち筋に到達しやすくなります。
-                </p>
+
+                <div class="content-card rounded-2xl p-7">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Topic B / Privacy</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 jp-keep">患者情報と<wbr>説明</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4 jp-keep">
+                        AIに<wbr>渡してよい<wbr>情報と、<wbr>患者への<wbr>説明を<wbr>整理する。
+                    </p>
+                    <ul class="text-slate-500 text-base space-y-2 leading-relaxed jp-keep">
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">生成AIに<wbr>入力してよい<wbr>情報の<wbr>線引き</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">患者への<wbr>説明と<wbr>同意の<wbr>考え方</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">委託先や<wbr>クラウドに<wbr>預けるときの<wbr>確認点</span></li>
+                    </ul>
+                </div>
+
+                <div class="content-card rounded-2xl p-7">
+                    <p class="text-xs text-brand-flame tracking-widest uppercase mb-2 font-en">Topic C / Governance</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 jp-keep">契約・<wbr>院内ガバナンス</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-4 jp-keep">
+                        導入・<wbr>契約・<wbr>撤退の<wbr>判断前に、<wbr>院内で<wbr>確認すべき点を<wbr>整える。
+                    </p>
+                    <ul class="text-slate-500 text-base space-y-2 leading-relaxed jp-keep">
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">ベンダー提案を<wbr>前に<wbr>確認すべき<wbr>論点</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">契約前に<wbr>言語化すべき<wbr>質問</span></li>
+                        <li class="flex gap-2"><i
+                                class="fa-solid fa-check text-brand-flame mt-1"></i><span class="jp-keep">法人単位の<wbr>支援は&nbsp;cursorvers.com&nbsp;へ</span></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Transformation Section -->
     <section class="section-padding bg-white relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="img-frame aspect-[4/5] reveal order-2 md:order-1">
-                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2070&auto=format&fit=crop"
-                        alt="Urban consulting leaders">
+                    <img src="images/outcomes-clinician-laptop.jpg"
+                        alt="ノートパソコンと聴診器が置かれた診察机" loading="lazy">
                     <div class="img-gradient"></div>
                     <div class="absolute bottom-10 left-10 text-white">
-                        <p class="text-xs font-bold uppercase tracking-widest mb-2 opacity-80 font-en">Transformation
-                        </p>
-                        <p class="text-xl font-bold">リスクを制御する側へ</p>
+                        <p class="text-xs font-bold uppercase tracking-widest mb-2 opacity-80 font-en">Outcomes</p>
+                        <p class="text-xl font-bold jp-keep">判断を、<wbr>説明できる形に</p>
                     </div>
                 </div>
 
                 <div class="reveal order-1 md:order-2">
-                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">05.
-                        Your Transformation</span>
-                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">
-                        受講後に手に入れる、３つの核心的能力。
+                    <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Outcomes</span>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">
+                        判断の場に<wbr>持ち帰る、<wbr>3&nbsp;つのこと
                     </h2>
                     <ul class="space-y-8 text-lg leading-relaxed">
                         <li class="flex gap-4">
                             <i class="fa-solid fa-shield-halved text-brand-flame text-xl shrink-0 mt-1"></i>
                             <div>
-                                <strong class="block text-slate-900 mb-1">自律的なリスク制御</strong>
-                                <span
-                                    class="text-slate-600">炎上、漏洩、ハルシネーション。AI利用に伴うリスクを自ら評価し、安全なプロンプトを設計・運用できる自信を手に入れます。</span>
+                                <strong class="block text-slate-900 mb-1">説明できるリスク評価</strong>
+                                <span class="text-slate-600 jp-keep">AI利用に<wbr>伴う<wbr>リスクを、<wbr>会議や<wbr>稟議で<wbr>説明できる<wbr>言葉で<wbr>整理できるように<wbr>なります。</span>
                             </div>
                         </li>
                         <li class="flex gap-4">
-                            <i class="fa-solid fa-bolt-lightning text-brand-flame text-xl shrink-0 mt-1"></i>
+                            <i class="fa-solid fa-list-check text-brand-flame text-xl shrink-0 mt-1"></i>
                             <div>
-                                <strong class="block text-slate-900 mb-1">知的生産の劇的効率化</strong>
-                                <span
-                                    class="text-slate-600">論文執筆、学会発表、情報発信。労働集約的な作業時間を劇的に短縮し、本質的な臨床や研究に集中できる時間を創出します。</span>
+                                <strong class="block text-slate-900 mb-1">院内ルールの土台</strong>
+                                <span class="text-slate-600 jp-keep">使ってよい<wbr>場面、<wbr>入力してよい<wbr>情報、<wbr>確認の<wbr>手順。<wbr>院内ルールの<wbr>骨組みを、<wbr>自分の<wbr>施設に<wbr>合わせて<wbr>考えられるように<wbr>なります。</span>
                             </div>
                         </li>
                         <li class="flex gap-4">
-                            <i class="fa-solid fa-coins text-brand-flame text-xl shrink-0 mt-1"></i>
+                            <i class="fa-solid fa-scale-balanced text-brand-flame text-xl shrink-0 mt-1"></i>
                             <div>
-                                <strong class="block text-slate-900 mb-1">収益ラインの複線化</strong>
-                                <span class="text-slate-600">臨床知をデジタル資産化し、<span
-                                        class="text-slate-900 font-bold">コンテンツ（ストック）／研修（スポット）／監修・アドバイザリー（継続）</span>を組み合わせて、時間に依存しない収益基盤を設計します。</span>
+                                <strong class="block text-slate-900 mb-1">判断前の論点整理</strong>
+                                <span class="text-slate-600 jp-keep">AIを<wbr>使うべきか、<wbr>止めるべきか、<wbr>専門家へ<wbr>回すべきか。<wbr>導入・契約・撤退の<wbr>判断前に、<wbr>確認すべき<wbr>論点を<wbr>言語化できるように<wbr>なります。</span>
                             </div>
                         </li>
                     </ul>
@@ -981,34 +956,33 @@
     <section id="pro-tier-detail" class="section-padding bg-slate-50 relative z-10">
         <div class="max-w-5xl mx-auto px-6">
             <div class="reveal">
-                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Pro Tier
-                    Detail</span>
-                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">Pro tier が解決すること</h2>
-                <p class="text-slate-600 text-lg leading-relaxed mb-10 max-w-3xl">
-                    note メンバーシップ「Pro tier」は、医療AI・生成AI・AIガバナンスについて<strong class="text-slate-900">月に一度、判断前の論点を整える個人向けブリーフィング</strong>です。
-                    AIを使うべきか、止めるべきか、専門家へ回すべきか。経営会議や院内稟議の前に、判断の材料を言語化します。法人単位の個別支援が必要な場合は、上位プランまたは顧問契約へ接続します。
+                <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">Cursorvers Pro</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900 jp-keep">Cursorvers&nbsp;Pro&nbsp;で<wbr>扱うこと</h2>
+                <p class="text-slate-600 text-lg leading-relaxed mb-10 max-w-3xl jp-keep">
+                    note&nbsp;の<wbr>メンバーシップ<wbr>「Cursorvers&nbsp;Pro｜医療AIガバナンス」は、<wbr><strong class="text-slate-900">5&nbsp;名限定で、<wbr>月&nbsp;1&nbsp;回の<wbr>web&nbsp;ミーティングで<wbr>継続して<wbr>相談できる</strong><wbr>オンラインメンバーシップです。
+                    月次の<wbr>相談、<wbr>会員向けの<wbr>Q&amp;A、<wbr>記事を<wbr>通じて、<wbr>AIを<wbr>「使ってよいのか」<wbr>「契約で<wbr>止めるべきか」<wbr>「どこから<wbr>専門家の<wbr>確認が<wbr>必要か」を<wbr>整理します。
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
                         <div class="text-brand-flame mb-3"><i class="fa-solid fa-comments text-2xl"></i></div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">月 1 回 30 分オンライン壁打ち</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            事前質問をもとに、導入・契約・撤退のどこで迷っているかを整理します。面談後は、次に確認すべき3点を短く残します。
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">月&nbsp;1&nbsp;回の<wbr>web&nbsp;ミーティング</h3>
+                        <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                            導入・<wbr>契約・<wbr>撤退の<wbr>どこで<wbr>迷っているかを、<wbr>月に<wbr>一度の<wbr>オンライン相談で<wbr>整理します。
                         </p>
                     </div>
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
                         <div class="text-brand-flame mb-3"><i class="fa-solid fa-file-lines text-2xl"></i></div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">月次ブリーフィング記事</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            規制ニュースの要約ではなく、医療経営者・医師起業家が会議で使う「判断軸」に翻訳して提供します。
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">有料&nbsp;note&nbsp;記事</h3>
+                        <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                            Cursorvers&nbsp;の<wbr>有料&nbsp;note&nbsp;記事を、<wbr>無料または<wbr>会員向けに<wbr>読める形で<wbr>提供します。
                         </p>
                     </div>
                     <div class="bg-white rounded-xl p-6 border border-slate-200">
-                        <div class="text-brand-flame mb-3"><i class="fa-solid fa-route text-2xl"></i></div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">上位相談への切り分け</h3>
-                        <p class="text-slate-600 text-base leading-relaxed">
-                            Proで扱う論点整理と、法人診断・顧問契約で扱う個別実装を切り分けます。顧問契約の代替ではなく、上位相談へ進む前の月次入口として設計しています。
+                        <div class="text-brand-flame mb-3"><i class="fa-solid fa-circle-question text-2xl"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 jp-keep">会員向けの<wbr>Q&amp;A</h3>
+                        <p class="text-slate-600 text-base leading-relaxed jp-keep">
+                            ミーティングの<wbr>ほかに、<wbr>会員向けの<wbr>Q&amp;A&nbsp;で<wbr>質問を<wbr>受け付けます。
                         </p>
                     </div>
                 </div>
@@ -1017,33 +991,31 @@
                     <div class="bg-white border border-slate-200 rounded-xl p-5">
                         <p class="text-xs text-brand-flame font-bold tracking-widest uppercase mb-2 font-en">Step 01</p>
                         <p class="text-slate-900 font-bold mb-2">無料記事・LINE</p>
-                        <p class="text-slate-600 text-sm leading-relaxed">医療AIの痛みと危険信号を知る。</p>
+                        <p class="text-slate-600 text-sm leading-relaxed jp-keep">医療AIの<wbr>痛みと<wbr>危険信号を<wbr>知る。</p>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-xl p-5">
                         <p class="text-xs text-brand-flame font-bold tracking-widest uppercase mb-2 font-en">Step 02</p>
                         <p class="text-slate-900 font-bold mb-2">フラッグシップ記事</p>
-                        <p class="text-slate-600 text-sm leading-relaxed">導入・契約停止・撤退の地図を持つ。</p>
+                        <p class="text-slate-600 text-sm leading-relaxed jp-keep">導入・<wbr>契約停止・<wbr>撤退の<wbr>地図を<wbr>持つ。</p>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-xl p-5">
                         <p class="text-xs text-brand-flame font-bold tracking-widest uppercase mb-2 font-en">Step 03</p>
-                        <p class="text-slate-900 font-bold mb-2">Pro tier</p>
-                        <p class="text-slate-600 text-sm leading-relaxed">月次で自分の論点を整える。</p>
+                        <p class="text-slate-900 font-bold mb-2">Cursorvers Pro</p>
+                        <p class="text-slate-600 text-sm leading-relaxed jp-keep">月&nbsp;1&nbsp;回、<wbr>論点を<wbr>相談する。</p>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-xl p-5">
                         <p class="text-xs text-brand-flame font-bold tracking-widest uppercase mb-2 font-en">Step 04</p>
                         <p class="text-slate-900 font-bold mb-2">法人診断・顧問</p>
-                        <p class="text-slate-600 text-sm leading-relaxed">組織の導入・契約・体制へ進む。</p>
+                        <p class="text-slate-600 text-sm leading-relaxed jp-keep">組織の<wbr>導入・<wbr>契約・<wbr>体制へ<wbr>進む。</p>
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-xl p-6 mb-8">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Apply Pro 後の流れ</h3>
-                    <ol class="text-slate-700 text-base leading-relaxed space-y-2 list-decimal list-inside">
-                        <li>Apply Pro から note メンバーシップページへ移動し、Pro tier を選択して決済します。</li>
-                        <li>参加後、note メンバーシップ内の固定案内から、事前質問フォームへ進みます。</li>
-                        <li>事前質問の内容をもとに、Google Calendar 予約枠で 30 分のオンライン壁打ちを予約します。</li>
-                        <li>面談は Google Meet または Zoom で実施します。終了後、次に確認すべき3点を短く共有します。</li>
-                        <li>個別実装・契約レビュー・法人判断が必要な場合は、法人診断または顧問契約へ切り分けます。</li>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">参加の流れ</h3>
+                    <ol class="text-slate-700 text-base leading-relaxed space-y-2 list-decimal list-inside jp-keep">
+                        <li>Apply&nbsp;Pro から note&nbsp;の<wbr>メンバーシップページへ<wbr>移動し、<wbr>「Pro｜医療AIガバナンス相談」を<wbr>選んで<wbr>決済します。</li>
+                        <li>参加後の<wbr>ご案内は、<wbr>note&nbsp;の<wbr>メンバーシップ内で<wbr>お知らせします。</li>
+                        <li>法的助言・<wbr>薬事判断・<wbr>契約書レビューが<wbr>必要な場合は、<wbr>弁護士などの<wbr>専門家への<wbr>相談を<wbr>おすすめします。<wbr>医療機関の<wbr>導入の<wbr>伴走は、<wbr>cursorvers.com&nbsp;で<wbr>扱います。</li>
                     </ol>
                 </div>
 
@@ -1053,11 +1025,11 @@
                         ご利用にあたっての医療免責事項
                     </h3>
                     <ul class="text-slate-700 text-base leading-relaxed space-y-2 list-disc list-inside">
-                        <li>Pro tier の壁打ち・記事・テンプレートは<strong>教育・論点整理目的</strong>であり、特定患者に対する診療行為・診断・治療の代替ではありません。</li>
+                        <li class="jp-keep">Cursorvers&nbsp;Pro の<wbr>ミーティング・<wbr>Q&amp;A・<wbr>記事は<wbr><strong>教育・<wbr>論点整理目的</strong>であり、<wbr>特定患者に<wbr>対する<wbr>診療行為・<wbr>診断・<wbr>治療の<wbr>代替では<wbr>ありません。</li>
                         <li>個別症例の診療判断は、必ず主治医・自院ガバナンス体制のもとで行ってください。</li>
-                        <li>壁打ち、事前質問フォーム、記事コメントへ <strong>PHI（個人を特定可能な診療情報）</strong>を投稿・共有しないでください。</li>
+                        <li>ミーティング、Q&amp;A、記事コメントへ <strong>PHI（個人を特定可能な診療情報）</strong>を投稿・共有しないでください。</li>
                         <li>本サービスは医療機器（SaMD）ではなく、AI ガバナンス教育・論点整理サービスです。</li>
-                        <li>個別の経営判断、法的助言、薬事判断、契約書レビュー、法人実装支援は法人診断または顧問契約で扱います。</li>
+                        <li>法的助言、薬事判断、診療助言、契約書レビューは扱いません。必要な場合は、弁護士などの専門家や主治医にご相談ください。</li>
                     </ul>
                 </div>
             </div>
@@ -1074,11 +1046,11 @@
                 <div class="space-y-4">
                     <details class="group bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <summary class="text-lg font-bold text-slate-900 cursor-pointer flex justify-between items-center gap-4">
-                            <span>Pro tier はどのような方を対象にしていますか？</span>
+                            <span>Cursorvers Pro はどのような方を対象にしていますか？</span>
                             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                            病院勤務医・開業医・管理職・AI 推進担当の方を中心に、医療AI導入前の論点整理、契約前確認、撤退判断の基本線を継続的に学びたい方を対象としています。5 名 pilot からの限定運用です。
+                            医療経営者・起業家、医療AI事業者の方をおもな対象に、医療AIガバナンスについて継続して相談したい方に向けた 5 名限定のメンバーシップです。
                         </p>
                     </details>
                     <details class="group bg-slate-50 border border-slate-200 rounded-xl p-5">
@@ -1087,7 +1059,7 @@
                             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                            Cursorvers 株式会社は<strong class="text-slate-900">免税事業者</strong>です。Pro tier ¥10,000/月 は税込価格表示で、消費税は課税されていません。インボイス（適格請求書）は発行できないため、仕入税額控除にはご利用いただけません。詳細は<a href="tokushoho.html" class="underline text-brand-flame">特定商取引法に基づく表記</a>をご確認ください。
+                            Cursorvers 株式会社は<strong class="text-slate-900">適格請求書（インボイス）発行事業者</strong>として登録済みです。Cursorvers Pro ¥10,000/月 は税込価格です。詳細は<a href="tokushoho.html" class="underline text-brand-flame">特定商取引法に基づく表記</a>をご確認ください。
                         </p>
                     </details>
                     <details class="group bg-slate-50 border border-slate-200 rounded-xl p-5">
@@ -1096,7 +1068,7 @@
                             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                            Pro tier は<strong class="text-slate-900">教育・論点整理サービス</strong>であり、特定患者に対する診療行為の代替ではありません。個別症例の診療判断は、必ず主治医・自院ガバナンス体制のもとで行ってください。壁打ち、事前質問フォーム、記事コメントへの PHI（個人を特定可能な診療情報）の投稿・共有はお控えください。
+                            Cursorvers Pro は<strong class="text-slate-900">教育・論点整理サービス</strong>であり、特定患者に対する診療行為の代替ではありません。個別症例の診療判断は、必ず主治医・自院ガバナンス体制のもとで行ってください。ミーティング、会員向けの質問、記事コメントへの PHI（個人を特定可能な診療情報）の投稿・共有はお控えください。
                         </p>
                     </details>
                     <details class="group bg-slate-50 border border-slate-200 rounded-xl p-5">
@@ -1105,7 +1077,7 @@
                             <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-                            note メンバーシップの管理画面から、いつでも解約手続きが可能です。解約後は次回課金日以降の課金は発生せず、現在の課金期間終了までは Pro tier コンテンツへアクセスいただけます。
+                            note メンバーシップの管理画面から、いつでも解約手続きが可能です。解約後は次回課金日以降の課金は発生せず、現在の課金期間終了までは Cursorvers Pro のコンテンツへアクセスいただけます。
                         </p>
                     </details>
                 </div>
@@ -1121,10 +1093,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Pro tier はどのような方を対象にしていますか？",
+          "name": "Cursorvers Pro はどのような方を対象にしていますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "病院勤務医・開業医・管理職・AI 推進担当の方を中心に、医療AI導入前の論点整理、契約前確認、撤退判断の基本線を継続的に学びたい方を対象としています。5 名 pilot からの限定運用です。"
+            "text": "医療経営者・起業家、医療AI事業者の方をおもな対象に、医療AIガバナンスについて継続して相談したい方に向けた 5 名限定のメンバーシップです。"
           }
         },
         {
@@ -1132,7 +1104,7 @@
           "name": "消費税・インボイスの扱いはどうなっていますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cursorvers 株式会社は免税事業者です。Pro tier ¥10,000/月 は税込価格表示で、消費税は課税されていません。インボイス（適格請求書）は発行できないため、仕入税額控除にはご利用いただけません。"
+            "text": "Cursorvers 株式会社は適格請求書（インボイス）発行事業者として登録済みです。Cursorvers Pro ¥10,000/月 は税込価格です。詳細は特定商取引法に基づく表記をご確認ください。"
           }
         },
         {
@@ -1140,7 +1112,7 @@
           "name": "個別症例の相談はできますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pro tier は教育・論点整理サービスであり、特定患者に対する診療行為の代替ではありません。個別症例の診療判断は、必ず主治医・自院ガバナンス体制のもとで行ってください。壁打ち、事前質問フォーム、記事コメントへの PHI（個人を特定可能な診療情報）の投稿・共有はお控えください。"
+            "text": "Cursorvers Pro は教育・論点整理サービスであり、特定患者に対する診療行為の代替ではありません。個別症例の診療判断は、必ず主治医・自院ガバナンス体制のもとで行ってください。ミーティング、会員向けの質問、記事コメントへの PHI（個人を特定可能な診療情報）の投稿・共有はお控えください。"
           }
         },
         {
@@ -1148,7 +1120,7 @@
           "name": "解約はいつでも可能ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "note メンバーシップの管理画面から、いつでも解約手続きが可能です。解約後は次回課金日以降の課金は発生せず、現在の課金期間終了までは Pro tier コンテンツへアクセスいただけます。"
+            "text": "note メンバーシップの管理画面から、いつでも解約手続きが可能です。解約後は次回課金日以降の課金は発生せず、現在の課金期間終了までは Cursorvers Pro のコンテンツへアクセスいただけます。"
           }
         }
       ]
@@ -1163,10 +1135,9 @@
                     <span class="text-brand-flame text-xs font-bold tracking-widest uppercase block mb-6 font-en">About
                         Us</span>
                     <h2 class="text-2xl md:text-3xl font-bold mb-8 leading-tight text-slate-900">Company Profile</h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-10">
-                        Cursorvers.eduは、医療者がAIを安全に使いこなし、臨床知を「資産」として運用できるようにする教育ラインです。<br>
-                        机上の学習ではなく、勝ち筋の設計・実装テンプレート・コミュニティで、経済的自律の基盤をつくります。<br>
-                        ※医療機関・企業向けの導入支援やプロジェクト相談は別窓口で対応しています。
+                    <p class="text-slate-600 text-lg leading-relaxed mb-10 jp-keep">
+                        Cursorvers.eduは、<wbr>医療者が<wbr>AIを<wbr>安全に<wbr>使いこなし、<wbr>判断前の<wbr>論点を<wbr>自分で<wbr>整えられるようにする<wbr>教育ラインです。<br>
+                        医療機関・企業向けの<wbr>導入支援や<wbr>第三者レビューは、<wbr><a href="https://cursorvers.com/" target="_blank" rel="noopener" class="text-brand-flame hover:underline">cursorvers.com</a>&nbsp;で<wbr>受け付けています。
                     </p>
 
                     <div class="space-y-0 border-t border-slate-200">
@@ -1182,7 +1153,7 @@
                         </div>
                         <div class="flex py-5 border-b border-slate-200">
                             <span class="w-36 text-base font-bold text-slate-400 font-en shrink-0">Address</span>
-                            <span class="text-base text-slate-900">〒102-0074 東京都千代田区九段南1-5-6 りそな九段ビル5F KSフロア</span>
+                            <span class="text-base text-slate-900">〒102-0093 東京都千代田区平河町1-4-15 平河町小池ビル3F</span>
                         </div>
                         <div class="flex py-5 border-b border-slate-200">
                             <span class="w-36 text-base font-bold text-slate-400 font-en shrink-0">Phone</span>
@@ -1205,16 +1176,15 @@
                         <span class="text-slate-900 font-bold text-base font-en">Cursorvers.edu</span>
                     </div>
                     <p class="text-base leading-relaxed opacity-80">
-                        Building clinical assets and economic autonomy through AI and education.
+                        AI governance education for medical professionals.
                     </p>
                 </div>
                 <div class="flex gap-16">
                     <div>
                         <h4 class="text-slate-900 font-bold mb-4 font-en">Services</h4>
                         <ul class="space-y-2">
-                            <li><a href="#solutions" class="hover:text-brand-flame transition">Solutions</a></li>
-                            <li><a href="/services" class="hover:text-brand-flame transition">Services</a></li>
-                            <li><a href="#blueprint" class="hover:text-brand-flame transition">Blueprint</a></li>
+                            <li><a href="/services" class="hover:text-brand-flame transition">個人向け</a></li>
+                            <li><a href="/solutions" class="hover:text-brand-flame transition">法人向け</a></li>
                         </ul>
                     </div>
                     <div>
@@ -1228,13 +1198,13 @@
                 </div>
             </div>
             <div class="mt-16 pt-8 border-t border-slate-200">
-                <p class="text-center text-sm text-slate-500 mb-3">※
-                    当事業者は免税事業者です。インボイス（適格請求書）は発行できないため、消費税の仕入税額控除にはご利用いただけません。<a href="tokushoho.html"
+                <p class="text-center text-sm text-slate-500 mb-3">
+                    当事業者は適格請求書（インボイス）発行事業者として登録済みです。<a href="tokushoho.html"
                         class="underline hover:text-slate-700 ml-1">詳細はこちら</a></p>
-                <p class="text-center text-sm text-slate-500 mb-6 leading-relaxed max-w-3xl mx-auto">※
+                <p class="text-center text-sm text-slate-500 mb-6 leading-relaxed max-w-3xl mx-auto">
                     本サービスは医療AIガバナンスの教育・論点整理サービスであり、医療機器（SaMD）ではありません。特定患者に対する診療行為・診断・治療の代替ではなく、個別症例の診療判断は必ず主治医・自院ガバナンス体制のもとで行ってください。PHI（個人を特定可能な診療情報）の投稿・共有はお控えください。</p>
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="font-en">&copy; 2026 Cursorvers.</p>
+                    <p class="text-center md:text-left"><span class="font-en">&copy; 2026 Cursorvers.</span> <span class="whitespace-nowrap">運営: <a href="https://cursorvers.com/" class="underline underline-offset-2 hover:text-brand-flame transition">Cursorvers株式会社（cursorvers.com）</a></span></p>
                     <div class="flex gap-6 text-lg">
                         <a href="#" class="hover:text-slate-900 transition"><i class="fa-brands fa-x-twitter"></i></a>
                     </div>

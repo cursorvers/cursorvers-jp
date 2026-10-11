@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TX3Y6G4XWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TX3Y6G4XWJ');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursorvers Edu | Solutions（法人向け）</title>
+    <meta name="description" content="医療機関・社会福祉法人・企業の方へ。企業向け研修の詳細は、このページでご紹介します。AI 導入の伴走と提案の第三者レビューの詳細、法人のご相談は、Cursorvers のコーポレートサイト cursorvers.com でご案内しています。">
+    <link rel="canonical" href="https://cursorvers.jp/solutions">
+    <meta property="og:url" content="https://cursorvers.jp/solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Cursorvers.edu">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        en: ['"Manrope"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-bg': '#FFFFFF',
+                        'brand-surface': '#F8FAFC',
+                        'brand-flame': '#FF4500',
+                        'brand-gold': '#FF5A1F',
+                        'brand-gray': '#F1F5F9',
+                        'brand-slate': '#475569',
+                        'brand-text-main': '#0F172A',
+                        'brand-text-sub': '#475569',
+                        'brand-border': '#E2E8F0',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            overflow-x: hidden;
+            font-feature-settings: "palt";
+            font-family: "Noto Sans JP", system-ui, sans-serif;
+        }
+        .section-padding { padding-top: 120px; padding-bottom: 120px; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.84);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .content-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .content-card:hover {
+            border-color: #FF4500;
+            transform: translateY(-4px);
+            background: #F8FAFC;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        .jp-keep { word-break: keep-all; overflow-wrap: anywhere; line-break: strict; }
+        .phase-label { letter-spacing: 0.3em; font-size: 0.7rem; text-transform: uppercase; color: #64748B; }
+
+        /* Pro Card Highlight */
+        .pro-highlight { border-color: rgba(255, 69, 0, 0.35); box-shadow: 0 0 30px rgba(255, 69, 0, 0.08); }
+        .pro-highlight:hover { border-color: rgba(255, 69, 0, 0.6); box-shadow: 0 0 40px rgba(255, 69, 0, 0.15); }
+
+        /* CTA Glow */
+        .cta-glow {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+        .cta-glow::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 9999px;
+            background: conic-gradient(from 0deg, #FF4500, #FF7A3C, #FF5A1F, #FF4500);
+            animation: spin 6s linear infinite;
+            opacity: 0.9;
+            z-index: -1;
+        }
+        .cta-glow::after {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            border-radius: 9999px;
+            background: var(--cta-bg, #FF4500);
+            z-index: -1;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300" data-mobile-menu-root data-mobile-menu-theme="light">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group" data-mobile-brand>
+                <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-10 w-10 rounded-full border border-slate-200 shadow-md group-hover:border-brand-flame transition">
+                <span class="text-xl font-bold tracking-tight text-slate-800 group-hover:text-brand-flame transition">Cursorvers.edu</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-5 lg:gap-10 text-sm font-medium text-slate-600 font-en" data-desktop-nav>
+                <a href="index.html#mission" class="hover:text-brand-flame transition duration-300">Mission</a>
+                <a href="/services" class="hover:text-brand-flame transition duration-300 whitespace-nowrap">個人向け</a>
+                <a href="/solutions" class="text-brand-flame font-semibold whitespace-nowrap" aria-current="page">法人向け</a>
+                <a href="index.html#company" class="hover:text-brand-flame transition duration-300">Company</a>
+                <a href="https://note.com/nice_wren7963" target="_blank" class="hover:text-brand-flame transition duration-300 flex items-center gap-1">Journal <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                <a href="https://cursorvers.com/" class="hidden lg:flex items-center gap-1 hover:text-brand-flame transition duration-300 whitespace-nowrap">cursorvers.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i><span class="sr-only">（運営会社 Cursorvers株式会社のサイトへ移動します）</span></a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <a href="https://cursorvers.com/contact.html" target="_blank" rel="noopener" title="cursorvers.com の相談窓口へ移動します" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold border border-slate-300 text-slate-700 px-6 py-3 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition duration-300 font-en uppercase tracking-wider" data-mobile-contact>
+                    Contact <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i><span class="sr-only">（cursorvers.com へ移動します）</span>
+                </a>
+                <button type="button" class="md:hidden text-slate-800 text-xl" data-mobile-menu-open aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 bg-white text-slate-900">
+        <section class="section-padding pt-32 pb-16" aria-labelledby="solutions-hero">
+            <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+                <p class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-brand-flame/10 border border-brand-flame/30 text-[10px] tracking-[0.4em] uppercase font-bold text-brand-flame font-en">
+                    Solutions · For Organizations
+                </p>
+                <h1 id="solutions-hero" class="text-4xl md:text-6xl font-black tracking-tight text-slate-900 jp-keep">Solutions｜<wbr>法人向け</h1>
+                <p class="text-slate-600 text-base md:text-lg leading-relaxed jp-keep">医療機関・<wbr>社会福祉法人・<wbr>企業の<wbr>方へ。<wbr>企業向け<wbr>研修は、<wbr>このページで<wbr>詳しく<wbr>ご紹介します。<wbr>AI導入の<wbr>伴走と<wbr>提案の<wbr>第三者レビューの<wbr>詳細、<wbr>法人の<wbr>ご相談は、<wbr>Cursorvers&nbsp;の<wbr>コーポレートサイト<wbr>（cursorvers.com）で<wbr>ご案内しています。</p>
+            </div>
+        </section>
+
+        <section class="pb-16 md:pb-24" aria-label="法人向けの入口">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-6 md:gap-8">
+                <article class="content-card p-8 md:p-10 flex flex-col gap-5" aria-labelledby="org-1">
+                    <div class="flex items-center gap-3">
+                        <span class="w-11 h-11 rounded-full bg-brand-flame/10 text-brand-flame flex items-center justify-center text-lg" aria-hidden="true"><i class="fa-solid fa-hospital"></i></span>
+                        <p class="text-sm font-bold text-brand-flame jp-keep">医療機関・<wbr>社会福祉法人</p>
+                    </div>
+                    <h2 id="org-1" class="text-2xl md:text-3xl font-bold text-slate-900 leading-snug jp-keep">AI導入の<wbr>伴走</h2>
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed jp-keep">臨床経験の<wbr>ある<wbr>医師が、<wbr>導入の<wbr>設計から<wbr>職員への<wbr>定着までを<wbr>伴走します。</p>
+                    <ul class="space-y-2 text-slate-700 text-base leading-relaxed">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">医師が<wbr>伴走し、<wbr>必要に<wbr>応じて<wbr>エンジニアを<wbr>アサイン</span></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">院内の<wbr>ルール・<wbr>チェックリスト・<wbr>研修資料づくり</span></li>
+                    </ul>
+                    <div class="mt-auto pt-6 border-t border-slate-200">
+                        <a href="https://cursorvers.com/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white bg-slate-800 hover:bg-brand-flame transition jp-keep">cursorvers.com&nbsp;で<wbr>見る <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+                        <p class="mt-3 text-xs text-slate-500 jp-keep">cursorvers.com&nbsp;(コーポレートサイト)&nbsp;へ<wbr>移動します</p>
+                    </div>
+                </article>
+                <article class="content-card p-8 md:p-10 flex flex-col gap-5" aria-labelledby="org-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-11 h-11 rounded-full bg-brand-flame/10 text-brand-flame flex items-center justify-center text-lg" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <p class="text-sm font-bold text-brand-flame jp-keep">医療機関・<wbr>医療AIベンダー</p>
+                    </div>
+                    <h2 id="org-2" class="text-2xl md:text-3xl font-bold text-slate-900 leading-snug jp-keep">提案の<wbr>第三者レビュー</h2>
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed jp-keep">製品の<wbr>販売を<wbr>目的とせず、<wbr>導入前・<wbr>提案前の<wbr>資料を、<wbr>臨床と<wbr>運用の<wbr>視点で<wbr>読みます。</p>
+                    <ul class="space-y-2 text-slate-700 text-base leading-relaxed">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">承認前に、<wbr>責任分界・<wbr>患者情報・<wbr>院内説明の<wbr>抜けを<wbr>確認</span></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">病院に<wbr>出す前に、<wbr>提案書の<wbr>懸念点を<wbr>言語化</span></li>
+                    </ul>
+                    <div class="mt-auto pt-6 border-t border-slate-200">
+                        <a href="https://cursorvers.com/#paths" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white bg-slate-800 hover:bg-brand-flame transition jp-keep">cursorvers.com&nbsp;で<wbr>見る <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+                        <p class="mt-3 text-xs text-slate-500 jp-keep">cursorvers.com&nbsp;(コーポレートサイト)&nbsp;へ<wbr>移動します</p>
+                    </div>
+                </article>
+                <article class="content-card p-8 md:p-10 flex flex-col gap-5" aria-labelledby="org-3">
+                    <div class="flex items-center gap-3">
+                        <span class="w-11 h-11 rounded-full bg-brand-flame/10 text-brand-flame flex items-center justify-center text-lg" aria-hidden="true"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <p class="text-sm font-bold text-brand-flame jp-keep">企業・<wbr>医療機関・<wbr>社会福祉法人</p>
+                    </div>
+                    <h2 id="org-3" class="text-2xl md:text-3xl font-bold text-slate-900 leading-snug jp-keep">企業向け<wbr>研修</h2>
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed jp-keep">病院や<wbr>医師に<wbr>向き合う<wbr>企業の<wbr>営業部門に<wbr>向けた、<wbr>医療AIガバナンスの<wbr>研修です。<wbr>医療機関・<wbr>社会福祉法人の<wbr>職員教育向けにも、<wbr>ご相談に<wbr>応じます。</p>
+                    <ul class="space-y-2 text-slate-700 text-base leading-relaxed">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">各分野の<wbr>スペシャリストを<wbr>お招きする<wbr>オムニバス形式</span></li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-brand-flame mt-1" aria-hidden="true"></i><span class="jp-keep">特定の<wbr>製品を<wbr>勧める<wbr>研修では<wbr>ありません</span></li>
+                    </ul>
+                    <div class="mt-auto pt-6 border-t border-slate-200">
+                        <a href="#training" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white bg-slate-800 hover:bg-brand-flame transition jp-keep">研修の<wbr>詳細を<wbr>見る <i class="fa-solid fa-arrow-down text-xs" aria-hidden="true"></i></a>
+                        <p class="mt-3 text-xs text-slate-500 jp-keep">このページの<wbr>下に<wbr>あります</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 企業向け研修の詳細 -->
+        <section id="training" class="pb-16 md:pb-24" style="scroll-margin-top: 110px;" aria-labelledby="training-heading">
+            <div class="max-w-6xl mx-auto px-6">
+                <p class="phase-label font-en">Corporate Training</p>
+                <h2 id="training-heading" class="mt-4 text-3xl md:text-4xl font-bold text-slate-900 jp-keep">企業向け<wbr>研修の<wbr>詳細</h2>
+                <p class="mt-5 text-slate-600 text-base md:text-lg leading-relaxed jp-keep">病院・<wbr>医師から<wbr>「そのAI、<wbr>使って<wbr>良いのか？」と<wbr>聞かれたときに、<wbr>確かめる<wbr>点と<wbr>相談先を<wbr>示せる<wbr>営業担当者を<wbr>育てる<wbr>研修です。<wbr>各分野で<wbr>実務を<wbr>担う<wbr>スペシャリストを<wbr>講師として<wbr>お招きし、<wbr>オムニバス形式で<wbr>行います。<wbr>使ってよいかを<wbr>決めるのは<wbr>医療機関で、<wbr>営業担当者が<wbr>判断を<wbr>引き受けることは<wbr>しません。</p>
+
+                <h3 class="mt-12 text-xl md:text-2xl font-bold text-slate-900 jp-keep">各分野の<wbr>スペシャリストを<wbr>お招きする<wbr>オムニバス形式</h3>
+                <ul class="mt-6 grid lg:grid-cols-3 gap-4 md:gap-5">
+                    <li class="rounded-2xl bg-brand-surface border border-slate-200 p-6 md:p-8 flex flex-col gap-4">
+                        <p class="jp-keep text-lg md:text-xl font-bold text-slate-900">相手と話せるようになる</p>
+                        <div class="flex flex-wrap gap-2"><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">医療</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">看護</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">薬剤</span></div>
+                        <p class="jp-keep text-base text-slate-600 leading-relaxed">院長・<wbr>看護部長・<wbr>薬剤部長<wbr>などと、<wbr>現場が<wbr>AIに<wbr>期待することと<wbr>心配することを<wbr>話せるようになります。</p>
+                    </li>
+                    <li class="rounded-2xl bg-brand-surface border border-slate-200 p-6 md:p-8 flex flex-col gap-4">
+                        <p class="jp-keep text-lg md:text-xl font-bold text-slate-900">不安と制度に<wbr>答えられる</p>
+                        <div class="flex flex-wrap gap-2"><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">法務</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">サイバーセキュリティ</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">経営と税務</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">DXと補助金</span></div>
+                        <p class="jp-keep text-base text-slate-600 leading-relaxed">法的な<wbr>不安・<wbr>情報管理・<wbr>投資の<wbr>判断・<wbr>予算に<wbr>ついて、<wbr>確かめる<wbr>点と<wbr>相談先を<wbr>示せるようになります。<wbr>営業担当者が<wbr>答えては<wbr>いけない<wbr>線も<wbr>学びます。</p>
+                    </li>
+                    <li class="rounded-2xl bg-brand-surface border border-slate-200 p-6 md:p-8 flex flex-col gap-4">
+                        <p class="jp-keep text-lg md:text-xl font-bold text-slate-900">比べ方と動き方を身につける</p>
+                        <div class="flex flex-wrap gap-2"><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">クラウド</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">場面演習</span><span class="inline-block text-sm font-semibold text-slate-800 bg-white border border-slate-200 rounded-full px-3 py-1">行動計画</span></div>
+                        <p class="jp-keep text-base text-slate-600 leading-relaxed">「何を<wbr>使えば<wbr>よいか」と<wbr>聞かれたときに<wbr>比べる<wbr>観点を<wbr>示し、<wbr>顧客役との<wbr>演習と、<wbr>担当顧客ごとの<wbr>行動計画で<wbr>仕上げます。</p>
+                    </li>
+                </ul>
+
+                <div class="mt-10 grid md:grid-cols-3 gap-4 md:gap-5">
+                    <div class="content-card p-6 md:p-8">
+                        <h3 class="text-lg font-bold text-slate-900 jp-keep">形</h3>
+                        <p class="mt-3 text-3xl md:text-4xl font-black text-brand-flame whitespace-nowrap">60分×10講</p>
+                        <p class="mt-3 text-base text-slate-600 leading-relaxed jp-keep">標準の<wbr>構成です。<wbr>ライブ講義で<wbr>中心となる<wbr>受講者を<wbr>育て、<wbr>その録画を<wbr>社内で<wbr>視聴して<wbr>広げる<wbr>形を<wbr>基本に、<wbr>回数や<wbr>視聴の<wbr>条件は<wbr>ご相談のうえ<wbr>決めます。</p>
+                    </div>
+                    <div class="content-card p-6 md:p-8">
+                        <h3 class="text-lg font-bold text-slate-900 jp-keep">製品・<wbr>企業の<wbr>扱い方</h3>
+                        <ul class="mt-3 space-y-3 text-base text-slate-600 leading-relaxed">
+                            <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-brand-flame flex-shrink-0" aria-hidden="true"></span><span class="jp-keep">製品は、<wbr>データの<wbr>置き場所・<wbr>責任の<wbr>所在・<wbr>記録の<wbr>残り方・<wbr>やめやすさ<wbr>などの<wbr>同じ観点で<wbr>比べます</span></li>
+                            <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-brand-flame flex-shrink-0" aria-hidden="true"></span><span class="jp-keep">選ぶのは<wbr>顧客です。<wbr>当社は<wbr>どの製品が<wbr>よいかを<wbr>決めることも、<wbr>保証することも<wbr>しません</span></li>
+                            <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-brand-flame flex-shrink-0" aria-hidden="true"></span><span class="jp-keep">講師と<wbr>企業の<wbr>協業・<wbr>取引の<wbr>関係は、<wbr>事前に<wbr>開示します</span></li>
+                        </ul>
+                    </div>
+                    <div class="content-card p-6 md:p-8">
+                        <h3 class="text-lg font-bold text-slate-900 jp-keep">研修の<wbr>あとに<wbr>残るもの</h3>
+                        <ul class="mt-3 space-y-3 text-base text-slate-600 leading-relaxed">
+                            <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-brand-flame flex-shrink-0" aria-hidden="true"></span><span class="jp-keep">顧客と<wbr>AIに<wbr>ついて<wbr>話してよい<wbr>範囲を<wbr>まとめた、<wbr>営業担当者向けの<wbr>ガイドラインの<wbr>草案</span></li>
+                            <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-brand-flame flex-shrink-0" aria-hidden="true"></span><span class="jp-keep">受講の<wbr>前後で<wbr>効果を<wbr>測る<wbr>方法の<wbr>ご提案</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="mt-5 text-sm text-slate-500 leading-relaxed jp-keep">分野と<wbr>回数は、<wbr>ご事情に<wbr>合わせて<wbr>調整します。<wbr>助成金などの<wbr>制度を<wbr>使えるかは、<wbr>要件を<wbr>確かめた<wbr>うえで<wbr>ご相談します。<wbr>申請するか<wbr>どうかの<wbr>判断と<wbr>申請の<wbr>手続きは、<wbr>貴社で<wbr>行います。</p>
+
+                <div class="mt-10">
+                    <a href="https://cursorvers.com/contact.html" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white bg-slate-800 hover:bg-brand-flame transition jp-keep">研修について<wbr>問い合わせる <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+                    <p class="mt-3 text-xs text-slate-500 jp-keep">cursorvers.com&nbsp;(コーポレートサイト)&nbsp;の<wbr>窓口へ<wbr>移動します</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-24 md:pb-32" aria-labelledby="for-individuals">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="rounded-2xl bg-brand-surface border border-slate-200 p-8 md:p-10 md:flex md:items-center md:justify-between gap-8">
+                    <div>
+                        <h2 id="for-individuals" class="text-xl md:text-2xl font-bold text-slate-900 jp-keep">個人として<wbr>学ぶ方へ</h2>
+                        <p class="mt-3 text-slate-600 text-base leading-relaxed jp-keep">無料の&nbsp;Free&nbsp;Community&nbsp;と、<wbr>月&nbsp;1&nbsp;回<wbr>相談できる&nbsp;Cursorvers&nbsp;Pro&nbsp;は、<wbr>個人で<wbr>参加する<wbr>サービスです。<wbr>法人としての<wbr>お申し込みは<wbr>受け付けていません。</p>
+                    </div>
+                    <a href="/services" class="mt-6 md:mt-0 shrink-0 inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-slate-800 border border-slate-300 hover:border-brand-flame hover:text-brand-flame transition jp-keep">個人向けの<wbr>サービスを<wbr>見る <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding pt-0 bg-white" aria-labelledby="disclaimer">
+            <div class="max-w-5xl mx-auto px-6 content-card p-8">
+                <h2 id="disclaimer" class="text-xl font-bold mb-4 text-slate-900">【重要なご案内】</h2>
+                <ul class="text-slate-600 text-sm space-y-3 leading-relaxed list-disc pl-5">
+                    <li>法人向けの<wbr>お問い合わせは、<wbr>cursorvers.com&nbsp;で<wbr>受け付けます。<wbr>このページでは<wbr>お申し込みを<wbr>受け付けていません。</li>
+                    <li>最終的な医療判断（診断・治療・投薬・検査の要否など）は、必ず現場の主治医・医療機関の責任のもとで行われます。</li>
+                    <li>お問い合わせの<wbr>際は、<wbr>患者さんの<wbr>情報や<wbr>診療情報を<wbr>送らないでください。</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Community Join Modal -->
+    <div id="community-modal" class="fixed inset-0 z-[70] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" data-close-community></div>
+        <div class="relative max-w-lg mx-auto mt-28 bg-white border border-slate-200 rounded-2xl shadow-2xl text-left p-8 md:p-10 space-y-6 mx-4">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-xs tracking-[0.3em] uppercase text-brand-flame font-bold font-en">Free Community</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">参加前のご案内</h3>
+                    <p class="text-slate-500 text-sm mt-3 leading-relaxed">LINEで最新のSafety & Literacy情報を受け取れます。PHIや診療情報は入力せず、友だち追加のみで参加できます。</p>
+                </div>
+                <button type="button" class="text-slate-400 hover:text-slate-900 text-xl" aria-label="閉じる" data-close-community>&times;</button>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-600 bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <div class="flex items-start gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-flame mt-1.5"></span>
+                    <p>カード情報やPHIは扱いません。友だち追加のみで参加できます。</p>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-flame mt-1.5"></span>
+                    <p>安全ガイド／医療×AIの実務ニュースをLINEで配信します。</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:justify-end gap-3 pt-2">
+                <button type="button" data-close-community class="inline-flex justify-center px-5 py-3 rounded-full border border-slate-300 text-slate-600 hover:text-slate-900 hover:border-slate-400 transition">閉じる</button>
+                <a href="line-qr.html?v=20260104" class="inline-flex justify-center px-6 py-3 rounded-full bg-brand-flame text-white font-bold hover:bg-brand-flame/90 transition focus:outline-none focus:ring-2 focus:ring-brand-flame focus:ring-offset-2 focus:ring-offset-white">
+                    LINE登録ページへ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-16 text-xs text-slate-500 relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-16">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-6 w-6 rounded-full border border-slate-200">
+                        <span class="text-slate-900 font-bold text-base font-en">Cursorvers.edu</span>
+                    </div>
+                    <p class="leading-relaxed opacity-80">AI governance education for medical professionals.</p>
+                </div>
+                <div class="flex gap-16">
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/services" class="hover:text-brand-flame transition">個人向け</a></li>
+                            <li><a href="/solutions" class="hover:text-brand-flame transition">法人向け</a></li>
+                            <li><a href="index.html#mission" class="hover:text-brand-flame transition">Mission</a></li>
+                            <li><a href="index.html#solutions" class="hover:text-brand-flame transition">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-900 font-bold mb-4 font-en">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="privacy.html" class="hover:text-brand-flame transition">Privacy Policy</a></li>
+                            <li><a href="terms.html" class="hover:text-brand-flame transition">Terms of Service</a></li>
+                            <li><a href="tokushoho.html" class="hover:text-brand-flame transition">特定商取引法に基づく表記</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-center md:text-left"><span class="font-en">&copy; 2026 Cursorvers.</span> <span class="whitespace-nowrap">運営: <a href="https://cursorvers.com/" class="underline underline-offset-2 hover:text-brand-flame transition">Cursorvers株式会社（cursorvers.com）</a></span></p>
+                <div class="flex gap-6 text-lg">
+                    <a href="#" class="hover:text-slate-900 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menuBtn = document.querySelector('[data-mobile-menu-open]');
+        const nav = document.querySelector('[data-desktop-nav]');
+        if (menuBtn && nav) {
+            let mobileMenu = null;
+            const createMenu = () => {
+                if (mobileMenu) return;
+                mobileMenu = document.createElement('div');
+                mobileMenu.id = 'mobile-menu';
+                mobileMenu.className = 'fixed inset-0 z-[60] bg-white flex flex-col';
+                mobileMenu.innerHTML = `
+                    <div class="flex items-center justify-between h-24 px-6 border-b border-slate-200">
+                        <a href="index.html" class="flex items-center gap-3">
+                            <img src="Cursorvers_logo1.jpeg" onerror="this.style.display='none'" alt="Logo" class="h-10 w-10 rounded-full border border-slate-200">
+                            <span class="text-xl font-bold tracking-tight text-slate-800">Cursorvers.edu</span>
+                        </a>
+                        <button type="button" class="text-slate-800 text-2xl" aria-label="メニューを閉じる" id="mobile-menu-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <nav class="flex-1 flex flex-col items-center justify-center gap-8 text-lg font-medium" id="mobile-nav-links"></nav>
+                    <div class="px-6 pb-10 text-center">
+                        <a href="https://cursorvers.com/contact.html" target="_blank" rel="noopener" class="inline-block text-xs font-bold border border-slate-300 px-8 py-4 rounded-full hover:bg-brand-flame hover:border-brand-flame hover:text-white transition text-slate-700">Contact（cursorvers.com）</a>
+                    </div>
+                `;
+                document.body.appendChild(mobileMenu);
+                const navLinks = mobileMenu.querySelector('#mobile-nav-links');
+                nav.querySelectorAll('a').forEach(link => {
+                    const clone = link.cloneNode(true);
+                    clone.className = 'text-xl font-semibold text-slate-800 hover:text-brand-flame transition py-2 text-center';
+                    clone.addEventListener('click', closeMenu);
+                    navLinks.appendChild(clone);
+                });
+                mobileMenu.querySelector('#mobile-menu-close').addEventListener('click', closeMenu);
+            };
+            const openMenu = () => {
+                createMenu();
+                mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                menuBtn.setAttribute('aria-expanded', 'true');
+            };
+            const closeMenu = () => {
+                if (mobileMenu) mobileMenu.style.display = 'none';
+                document.body.style.overflow = '';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            };
+            menuBtn.addEventListener('click', openMenu);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+        }
+
+        // Community modal
+        const communityModal = document.getElementById('community-modal');
+        const openCommunityButtons = document.querySelectorAll('[data-open-community]');
+        const closeCommunityTargets = communityModal ? communityModal.querySelectorAll('[data-close-community]') : [];
+
+        // Community modal handlers
+        const openCommunityModal = () => {
+            if (!communityModal) return;
+            communityModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        };
+        const closeCommunityModal = () => {
+            if (!communityModal) return;
+            communityModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+        openCommunityButtons.forEach(btn => btn.addEventListener('click', openCommunityModal));
+        closeCommunityTargets.forEach(btn => btn.addEventListener('click', closeCommunityModal));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCommunityModal();
+        });
+
+    </script>
+</body>
+</html>
