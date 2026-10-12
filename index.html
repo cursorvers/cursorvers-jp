@@ -471,7 +471,7 @@
     <!-- Hero Section (Video Background - White Base) -->
     <div class="hero-wrapper" id="main">
         <!-- Video Background -->
-        <!-- 背景は 3D の白い建築模型 (医療の街区)。cursorvers.com と同じ assets/hero3d/hero3d.min.js (ソースは cursorvers-inc の assets/hero3d/src/)。
+        <!-- 背景は 3D の白い建築模型 (医療の街区)。.edu 専用の版付き assets/hero3d/hero3d-edu-c8d9cd4b.min.js (cursorvers-inc の assets/hero3d/src/ を commit 37a606d でビルド)。
              load の後のアイドル時に読み込む (LCP は文字)。一時停止のボタンあり (WCAG 2.2.2)。reduced-motion では動かさず 1 枚だけ描く。
              JS やモジュールが失敗しても、文字・ボタン・ナビは HTML と CSS だけで成り立つ。 -->
         <canvas id="heroFx" aria-hidden="true"></canvas>
@@ -479,7 +479,7 @@
         <button type="button" lang="en" class="hero-mono__pause" id="heroPause" aria-pressed="false" data-state="playing" hidden>Pause</button>
         <script>
         (function () {
-            function go() { var s = document.createElement('script'); s.type = 'module'; s.src = 'assets/hero3d/hero3d.min.js'; document.head.appendChild(s); }
+            function go() { var s = document.createElement('script'); s.type = 'module'; s.src = 'assets/hero3d/hero3d-edu-c8d9cd4b.min.js'; document.head.appendChild(s); }
             function idle() { if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 1500 }); } else { setTimeout(go, 600); } }
             if (document.readyState === 'complete') { idle(); } else { window.addEventListener('load', idle, { once: true }); }
         })();
